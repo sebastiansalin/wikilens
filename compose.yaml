@@ -1,0 +1,12 @@
+services:
+  db:
+    image: mariadb:11.8
+    environment:
+      MARIADB_DATABASE: wikilens
+      MARIADB_ROOT_PASSWORD: local-development-only
+    ports:
+      - "127.0.0.1:3308:3306"
+    volumes:
+      - wikilens-db:/var/lib/mysql
+volumes:
+  wikilens-db:

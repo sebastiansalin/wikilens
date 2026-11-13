@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0a1015">
+  <title>WikiLens — A map of disagreement</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <a class="brand" href="/" aria-label="WikiLens home"><span class="brand-icon">◉</span> wiki<span>lens</span><small>EXPERIMENT / 01</small></a>
+    <nav><button class="tab active" id="mapTab">Conflict atlas</button><button class="tab" id="methodBtn">Methodology ↗</button></nav>
+    <div class="connection"><i></i><span id="connection">Connecting to MariaDB</span></div>
+  </header>
+  <main>
+    <aside class="sidebar">
+      <div class="eyebrow">FINNISH WIKIPEDIA</div>
+      <h1>A map of<br><em>disagreement.</em></h1>
+      <p class="intro">Explore how connected articles have been challenged, rewritten, and restored.</p>
+      <label class="search"><span>⌕</span><input id="search" type="search" placeholder="Find an article…" aria-label="Find an article"><kbd>/</kbd></label>
+      <div class="section-label">OBSERVATION WINDOW</div>
+      <select id="window" aria-label="Observation window"><option value="0">All history to selected date</option><option value="365">Previous 365 days</option><option value="90">Previous 90 days</option><option value="30">Previous 30 days</option></select>
+      <div class="score-toggle"><button id="intensityMode" class="chosen">Intensity</button><button id="volumeMode">Volume</button></div>
+      <div class="section-heading"><span class="section-label">ARTICLES IN VIEW</span><span id="listCount" class="count">—</span></div>
+      <div id="ranking" class="ranking" aria-label="Articles ranked by editing conflict"></div>
+      <div class="sidebar-bottom"><span class="sample-badge">M / REAL REVISION DATA</span><p id="sampleInfo">Loading a verified dataset sample…</p><a href="https://github.com/MariaDB/mariadb-wikipedia-datasets/releases/tag/m-2026-10" target="_blank" rel="noreferrer">Dataset & attribution ↗</a></div>
+    </aside>
+    <section class="workspace" aria-label="Interactive article network">
+      <div class="graph-top"><div><span class="eyebrow">THE CONFLICT ATLAS</span><p><span id="nodeCount">—</span> articles <b>·</b> <span id="edgeCount">—</span> directed links</p></div><div class="graph-controls"><button id="hotOnly" aria-pressed="false">Hotspots only</button><button id="motion" aria-pressed="true" title="Toggle simulation and animated flames">Ⅱ Motion</button></div></div>
+      <canvas id="graph" aria-label="Draggable article graph. Use the article list to select nodes with a keyboard."></canvas>
+      <div id="tooltip" role="tooltip" hidden></div>
+      <div class="graph-empty" id="graphStatus"><span class="loader"></span><strong>Reading the revision record</strong><p>Loading article states from MariaDB…</p></div>
+      <div class="graph-footer"><div class="legend"><span id="legendTitle">EDIT-CONFLICT INTENSITY</span><div class="gradient"></div><div class="legend-labels"><span>Lower</span><span>Higher</span></div><small>Gray = fewer than 20 edits</small></div><div class="navigation"><button id="zoomOut" aria-label="Zoom out">−</button><button id="resetView" title="Reset graph view">⌖</button><button id="zoomIn" aria-label="Zoom in">+</button></div></div>
+      <div class="drag-hint">↔ Drag nodes to move them <span>·</span> Scroll to zoom <span>·</span> Drag empty space to pan</div>
+      <section class="timebar"><div class="time-title"><div><span class="eyebrow">TIME MACHINE</span><strong id="dateLabel">01 OCT 2026</strong></div><span class="temporal-tag">FOR SYSTEM_TIME AS OF</span></div><input type="range" id="date" min="2004" max="2026" value="2026" step="1" aria-label="Historical year"><div class="year-labels"><span>2004</span><span>2010</span><span>2015</span><span>2020</span><span>2026</span></div><div class="time-note"><i></i> Article text, size, and links reflect the selected date. Scores use edits observed by that date.</div></section>
+    </section>
+    <aside class="inspector" id="inspector" aria-label="Article evidence">
+      <div class="inspector-title"><span class="eyebrow">UNDER THE LENS</span><button id="closeDetail" aria-label="Close article details">×</button></div>
+      <div id="detail"><div class="empty-detail"><div class="lens-illustration">◎</div><h2>Every color has a history.</h2><p>Select an article to inspect the edits behind its score.</p><div class="explain-row"><i class="dot green"></i><span>Lower observed editing conflict</span></div><div class="explain-row"><i class="dot red"></i><span>Repeated mutual reversals</span></div><div class="explain-row"><span class="flame-key">♨</span><span>Intense, repeated conflict activity</span></div><p class="caveat">Editing conflict is not a measure of factual accuracy, bias, or real-world controversy.</p></div></div>
+    </aside>
+  </main>
+  <dialog id="methodDialog"><button class="dialog-close" id="closeMethod" aria-label="Close methodology">×</button><div class="eyebrow">SHOW YOUR WORK</div><h2>Color, backed by revisions.</h2><p>This prototype measures <strong>observed editing conflict</strong>. It does not judge whether an article is true, neutral, or socially controversial.</p><h3>1 / Detect exact restorations</h3><p>A revision restores an earlier SHA-1 text hash, different from the preceding revision. We attribute the event to the restoring editor and preceding editor; self-restorations are excluded. This conservative baseline misses partial reversals and cannot fully attribute multi-edit restores.</p><h3>2 / Find mutual reversals</h3><p>Count events only when the two editors reversed each other in both directions within the selected window. All saved revisions form the denominator. Minor edits are retained because the minor flag is not a reliable formatting classifier.</p><h3>3 / Smooth the rate</h3><div class="formula">Intensity = 100 × (m + 20p₀) / (N + 20)</div><p>m = mutual-reversal events; N = revisions; p₀ = the pooled rate across this sample and window. This is our proposed adaptation, not a published controversy probability. Below 20 revisions the node is gray. Fixed color scale: green at 0%, amber at 2%, red at 4% or more. Flames require ≥3% intensity and ≥5 mutual events.</p><h3>Historical conflict volume</h3><div class="formula">Volume = E × Σ min(nᵤ, nᵥ)</div><p>E counts participants in mutual reversals. n counts each editor’s article revisions observed by the selected date. The sum is over mutual-reversal events in the window. This adapts Yasseri et al.; it omits their strongest-pair exclusion and should not be described as an exact reproduction. Volume colors use a fixed logarithmic scale, 0–100,000.</p><h3>Scope & limitations</h3><p>36 deliberately selected articles from M shard 01, not a representative sample. Only links between sampled pages are shown. Titles are matched directly; redirects and renamed targets can be missed. No automatic vandalism classifier or bot filter is applied. No mutual reversals detected does not mean no dispute occurred. Silence may also reflect page protection or missing/suppressed revisions.</p><p>Node size scales with wikitext size in bytes, using bounded radii. Edge width follows the smaller endpoint’s displayed radius, capped for readability. Flames are a visual threshold, not a validated category. Graph proximity is a layout effect; edges indicate hyperlinks, not conflict spreading.</p><p><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3380063/" target="_blank" rel="noreferrer">Yasseri et al. (2012) ↗</a> · <a href="https://github.com/MariaDB/mariadb-wikipedia-datasets" target="_blank" rel="noreferrer">Dataset & licensing ↗</a></p></dialog>
+  <div id="toast" role="status" aria-live="polite" hidden></div>
+  <script src="app.js"></script>
+</body>
+</html>

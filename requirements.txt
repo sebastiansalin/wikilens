@@ -1,0 +1,2 @@
+pyarrow==26.0.1
+PyMySQL==1.2.4
