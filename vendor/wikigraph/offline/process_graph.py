@@ -1,0 +1,297 @@
+import math
+from pathlib import Path
+
+import cudf  # pyright: ignore[reportMissingImports]  # GPU-only (cuda13 extra)
+import cugraph  # pyright: ignore[reportMissingImports]  # GPU-only (cuda13 extra)
+import polars as pl
+from loguru import logger
+
+NODES_INPUT_PATH = Path("intermediates/extracted_nodes.parquet")
+EDGES_INPUT_PATH = Path("intermediates/extracted_edges.parquet")
+
+PAGERANK_PATH = Path("intermediates/pagerank.parquet")
+CLUSTERS_PATH = Path("intermediates/clusters.parquet")
+INITIAL_LAYOUT_PATH = Path("intermediates/initial_layout.parquet")
+
+INITIAL_NODES_PATH = Path("intermediates/initial_enriched_nodes.parquet")
+
+WORLD_EXTENT = 2**16
+
+CLUSTERING_RESOLUTION = 1.0
+
+PAGERANK_RADIUS_EXPONENT = 0.5
+TARGET_NODE_FILL = 0.0005
+
+# Clamp the bottom RADIUS_FLOOR_PERCENTILE of nodes (by PageRank) up to a single
+# floor radius so the long tail of tiny articles renders at one readable size.
+RADIUS_FLOOR_PERCENTILE = 0.10
+
+LAYOUT_RADIUS_INFLATION = 1.3
+
+
+def compute_pagerank() -> None:
+    """Compute PageRank on the directed graph (the only directed stage)."""
+    if PAGERANK_PATH.exists():
+        logger.info("PageRank already computed, skipping")
+        return
+
+    logger.info("Computing PageRank")
+    edges_df = cudf.read_parquet(EDGES_INPUT_PATH)
+
+    G = cugraph.Graph(directed=True)
+    G.from_cudf_edgelist(
+        edges_df,
+        source="src",
+        destination="dst",
+        store_transposed=True,
+    )
+
+    pagerank = cugraph.pagerank(
+        G,
+        alpha=0.85,
+        tol=1e-6,
+        max_iter=100,
+    ).rename(columns={"vertex": "id"})
+
+    pagerank_column = pagerank["pagerank"]
+    assert pagerank_column is not None
+
+    logger.info(
+        f"PageRank stats: min={pagerank_column.min():.2e}, "
+        f"max={pagerank_column.max():.2e}, "
+        f"mean={pagerank_column.mean():.2e}"
+    )
+
+    pagerank.to_parquet(PAGERANK_PATH, compression="zstd")
+    logger.success(f"Wrote PageRank to {PAGERANK_PATH}")
+
+
+def compute_clusters() -> None:
+    """Run Leiden clustering on the undirected graph."""
+    if CLUSTERS_PATH.exists():
+        logger.info("Clusters already computed, skipping")
+        return
+
+    logger.info("Computing Leiden clusters")
+    edges_df = cudf.read_parquet(EDGES_INPUT_PATH)
+
+    G = cugraph.Graph(directed=False)
+    G.from_cudf_edgelist(edges_df, source="src", destination="dst")
+
+    partitions, modularity = cugraph.leiden(G, resolution=CLUSTERING_RESOLUTION)
+    partitions = partitions.rename(columns={"vertex": "id"})
+
+    n_clusters = int(partitions["partition"].nunique())  # pyright: ignore[reportOptionalMemberAccess, reportArgumentType]
+    logger.info(f"Found {n_clusters:,} clusters, modularity = {modularity:.4f}")
+
+    partitions.to_parquet(CLUSTERS_PATH, compression="zstd")
+    logger.success(f"Wrote clusters to {CLUSTERS_PATH}")
+
+
+def compute_layout() -> None:
+    """Two-pass ForceAtlas2 on the undirected graph.
+
+    Pass 1 finds the layout; pass 2 re-runs from it with overlap prevention.
+    Radii (from PageRank, world coords) are converted into pass-1's layout space
+    and carried through pass 2 so they stay consistent with final positions.
+    """
+    if INITIAL_LAYOUT_PATH.exists():
+        logger.info("Layout already computed, skipping")
+        return
+
+    edges_df = cudf.read_parquet(EDGES_INPUT_PATH)
+    pagerank_df = cudf.read_parquet(PAGERANK_PATH)
+
+    # Floor PageRank at its low percentile so the bottom decile collapses to one
+    # size; compute the coefficient on clamped values so total fill stays at
+    # TARGET_NODE_FILL.
+    pr_floor = float(pagerank_df["pagerank"].quantile(RADIUS_FLOOR_PERCENTILE))
+    pr_eff = pagerank_df["pagerank"].clip(lower=pr_floor)
+    pr_pow_sum = float((pr_eff ** (2 * PAGERANK_RADIUS_EXPONENT)).sum())
+    radius_coefficient = WORLD_EXTENT * math.sqrt(
+        TARGET_NODE_FILL / (math.pi * pr_pow_sum)
+    )
+    logger.info(
+        f"Radius: r = {radius_coefficient:.2f} · "
+        f"max(pagerank, p{RADIUS_FLOOR_PERCENTILE:.0%}={pr_floor:.2e})^"
+        f"{PAGERANK_RADIUS_EXPONENT} (target fill {TARGET_NODE_FILL:.4f})"
+    )
+
+    # World-space target radii, converted into layout space after pass 1.
+    vertex_radius = pagerank_df.rename(columns={"id": "vertex"}).assign(
+        radius=lambda d: (
+            d["pagerank"].clip(lower=pr_floor) ** PAGERANK_RADIUS_EXPONENT
+            * radius_coefficient
+        )
+    )[["vertex", "radius"]]
+
+    G = cugraph.Graph(directed=False)
+    G.from_cudf_edgelist(edges_df, source="src", destination="dst")
+
+    logger.info("Running ForceAtlas2 (pass 1: rough layout)")
+    pos = cugraph.force_atlas2(
+        G,
+        max_iter=2000,
+        scaling_ratio=5.0,
+        gravity=1.0,
+        strong_gravity_mode=False,
+        lin_log_mode=False,
+        edge_weight_influence=1.0,
+        jitter_tolerance=0.5,
+        barnes_hut_optimize=True,
+        barnes_hut_theta=0.5,
+        outbound_attraction_distribution=True,
+        prevent_overlapping=False,
+        verbose=True,
+    )
+
+    pos_x = pos["x"]
+    pos_y = pos["y"]
+    assert pos_x is not None and pos_y is not None
+
+    cx = float(pos_x.median())
+    cy = float(pos_y.median())
+    max_abs = max(
+        float((pos_x - cx).abs().max()),
+        float((pos_y - cy).abs().max()),
+    )
+    scale_1 = (WORLD_EXTENT / 2) / max_abs
+
+    vertex_radius = vertex_radius.assign(radius=lambda d: d["radius"] / scale_1)
+    vertex_radius_padded = vertex_radius.assign(
+        radius=lambda d: d["radius"] * LAYOUT_RADIUS_INFLATION
+    )
+
+    logger.info("Running ForceAtlas2 (pass 2: overlap cleanup)")
+    logger.info("Running initial overlap pass (500 iters)")
+    pos = cugraph.force_atlas2(
+        G,
+        max_iter=500,
+        pos_list=pos,
+        scaling_ratio=5.0,
+        gravity=1.0,
+        strong_gravity_mode=False,
+        lin_log_mode=False,
+        edge_weight_influence=1.0,
+        jitter_tolerance=0.05,
+        barnes_hut_optimize=True,
+        barnes_hut_theta=0.5,
+        outbound_attraction_distribution=True,
+        prevent_overlapping=True,
+        vertex_radius=vertex_radius_padded,
+        overlap_scaling_ratio=100.0,
+        verbose=True,
+    )
+
+    for jitter_tolerance in [
+        0.01,
+        0.005,
+        0.0005,
+        0.00005,
+        0.000005,
+        0.000001,
+        0.0000001,
+    ]:
+        logger.info(f"Running 100 iter overlap pass with jt={jitter_tolerance}")
+        pos = cugraph.force_atlas2(
+            G,
+            max_iter=100,
+            pos_list=pos,
+            scaling_ratio=5.0,
+            gravity=1.0,
+            strong_gravity_mode=False,
+            lin_log_mode=False,
+            edge_weight_influence=1.0,
+            jitter_tolerance=jitter_tolerance,
+            barnes_hut_optimize=True,
+            barnes_hut_theta=0.5,
+            outbound_attraction_distribution=True,
+            prevent_overlapping=True,
+            vertex_radius=vertex_radius_padded,
+            overlap_scaling_ratio=2000.0,
+            verbose=True,
+        )
+
+    pos_x = pos["x"]
+    pos_y = pos["y"]
+    assert pos_x is not None and pos_y is not None
+
+    logger.info(
+        f"Raw layout extents: "
+        f"x: [{float(pos_x.min()):.1f}, {float(pos_x.max()):.1f}], "
+        f"y: [{float(pos_y.min()):.1f}, {float(pos_y.max()):.1f}]"
+    )
+
+    pos = pos.merge(vertex_radius, on="vertex").rename(columns={"vertex": "id"})
+    pos.to_parquet(INITIAL_LAYOUT_PATH, compression="zstd")
+    logger.success(f"Wrote layout to {INITIAL_LAYOUT_PATH}")
+
+
+def normalize_layout(layout: pl.DataFrame) -> pl.DataFrame:
+    """Center and scale x, y, radius into the WORLD_EXTENT canonical space.
+
+    The same scale factor applies to all three so radii stay consistent with
+    positions.
+    """
+    cx = float(layout["x"].median())  # pyright: ignore[reportArgumentType]
+    cy = float(layout["y"].median())  # pyright: ignore[reportArgumentType]
+    centered = layout.with_columns(
+        (pl.col("x") - cx).alias("x"),
+        (pl.col("y") - cy).alias("y"),
+    )
+
+    max_abs = max(
+        float(centered["x"].abs().max()),  # pyright: ignore[reportArgumentType]
+        float(centered["y"].abs().max()),  # pyright: ignore[reportArgumentType]
+    )
+    scale = (WORLD_EXTENT / 2) / max_abs
+    logger.info(
+        f"Centering at ({cx:.2f}, {cy:.2f}), scaling x/y/radius by {scale:.4f} "
+        f"to fit WORLD_EXTENT={WORLD_EXTENT}"
+    )
+
+    return centered.with_columns(
+        (pl.col("x") * scale).alias("x"),
+        (pl.col("y") * scale).alias("y"),
+        (pl.col("radius") * scale).alias("radius"),
+    )
+
+
+def merge_and_write() -> None:
+    """Join nodes, pagerank, clusters, and layout into the initial enriched table.
+
+    "Initial" because remove_overlaps runs next and writes the final table the
+    rest of the pipeline consumes.
+    """
+    logger.info("Merging into initial node table")
+
+    nodes = pl.read_parquet(NODES_INPUT_PATH)
+    pagerank = pl.read_parquet(PAGERANK_PATH)
+    clusters = pl.read_parquet(CLUSTERS_PATH)
+    layout = pl.read_parquet(INITIAL_LAYOUT_PATH)
+
+    layout = normalize_layout(layout)
+
+    enriched = (
+        nodes.join(pagerank, on="id", how="inner")
+        .join(clusters, on="id", how="inner")
+        .join(layout, on="id", how="inner")
+        .sort("id")
+    )
+
+    logger.info(f"Initial enriched node table: {len(enriched):,} rows")
+    logger.info(f"Schema: {enriched.schema}")
+    enriched.write_parquet(INITIAL_NODES_PATH, compression="zstd")
+    logger.success(f"Wrote {INITIAL_NODES_PATH}")
+
+
+if __name__ == "__main__":
+    logger.info("Processing graph")
+
+    compute_pagerank()
+    compute_clusters()
+    compute_layout()
+    merge_and_write()
+
+    logger.success("Graph successfully processed")
+

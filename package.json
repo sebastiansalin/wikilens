@@ -1,0 +1,35 @@
+{
+  "name": "wikilens",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node node_modules/vite/bin/vite.js --host 127.0.0.1",
+    "build": "node node_modules/typescript/bin/tsc -b && node node_modules/vite/bin/vite.js build",
+    "preview": "node node_modules/vite/bin/vite.js preview --host 127.0.0.1",
+    "test": "node --test tests/*.test.mjs",
+    "api": "node server/dev.mjs",
+    "dev:browser": "node scripts/dev-browser.mjs",
+    "build:previews": "node scripts/build-previews.mjs",
+    "pilot:prepare": "python pipeline/prepare_m.py",
+    "pilot:database": "node pipeline/mariadb-pilot.mjs .local/m-pilot.jsonl",
+    "pilot:build": "node pipeline/build-pilot.mjs .local/m-pilot.jsonl",
+    "pilot:build:database": "node pipeline/build-pilot.mjs .local/m-pilot-from-db.jsonl"
+  },
+  "dependencies": {
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "lucide-react": "1.31.0",
+    "mariadb": "3.4.5"
+  },
+  "devDependencies": {
+    "@types/react": "19.2.18",
+    "@types/react-dom": "19.2.5",
+    "@vitejs/plugin-react": "6.1.1",
+    "typescript": "6.0.3",
+    "vite": "8.2.2"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

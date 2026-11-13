@@ -1,0 +1,30 @@
+[project]
+name = "wikigraph"
+version = "0.1.0"
+description = "An interactive visualization of all of English Wikipedia."
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "joblib>=1.5.3",
+    "loguru>=0.7.3",
+    "matplotlib>=3.10.9",
+    "numpy>=2.4.6",
+    "pillow>=12.2.0",
+    "pmtiles>=3.7.0",
+    "polars[rt64]>=1.40.1",
+    "skia-python>=144.0.post2",
+    "tqdm>=4.67.3",
+]
+[project.optional-dependencies]
+cuda13 = [
+    "cugraph-cu13>=26.4.0",
+]
+
+[[tool.uv.index]]
+name = "nvidia"
+url = "https://pypi.nvidia.com"
+explicit = true
+
+[tool.uv.sources]
+cugraph-cu13 = { index = "nvidia" }
+
