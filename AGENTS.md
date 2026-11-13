@@ -14,6 +14,8 @@ Team: Sebastian, Aksu, Leo. Build a beautiful Wikipedia graph explorer and hones
 - Root owns shared UI, contracts, package.json and deployment.
 - Delegated agents may edit only their assigned directories. Do not undo another agent's work.
 - Do not read, print, or commit credentials. Keep .env and local runtime files ignored.
+- GitHub access was repaired on 2026-11-14: `sebastiansalin/wikilens` is selected in the existing connector installation. Source is published to private `main`; see docs/qa/github-publication.md.
+- This managed session has read-only `.git` metadata and cannot read the GitHub CLI configuration. Use the connected GitHub API for publication, preserving the current remote tree and using an expected-head, non-force branch update. Do not run denied commands through a UI terminal or alter sandbox protections. Local Git metadata has not been synchronized with the remote history.
 - Never invent data, similarity scores, API success, screenshots, reviews, or grading compliance.
 - Connection similarity measures link overlap, not truth or political agreement.
 - Unknown challenge requirements must remain marked unverified.

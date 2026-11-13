@@ -14,7 +14,7 @@ See [the ten-source review and formula](docs/CONFLICT-RESEARCH.md). This prototy
 
 ### Reproduce the real pilot
 
-On this Windows machine, run `npm install`, then `node scripts/bootstrap-local.mjs` for the project-local setup and calculations. Git publication is also available independently with `node scripts/bootstrap-local.mjs --git-only`; it does not require the database or dataset. The script uses your existing GitHub CLI login and performs a normal push to the existing private `sebastiansalin/wikilens` repository. It never force-pushes.
+On this Windows machine, run `npm install`, then `node scripts/bootstrap-local.mjs` for the project-local setup and calculations. Git publication is also available independently with `node scripts/bootstrap-local.mjs --git-only` from a checkout with writable Git metadata and the existing remote history; it does not require the database or dataset. The script uses your existing GitHub CLI login and performs a normal push to the existing private `sebastiansalin/wikilens` repository. It never force-pushes. The current managed workspace cannot write `.git` or read GitHub CLI configuration, so its source was published through the connected GitHub API instead. Its local Git metadata has not been synchronized with the remote commits.
 
 ```sh
 python -m pip install -r pipeline/requirements.txt
@@ -39,10 +39,10 @@ Then run `npm test` and `npm run build`. Only deploy after inspecting real score
 ### Current verification and publication status
 
 - Scoring edge-case tests and a synthetic 20-article export test pass; these do not constitute calculations on 20 real Wikipedia pages.
-- TypeScript and the production build pass. The existing live Talvisota graph and honest missing-pilot state were visually checked.
+- Validation rerun on 2026-11-14 (Europe/Helsinki): `npm test` passed 75 tests with one MariaDB integration test skipped; TypeScript and the production build passed. The existing live Talvisota graph and honest missing-pilot state were visually checked previously.
 - **Real M calculations are not complete:** shell downloads are denied by the environment; the browser download also failed. No public score bundle has been generated.
 - **MariaDB execution is not verified:** no connection is configured in this session.
-- **GitHub upload is blocked:** the connector returns 404 for `sebastiansalin/wikilens`; its installed-repository search finds no WikiLens repository. Local `git add` also fails because `.git/index.lock` cannot be written. Source is in this working directory; no commit or push was created.
+- **GitHub upload is verified:** WikiLens was added to the existing connector's selected repositories on 2026-11-14 (Europe/Helsinki), resolving the 404. All 117 files in the initial source snapshot were uploaded to `main` in commit [`e350134`](https://github.com/sebastiansalin/wikilens/commit/e350134a028f35060bc9882cbb844c6e36958ff4); every remote Git blob hash matched the local source bytes. The repository remains private. Local Git metadata is still read-only in this managed session; subsequent publication can use the connected API. See [publication evidence](docs/qa/github-publication.md).
 - **Vercel deployment is blocked:** creation of `wikilens` in the connected team returned 403 permission denied. No deployment URL exists for this change.
 
 ## Existing explorer features
@@ -105,9 +105,9 @@ See [the architecture decision](docs/MAP-ARCHITECTURE.md) for the data boundary,
 
 Private repository: https://github.com/sebastiansalin/wikilens
 
-Invitations to `leosuojarvi` and `pitkenin` were visible as pending on 2026-11-13. Source publication is still blocked: the GitHub connector cannot access this new repository, and this session cannot stage local Git metadata. The repository's existence does not mean the working tree has been pushed.
+Invitations to `leosuojarvi` and `pitkenin` were visible as pending on 2026-11-13. Source publication to `main` was verified on 2026-11-14 (Europe/Helsinki) through the connected GitHub API. This session's local Git metadata remains unsynchronized; use the connector for further publication or a normal clone in a Git-enabled session.
 
-Deploy one **new** WikiLens Vercel project after repository access is available. Use Vite, `npm run build`, output `dist`, Node 24 and server-side MariaDB configuration. A local loopback database is not reachable by a deployed Vercel function. Leave `VITE_DATA_MODE` unset for server mode; explicitly set it to `browser` only for the live-Wikipedia alternative. Do not alter unrelated Vercel projects.
+Repository access is now available; Vercel deployment remains a separate unresolved step. Deploy one **new** WikiLens Vercel project. Use Vite, `npm run build`, output `dist`, Node 24 and server-side MariaDB configuration. A local loopback database is not reachable by a deployed Vercel function. Leave `VITE_DATA_MODE` unset for server mode; explicitly set it to `browser` only for the live-Wikipedia alternative. Do not alter unrelated Vercel projects.
 
 ## Measurement boundaries
 
