@@ -2,6 +2,8 @@
 
 A living Wikipedia atlas by **Sebastian, Aksu and Leo**, for Junction 2026.
 
+**Live site: https://wikilens-junction2026.vercel.app**
+
 One persistent workspace combines a star map, directed route finder, article inspector, language comparison and revision history. Paper, Ink and Galaxy are appearances of the same app. Old Atlas/Prism/Cosmos links open the unified workspace.
 
 ## Editing-disagreement pilot
@@ -43,7 +45,7 @@ Then run `npm test` and `npm run build`. Only deploy after inspecting real score
 - Validation on 2026-11-14 (Europe/Helsinki): all 77 Node tests passed with the real MariaDB integration enabled (zero skipped), both Python regression tests passed, TypeScript and production build passed. The real colored graph and revision evidence were checked in Sebastian's Brave browser.
 - A source-diff spot check confirmed a repeated vandalism/cleanup cycle contributes to Sauli Niinistö's score. This is an editing-reversal index, not a validated measure of substantive disagreement. Zero means no qualifying repeated mutual restores were detected, not that an article has never been disputed.
 - **GitHub upload is verified:** WikiLens was added to the existing connector's selected repositories on 2026-11-14 (Europe/Helsinki), resolving the 404. All 117 files in the initial source snapshot were uploaded to `main` in commit [`e350134`](https://github.com/sebastiansalin/wikilens/commit/e350134a028f35060bc9882cbb844c6e36958ff4); every remote Git blob hash matched the local source bytes. The repository remains private. Local Git metadata is still read-only in this managed session; subsequent publication can use the connected API. See [publication evidence](docs/qa/github-publication.md).
-- **Vercel deployment in progress:** one new `wikilens` project was created in team `mv-c84d` through the user's browser, configured for Vite and Node 24. The connector cannot see the new project; no production deployment is verified yet.
+- **Vercel production deployment verified:** [wikilens-junction2026.vercel.app](https://wikilens-junction2026.vercel.app) serves the real pilot. Deployment `dpl_BzMAn1uHwC4vRmxToxfkQwBHDc9X`, commit `2367023`, became Ready after a 19-second build. The new project is connected to this repository's `main` branch. The connector cannot see the project, so deployment was completed and checked in Sebastian's Brave browser.
 
 ## Existing explorer features
 
@@ -56,7 +58,7 @@ Then run `npm test` and `npm run build`. Only deploy after inspecting real score
 
 ## Current limits
 
-The pilot serves a static snapshot calculated from a verified MariaDB readback. Live-Wikipedia exploration is a separate mode. The local loopback database is not a hosted database. Graph display is capped at 160 articles; the pilot has 20. Full-Wikipedia tiles, global PageRank, Leiden clustering and GPU layout have not been generated. No Vercel deployment has been verified yet. An independent initial unified UI review scored 7/10; follow-up fixes do not constitute an automatic 9/10 pass.
+The pilot serves a static snapshot calculated from a verified MariaDB readback. Live-Wikipedia exploration is a separate mode. The local loopback database is not a hosted database. Graph display is capped at 160 articles; the pilot has 20. Full-Wikipedia tiles, global PageRank, Leiden clustering and GPU layout have not been generated. An independent initial unified UI review scored 7/10; follow-up fixes do not constitute an automatic 9/10 pass.
 
 The authenticated challenge brief has been checked: its focus is MariaDB RAG and/or system-versioned tables. See [challenge mapping](docs/CHALLENGE.md). Existing SQL cache usage alone is not evidence of meeting that requirement.
 

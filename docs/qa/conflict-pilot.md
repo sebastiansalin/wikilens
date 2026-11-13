@@ -21,8 +21,9 @@
 
 ## Publication and boundaries
 
-- Initial source publication is verified in github-publication.md; the calculated bundle is being added in the follow-up publication.
-- New Vercel project wikilens exists in team mv-c84d; deployment verification is pending.
+- Initial source publication is verified in github-publication.md. The real bundle and fixes were published in commit `236702389fe999acd781a48555bd34fe3b650871`; all seven updated remote file hashes match local bytes.
+- Production deployment `dpl_BzMAn1uHwC4vRmxToxfkQwBHDc9X` is Ready (19-second build), serving https://wikilens-junction2026.vercel.app from project wikilens in team mv-c84d.
+- Live browser checks: automatic pilot loading, 20 graph nodes, score colors, ranking navigation to Hanoi Rocks (0), correct zero-dispute count, source attribution. Local UI additionally checked Tarja Halonen (73.8) with its one excluded history gap, yearly timeline, returning passages and revision links.
 - The public pilot is a portable snapshot computed using MariaDB, not a live connection from Vercel to the local database.
 - No human-labeled precision/recall evaluation, comparative superiority, complete bot exclusion, semantic agreement, or cross-language disagreement claim is supported.
 - Zero means no qualifying repeated mutual full-text restores in the available history. Partial wording disputes and talk-page debates can be missed.
