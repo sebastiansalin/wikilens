@@ -1,0 +1,774 @@
+{
+  "schemaVersion": 1,
+  "scope": "Diagnostic audit, not an independent accuracy benchmark",
+  "method": "wikilens-conflict-v1",
+  "dataset": "m-2026-10",
+  "generatedAt": "2026-11-13T23:43:25.115Z",
+  "pilotSha256": "82d951e630853bb53531bfc2ff649e75e507c84cd5bfc386096aff770ee03d64",
+  "verifiedArticles": 20,
+  "verifiedRevisions": 37318,
+  "qualifyingRevisions": 289,
+  "articleDays": 77,
+  "cleanupDiscounted": 4,
+  "positiveWithNoFiveYearSignal": 13,
+  "articles": [
+    {
+      "pageId": 1137,
+      "title": "Sauli Niinistö",
+      "score": 76.4,
+      "disputed": 67,
+      "days": 14,
+      "participants": 20,
+      "cleanupDiscounted": 0,
+      "withinOneMinute": 30,
+      "lastDispute": "2025-11-12T06:53:56.000000Z",
+      "recent": {
+        "2021-10-01": {
+          "score": 27,
+          "revisions": 251,
+          "disputed": 4
+        },
+        "2025-10-01": {
+          "score": 42.5,
+          "revisions": 33,
+          "disputed": 4
+        }
+      },
+      "sensitivity": {
+        "sevenDayWindow": 75.5,
+        "thousandRevisionLookback": 76.4
+      },
+      "baseline": {
+        "exactReverts": 639,
+        "selfReverts": 17,
+        "nonSelfExactReverts": 622,
+        "exactRevertRate": 28.3
+      }
+    },
+    {
+      "pageId": 1187,
+      "title": "Tarja Halonen",
+      "score": 73.8,
+      "disputed": 61,
+      "days": 13,
+      "participants": 24,
+      "cleanupDiscounted": 0,
+      "withinOneMinute": 39,
+      "lastDispute": "2017-01-20T20:32:48.000000Z",
+      "recent": {
+        "2021-10-01": {
+          "score": 0,
+          "revisions": 127,
+          "disputed": 0
+        },
+        "2025-10-01": {
+          "score": 0,
+          "revisions": 23,
+          "disputed": 0
+        }
+      },
+      "sensitivity": {
+        "sevenDayWindow": 73.2,
+        "thousandRevisionLookback": 73.8
+      },
+      "baseline": {
+        "exactReverts": 972,
+        "selfReverts": 16,
+        "nonSelfExactReverts": 956,
+        "exactRevertRate": 31.6
+      }
+    },
+    {
+      "pageId": 1150,
+      "title": "Suomen sisällissota",
+      "score": 67.1,
+      "disputed": 27,
+      "days": 8,
+      "participants": 11,
+      "cleanupDiscounted": 0,
+      "withinOneMinute": 4,
+      "lastDispute": "2017-08-28T11:21:02.000000Z",
+      "recent": {
+        "2021-10-01": {
+          "score": 0,
+          "revisions": 216,
+          "disputed": 0
+        },
+        "2025-10-01": {
+          "score": 0,
+          "revisions": 30,
+          "disputed": 0
+        }
+      },
+      "sensitivity": {
+        "sevenDayWindow": 65.1,
+        "thousandRevisionLookback": 67.1
+      },
+      "baseline": {
+        "exactReverts": 322,
+        "selfReverts": 12,
+        "nonSelfExactReverts": 310,
+        "exactRevertRate": 9.6
+      }
+    },
+    {
+      "pageId": 1069,
+      "title": "Suomen tasavallan presidentti",
+      "score": 66.1,
+      "disputed": 22,
+      "days": 8,
+      "participants": 11,
+      "cleanupDiscounted": 2,
+      "withinOneMinute": 3,
+      "lastDispute": "2020-09-29T17:22:36.000000Z",
+      "recent": {
+        "2021-10-01": {
+          "score": 0,
+          "revisions": 252,
+          "disputed": 0
+        },
+        "2025-10-01": {
+          "score": 0,
+          "revisions": 21,
+          "disputed": 0
+        }
+      },
+      "sensitivity": {
+        "sevenDayWindow": 65.5,
+        "thousandRevisionLookback": 66.1
+      },
+      "baseline": {
+        "exactReverts": 339,
+        "selfReverts": 16,
+        "nonSelfExactReverts": 323,
+        "exactRevertRate": 20.1
+      }
+    },
+    {
+      "pageId": 1275,
+      "title": "Urho Kekkonen",
+      "score": 62.5,
+      "disputed": 20,
+      "days": 5,
+      "participants": 11,
+      "cleanupDiscounted": 0,
+      "withinOneMinute": 10,
+      "lastDispute": "2009-12-15T06:04:38.000000Z",
+      "recent": {
+        "2021-10-01": {
+          "score": 0,
+          "revisions": 278,
+          "disputed": 0
+        },
+        "2025-10-01": {
+          "score": 0,
+          "revisions": 21,
+          "disputed": 0
+        }
+      },
+      "sensitivity": {
+        "sevenDayWindow": 61.3,
+        "thousandRevisionLookback": 62.5
+      },
+      "baseline": {
+        "exactReverts": 459,
+        "selfReverts": 29,
+        "nonSelfExactReverts": 430,
+        "exactRevertRate": 19.3
+      }
+    },
+    {
+      "pageId": 11396,
+      "title": "Alexander Stubb",
+      "score": 61.5,
+      "disputed": 16,
+      "days": 6,
+      "participants": 10,
+      "cleanupDiscounted": 0,
+      "withinOneMinute": 7,
+      "lastDispute": "2026-09-08T18:22:03.000000Z",
+      "recent": {
+        "2021-10-01": {
+          "score": 39.1,
+          "revisions": 641,
+          "disputed": 6
+        },
+        "2025-10-01": {
+          "score": 25.9,
+          "revisions": 101,
+          "disputed": 3
+        }
+      },
+      "sensitivity": {
+        "sevenDayWindow": 50.1,
+        "thousandRevisionLookback": 61.5
+      },
+      "baseline": {
+        "exactReverts": 287,
+        "selfReverts": 7,
+        "nonSelfExactReverts": 280,
+        "exactRevertRate": 18.6
+      }
+    },
+    {
+      "pageId": 11594,
+      "title": "Vanhoillislestadiolaisuus",
+      "score": 52.2,
+      "disputed": 15,
+      "days": 2,
+      "participants": 5,
+      "cleanupDiscounted": 1,
+      "withinOneMinute": 3,
+      "lastDispute": "2006-03-06T10:23:13.000000Z",
+      "recent": {
+        "2021-10-01": {
+          "score": 0,
+          "revisions": 54,
+          "disputed": 0
+        },
+        "2025-10-01": {
+          "score": null,
+          "revisions": 3,
+          "disputed": 0
+        }
+      },
+      "sensitivity": {
+        "sevenDayWindow": 51,
+        "thousandRevisionLookback": 52.2
+      },
+      "baseline": {
+        "exactReverts": 84,
+        "selfReverts": 5,
+        "nonSelfExactReverts": 79,
+        "exactRevertRate": 5.8
+      }
+    },
+    {
+      "pageId": 440,
+      "title": "Jatkosota",
+      "score": 50,
+      "disputed": 10,
+      "days": 4,
+      "participants": 6,
+      "cleanupDiscounted": 0,
+      "withinOneMinute": 1,
+      "lastDispute": "2014-04-24T02:32:12.000000Z",
+      "recent": {
+        "2021-10-01": {
+          "score": 0,
+          "revisions": 329,
+          "disputed": 0
+        },
+        "2025-10-01": {
+          "score": 0,
+          "revisions": 198,
+          "disputed": 0
+        }
+      },
+      "sensitivity": {
+        "sevenDayWindow": 38.5,
+        "thousandRevisionLookback": 50
+      },
+      "baseline": {
+        "exactReverts": 206,
+        "selfReverts": 7,
+        "nonSelfExactReverts": 199,
+        "exactRevertRate": 12.3
+      }
+    },
+    {
+      "pageId": 1256,
+      "title": "Talvisota",
+      "score": 49.6,
+      "disputed": 10,
+      "days": 4,
+      "participants": 6,
+      "cleanupDiscounted": 0,
+      "withinOneMinute": 3,
+      "lastDispute": "2014-04-24T02:32:50.000000Z",
+      "recent": {
+        "2021-10-01": {
+          "score": 0,
+          "revisions": 216,
+          "disputed": 0
+        },
+        "2025-10-01": {
+          "score": 0,
+          "revisions": 43,
+          "disputed": 0
+        }
+      },
+      "sensitivity": {
+        "sevenDayWindow": 49.6,
+        "thousandRevisionLookback": 49.6
+      },
+      "baseline": {
+        "exactReverts": 308,
+        "selfReverts": 19,
+        "nonSelfExactReverts": 289,
+        "exactRevertRate": 14.4
+      }
+    },
+    {
+      "pageId": 498,
+      "title": "Kalevala",
+      "score": 48.7,
+      "disputed": 12,
+      "days": 3,
+      "participants": 3,
+      "cleanupDiscounted": 0,
+      "withinOneMinute": 1,
+      "lastDispute": "2007-01-26T09:50:58.000000Z",
+      "recent": {
+        "2021-10-01": {
+          "score": 0,
+          "revisions": 170,
+          "disputed": 0
+        },
+        "2025-10-01": {
+          "score": null,
+          "revisions": 8,
+          "disputed": 0
+        }
+      },
+      "sensitivity": {
+        "sevenDayWindow": 45.4,
+        "thousandRevisionLookback": 48.7
+      },
+      "baseline": {
+        "exactReverts": 260,
+        "selfReverts": 19,
+        "nonSelfExactReverts": 241,
+        "exactRevertRate": 18.4
+      }
+    },
+    {
+      "pageId": 1562418,
+      "title": "Koronaviruspandemia Suomessa",
+      "score": 44.9,
+      "disputed": 9,
+      "days": 3,
+      "participants": 6,
+      "cleanupDiscounted": 1,
+      "withinOneMinute": 1,
+      "lastDispute": "2020-11-04T20:14:53.000000Z",
+      "recent": {
+        "2021-10-01": {
+          "score": 0,
+          "revisions": 204,
+          "disputed": 0
+        },
+        "2025-10-01": {
+          "score": null,
+          "revisions": 4,
+          "disputed": 0
+        }
+      },
+      "sensitivity": {
+        "sevenDayWindow": 44.9,
+        "thousandRevisionLookback": 44.9
+      },
+      "baseline": {
+        "exactReverts": 80,
+        "selfReverts": 2,
+        "nonSelfExactReverts": 78,
+        "exactRevertRate": 4
+      }
+    },
+    {
+      "pageId": 5901,
+      "title": "Martti Ahtisaari",
+      "score": 40.5,
+      "disputed": 7,
+      "days": 3,
+      "participants": 4,
+      "cleanupDiscounted": 0,
+      "withinOneMinute": 0,
+      "lastDispute": "2017-01-20T20:32:35.000000Z",
+      "recent": {
+        "2021-10-01": {
+          "score": 0,
+          "revisions": 394,
+          "disputed": 0
+        },
+        "2025-10-01": {
+          "score": 0,
+          "revisions": 21,
+          "disputed": 0
+        }
+      },
+      "sensitivity": {
+        "sevenDayWindow": 40.5,
+        "thousandRevisionLookback": 40.5
+      },
+      "baseline": {
+        "exactReverts": 252,
+        "selfReverts": 10,
+        "nonSelfExactReverts": 242,
+        "exactRevertRate": 17
+      }
+    },
+    {
+      "pageId": 6021,
+      "title": "Carl Gustaf Emil Mannerheim",
+      "score": 35.6,
+      "disputed": 6,
+      "days": 2,
+      "participants": 4,
+      "cleanupDiscounted": 0,
+      "withinOneMinute": 1,
+      "lastDispute": "2017-06-19T08:17:17.000000Z",
+      "recent": {
+        "2021-10-01": {
+          "score": 0,
+          "revisions": 263,
+          "disputed": 0
+        },
+        "2025-10-01": {
+          "score": 0,
+          "revisions": 34,
+          "disputed": 0
+        }
+      },
+      "sensitivity": {
+        "sevenDayWindow": 35.6,
+        "thousandRevisionLookback": 35.6
+      },
+      "baseline": {
+        "exactReverts": 309,
+        "selfReverts": 13,
+        "nonSelfExactReverts": 296,
+        "exactRevertRate": 12.9
+      }
+    },
+    {
+      "pageId": 5759,
+      "title": "Lestadiolaisuus",
+      "score": 23.9,
+      "disputed": 4,
+      "days": 1,
+      "participants": 2,
+      "cleanupDiscounted": 0,
+      "withinOneMinute": 0,
+      "lastDispute": "2010-03-07T20:20:14.000000Z",
+      "recent": {
+        "2021-10-01": {
+          "score": 0,
+          "revisions": 116,
+          "disputed": 0
+        },
+        "2025-10-01": {
+          "score": null,
+          "revisions": 7,
+          "disputed": 0
+        }
+      },
+      "sensitivity": {
+        "sevenDayWindow": 23.9,
+        "thousandRevisionLookback": 23.9
+      },
+      "baseline": {
+        "exactReverts": 173,
+        "selfReverts": 10,
+        "nonSelfExactReverts": 163,
+        "exactRevertRate": 10.4
+      }
+    },
+    {
+      "pageId": 7314,
+      "title": "Mikael Agricola",
+      "score": 20.1,
+      "disputed": 3,
+      "days": 1,
+      "participants": 2,
+      "cleanupDiscounted": 0,
+      "withinOneMinute": 1,
+      "lastDispute": "2006-02-03T06:46:14.000000Z",
+      "recent": {
+        "2021-10-01": {
+          "score": 0,
+          "revisions": 161,
+          "disputed": 0
+        },
+        "2025-10-01": {
+          "score": null,
+          "revisions": 18,
+          "disputed": 0
+        }
+      },
+      "sensitivity": {
+        "sevenDayWindow": 20.1,
+        "thousandRevisionLookback": 20.1
+      },
+      "baseline": {
+        "exactReverts": 471,
+        "selfReverts": 20,
+        "nonSelfExactReverts": 451,
+        "exactRevertRate": 27.3
+      }
+    },
+    {
+      "pageId": 327,
+      "title": "Hanoi Rocks",
+      "score": 0,
+      "disputed": 0,
+      "days": 0,
+      "participants": 0,
+      "cleanupDiscounted": 0,
+      "withinOneMinute": 0,
+      "lastDispute": null,
+      "recent": {
+        "2021-10-01": {
+          "score": 0,
+          "revisions": 40,
+          "disputed": 0
+        },
+        "2025-10-01": {
+          "score": null,
+          "revisions": 6,
+          "disputed": 0
+        }
+      },
+      "sensitivity": {
+        "sevenDayWindow": 0,
+        "thousandRevisionLookback": 0
+      },
+      "baseline": {
+        "exactReverts": 77,
+        "selfReverts": 11,
+        "nonSelfExactReverts": 66,
+        "exactRevertRate": 5.6
+      }
+    },
+    {
+      "pageId": 795,
+      "title": "Matti Vanhanen",
+      "score": 0,
+      "disputed": 0,
+      "days": 0,
+      "participants": 0,
+      "cleanupDiscounted": 0,
+      "withinOneMinute": 0,
+      "lastDispute": null,
+      "recent": {
+        "2021-10-01": {
+          "score": 0,
+          "revisions": 85,
+          "disputed": 0
+        },
+        "2025-10-01": {
+          "score": null,
+          "revisions": 6,
+          "disputed": 0
+        }
+      },
+      "sensitivity": {
+        "sevenDayWindow": 0,
+        "thousandRevisionLookback": 0
+      },
+      "baseline": {
+        "exactReverts": 253,
+        "selfReverts": 8,
+        "nonSelfExactReverts": 245,
+        "exactRevertRate": 17.4
+      }
+    },
+    {
+      "pageId": 14398,
+      "title": "Nightwish",
+      "score": 0,
+      "disputed": 0,
+      "days": 0,
+      "participants": 0,
+      "cleanupDiscounted": 0,
+      "withinOneMinute": 0,
+      "lastDispute": null,
+      "recent": {
+        "2021-10-01": {
+          "score": 0,
+          "revisions": 129,
+          "disputed": 0
+        },
+        "2025-10-01": {
+          "score": null,
+          "revisions": 1,
+          "disputed": 0
+        }
+      },
+      "sensitivity": {
+        "sevenDayWindow": 0,
+        "thousandRevisionLookback": 0
+      },
+      "baseline": {
+        "exactReverts": 187,
+        "selfReverts": 15,
+        "nonSelfExactReverts": 172,
+        "exactRevertRate": 13.5
+      }
+    },
+    {
+      "pageId": 436339,
+      "title": "Jokelan koulusurmat",
+      "score": 0,
+      "disputed": 0,
+      "days": 0,
+      "participants": 0,
+      "cleanupDiscounted": 0,
+      "withinOneMinute": 0,
+      "lastDispute": null,
+      "recent": {
+        "2021-10-01": {
+          "score": 0,
+          "revisions": 96,
+          "disputed": 0
+        },
+        "2025-10-01": {
+          "score": null,
+          "revisions": 8,
+          "disputed": 0
+        }
+      },
+      "sensitivity": {
+        "sevenDayWindow": 0,
+        "thousandRevisionLookback": 0
+      },
+      "baseline": {
+        "exactReverts": 171,
+        "selfReverts": 10,
+        "nonSelfExactReverts": 161,
+        "exactRevertRate": 11.4
+      }
+    },
+    {
+      "pageId": 1517061,
+      "title": "Suomen lähetyskunta",
+      "score": 0,
+      "disputed": 0,
+      "days": 0,
+      "participants": 0,
+      "cleanupDiscounted": 0,
+      "withinOneMinute": 0,
+      "lastDispute": null,
+      "recent": {
+        "2021-10-01": {
+          "score": 0,
+          "revisions": 1083,
+          "disputed": 0
+        },
+        "2025-10-01": {
+          "score": null,
+          "revisions": 9,
+          "disputed": 0
+        }
+      },
+      "sensitivity": {
+        "sevenDayWindow": 0,
+        "thousandRevisionLookback": 0
+      },
+      "baseline": {
+        "exactReverts": 8,
+        "selfReverts": 3,
+        "nonSelfExactReverts": 5,
+        "exactRevertRate": 0.6
+      }
+    }
+  ],
+  "manualSauliVandalism": {
+    "basis": "All 52 qualifying changes on these eight days inspected; single analyst, not blinded; remaining 15 not uniformly classified",
+    "count": 52,
+    "days": [
+      {
+        "day": "2013-06-13",
+        "revisionIds": [
+          13320378,
+          13320383,
+          13320384
+        ]
+      },
+      {
+        "day": "2013-06-14",
+        "revisionIds": [
+          13322269,
+          13322272,
+          13322273,
+          13322283,
+          13322287,
+          13322291,
+          13322292,
+          13322298,
+          13322299,
+          13322306,
+          13322308,
+          13322313,
+          13322315,
+          13322324,
+          13322326,
+          13322336,
+          13322346,
+          13322347,
+          13322356,
+          13322359,
+          13322368,
+          13322370,
+          13322437,
+          13322439,
+          13322469,
+          13322470
+        ]
+      },
+      {
+        "day": "2013-12-12",
+        "revisionIds": [
+          13722527,
+          13722533,
+          13722543
+        ]
+      },
+      {
+        "day": "2014-07-15",
+        "revisionIds": [
+          14166177,
+          14166178,
+          14166181
+        ]
+      },
+      {
+        "day": "2015-07-21",
+        "revisionIds": [
+          15084313,
+          15084321,
+          15084325
+        ]
+      },
+      {
+        "day": "2015-09-10",
+        "revisionIds": [
+          15201817,
+          15201824,
+          15201831,
+          15201846
+        ]
+      },
+      {
+        "day": "2015-09-11",
+        "revisionIds": [
+          15204495,
+          15204498,
+          15204499,
+          15204502,
+          15204503,
+          15204505
+        ]
+      },
+      {
+        "day": "2025-11-12",
+        "revisionIds": [
+          23674262,
+          23674274,
+          23674278,
+          23674279
+        ]
+      }
+    ]
+  }
+}

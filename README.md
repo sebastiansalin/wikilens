@@ -14,6 +14,8 @@ The existing explorer remains usable in explicit live-Wikipedia mode. Once `publ
 
 See [the ten-source review and formula](docs/CONFLICT-RESEARCH.md). This prototype has not been shown to outperform previous research.
 
+**Score audit:** [inspection of the real pilot](docs/qa/conflict-score-audit.md) reproduced all 20 scores but found substantial validity problems: 52 of Sauli Niinistö's 67 counted reversals concern obvious vandalism, bot-marked language-link maintenance contributes to Ahtisaari's score, and Nightwish scores zero despite repeated genre-wording reversals. The current ranking is an exploratory restoration index, not a validated ranking of substantive disagreement. The audit includes diagnostic recent-window calculations; deployed v1 scores are unchanged.
+
 ### Reproduce the real pilot
 
 On this Windows machine, run `npm install`, then `node scripts/bootstrap-local.mjs` for the project-local setup and calculations. Git publication is also available independently with `node scripts/bootstrap-local.mjs --git-only` from a checkout with writable Git metadata and the existing remote history; it does not require the database or dataset. The script uses your existing GitHub CLI login and performs a normal push to the existing private `sebastiansalin/wikilens` repository. It never force-pushes. The current managed workspace cannot write `.git` or read GitHub CLI configuration, so its source was published through the connected GitHub API instead. Its local Git metadata has not been synchronized with the remote commits.
