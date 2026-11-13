@@ -132,14 +132,36 @@ function screen(n){return{x:width/2+state.panX+n.x*state.zoom,y:height/2+state.p
 function world(x,y){return{x:(x-width/2-state.panX)/state.zoom,y:(y-height/2-state.panY)/state.zoom};}
 function hit(x,y){return state.nodes.filter(shown).slice().reverse().find(n=>{const p=screen(n);return Math.hypot(x-p.x,y-p.y)<n.r*state.zoom+7;});}
 function flame(n,time){
-  const phase=state.motion&&!reduced?time*.003:0;
-  for(let i=0;i<5;i++){
-    const angle=i*Math.PI*2/5+Math.sin(phase*.25)*.12;
-    const size=Math.min(8,n.r*.38),r=n.r+5+Math.sin(phase+i)*1.5;
-    ctx.save();ctx.rotate(angle);ctx.translate(0,-r);ctx.rotate(Math.sin(phase+i)*.15);
-    const gradient=ctx.createLinearGradient(0,0,0,-size*1.8);gradient.addColorStop(0,'#ff7132');gradient.addColorStop(.5,'#ffc15c');gradient.addColorStop(1,'#ffe4a599');ctx.fillStyle=gradient;
-    ctx.beginPath();ctx.moveTo(-size*.43,0);ctx.bezierCurveTo(-size*.8,-size*.55,size*.13,-size*.7,Math.sin(phase*1.5+i)*size*.3,-size*1.6);ctx.bezierCurveTo(size*.38,-size*.7,size*.85,-size*.2,size*.35,.2);ctx.quadraticCurveTo(0,size*.38,-size*.43,0);ctx.fill();ctx.restore();
+  const phase=state.motion&&!reduced?time*.0015:0;
+  const seed=n.id*.618, height=Math.min(8,n.r*.32), segments=144;
+  ctx.save();
+  // Overlapping, continuous contours keep the fire attached to the whole rim.
+  // Several spatial frequencies avoid evenly spaced, icon-like flame shapes.
+  for(let layer=0;layer<3;layer++){
+    const reach=height*(1-layer*.23), outer=n.r+reach+3;
+    const glow=ctx.createRadialGradient(0,0,n.r-1.5,0,-reach*.12,outer);
+    glow.addColorStop(0,'rgba(255,183,86,0.08)');
+    glow.addColorStop(.17,`rgba(255,${137+layer*24},64,${.20-layer*.025})`);
+    glow.addColorStop(.5,'rgba(239,91,35,0.12)');
+    glow.addColorStop(1,'rgba(218,67,25,0)');
+    ctx.fillStyle=glow;
+    ctx.shadowColor='rgba(239,100,37,0.16)';ctx.shadowBlur=layer===0?5:2;
+    ctx.beginPath();
+    for(let i=0;i<=segments;i++){
+      const a=i/segments*Math.PI*2, t=phase+layer*.7;
+      const turbulence=(Math.sin(a*7-t*1.9+seed)*.45+
+        Math.sin(a*13+t*2.3+Math.sin(a*3-t))*.28+
+        Math.sin(a*23-t*3.1+seed*.4)*.17+
+        Math.sin(a*37+t*1.7)*.10+1)*.5;
+      const lift=.65+.35*Math.max(0,-Math.sin(a));
+      const radius=n.r+1.1+reach*(.16+Math.pow(turbulence,1.65)*.9)*lift;
+      const x=Math.cos(a)*radius;
+      const y=Math.sin(a)*radius-reach*.10*turbulence;
+      if(i===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);
+    }
+    ctx.closePath();ctx.fill();
   }
+  ctx.restore();
 }
 function draw(time){
   simulate();ctx.setTransform(pixelRatio,0,0,pixelRatio,0,0);ctx.clearRect(0,0,width,height);
