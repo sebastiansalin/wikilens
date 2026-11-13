@@ -5,7 +5,16 @@ import { tmpdir } from 'node:os';
 import { resolve,join,sep } from 'node:path';
 import { createHash } from 'node:crypto';
 import { execFileSync } from 'node:child_process';
-import { verifiedManifest,articleHistories } from '../pipeline/input.mjs';
+import { verifiedManifest,articleHistories,jsonLines } from '../pipeline/input.mjs';
+
+test('JSONL preserves Unicode paragraph separators across chunks and supports CRLF and no final newline',async()=>{
+ const rows=[{text:'Before\u2028middle\u2029after — suomalainen'},{text:'two\nlines'}];
+ const data=rows.map(JSON.stringify).join('\r\n');
+ async function* chunks(){for(let i=0;i<data.length;i+=3)yield data.slice(i,i+3);}
+ const actual=[];for await(const row of jsonLines(chunks()))actual.push(row);
+ assert.deepEqual(actual,rows);
+ await assert.rejects(async()=>{for await(const row of jsonLines(['{}\n{"text":"private']))void row;},/^Error: Invalid JSON at physical line 2$/);
+});
 
 test('synthetic integration fixture: export 20 complete histories, retain genuine fixture links, reject tampering',async()=>{
  const root=resolve(tmpdir()),directory=await mkdtemp(join(root,'wikilens-test-'));

@@ -34,6 +34,7 @@ try {
     if(i+1<rows.length){values.push(starts[i+1]);await connection.query(`INSERT INTO m_article_versions (${columns},row_end) VALUES (${values.map(()=>'?').join(',')})`,values);}
     else await connection.query(`INSERT INTO m_article_versions (${columns}) VALUES (${values.map(()=>'?').join(',')})`,values);
    }
+   console.log(`Imported ${rows[0].title}: ${rows.length} revisions`);
   }
   await connection.query('INSERT INTO m_conflict_imports(dataset,export_sha256,manifest) VALUES (?,?,?)',[manifest.dataset,manifest.exportSha256,JSON.stringify(manifest)]);
   await connection.commit();await connection.query('SET SESSION system_versioning_insert_history=0');

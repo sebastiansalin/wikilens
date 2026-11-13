@@ -30,7 +30,7 @@ npm run pilot:database
 npm run pilot:build:database
 ```
 
-This creates dedicated `m_article_versions` system-versioned tables, inserts original revision times, and reads the input back using `FOR SYSTEM_TIME ALL` before scoring. Same-second edits receive deterministic microsecond offsets. The importer is immutable and skips an identical capture; it refuses a different capture under the same dataset ID. Use a dedicated MariaDB 10.11+ database. The SQL path still needs execution against an actual server before it can be called validated.
+This creates dedicated `m_article_versions` system-versioned tables, inserts original revision times, and reads the input back using `FOR SYSTEM_TIME ALL` before scoring. Same-second edits receive deterministic microsecond offsets. The importer is immutable and skips an identical capture; it refuses a different capture under the same dataset ID. This path has been executed on MariaDB 11.4.12: 37,318 historical revisions and 20 current rows. An `AS OF` query for Talvisota on 2010-01-01 returned the expected revision 7751713.
 
 Without MariaDB, `npm run pilot:build` calculates directly from the verified Parquet export. Its provenance explicitly says no MariaDB execution. Both paths write a small public JSON bundle for the frontend; no revision-history processing runs inside a Vercel request. Editor names and raw dumps stay local. Displayed Wikipedia excerpts retain source revision links and CC BY-SA attribution.
 
@@ -38,12 +38,12 @@ Then run `npm test` and `npm run build`. Only deploy after inspecting real score
 
 ### Current verification and publication status
 
-- Scoring edge-case tests and a synthetic 20-article export test pass; these do not constitute calculations on 20 real Wikipedia pages.
-- Validation rerun on 2026-11-14 (Europe/Helsinki): `npm test` passed 75 tests with one MariaDB integration test skipped; TypeScript and the production build passed. The existing live Talvisota graph and honest missing-pilot state were visually checked previously.
-- **Real M calculations are not complete:** shell downloads are denied by the environment; the browser download also failed. No public score bundle has been generated.
-- **MariaDB execution is not verified:** no connection is configured in this session.
+- **Real M calculations complete:** all 16 official partitions verified; 20 most-revised articles selected before scoring; 37,318 revisions processed and 54 directed links exported to `public/data/conflict-pilot.json`.
+- **MariaDB execution verified:** histories imported into MariaDB 11.4.12 system-versioned tables and read back with `FOR SYSTEM_TIME ALL` before scoring. Coverage across the selected pages is 2003-02-21 through 2026-09-28; each page shows its own period.
+- Validation on 2026-11-14 (Europe/Helsinki): all 77 Node tests passed with the real MariaDB integration enabled (zero skipped), both Python regression tests passed, TypeScript and production build passed. The real colored graph and revision evidence were checked in Sebastian's Brave browser.
+- A source-diff spot check confirmed a repeated vandalism/cleanup cycle contributes to Sauli Niinistö's score. This is an editing-reversal index, not a validated measure of substantive disagreement. Zero means no qualifying repeated mutual restores were detected, not that an article has never been disputed.
 - **GitHub upload is verified:** WikiLens was added to the existing connector's selected repositories on 2026-11-14 (Europe/Helsinki), resolving the 404. All 117 files in the initial source snapshot were uploaded to `main` in commit [`e350134`](https://github.com/sebastiansalin/wikilens/commit/e350134a028f35060bc9882cbb844c6e36958ff4); every remote Git blob hash matched the local source bytes. The repository remains private. Local Git metadata is still read-only in this managed session; subsequent publication can use the connected API. See [publication evidence](docs/qa/github-publication.md).
-- **Vercel deployment is blocked:** creation of `wikilens` in the connected team returned 403 permission denied. No deployment URL exists for this change.
+- **Vercel deployment in progress:** one new `wikilens` project was created in team `mv-c84d` through the user's browser, configured for Vite and Node 24. The connector cannot see the new project; no production deployment is verified yet.
 
 ## Existing explorer features
 
@@ -56,7 +56,7 @@ Then run `npm test` and `npm run build`. Only deploy after inspecting real score
 
 ## Current limits
 
-The local preview explicitly uses **live Wikipedia**, not MariaDB. Actual MariaDB execution is still unverified; database integration tests require a configured server. Graph display is capped at 160 articles. Full-Wikipedia tiles, global PageRank, Leiden clustering and GPU layout have not been generated. No Vercel deployment has been verified. An independent initial unified UI review scored 7/10; follow-up fixes do not constitute an automatic 9/10 pass.
+The pilot serves a static snapshot calculated from a verified MariaDB readback. Live-Wikipedia exploration is a separate mode. The local loopback database is not a hosted database. Graph display is capped at 160 articles; the pilot has 20. Full-Wikipedia tiles, global PageRank, Leiden clustering and GPU layout have not been generated. No Vercel deployment has been verified yet. An independent initial unified UI review scored 7/10; follow-up fixes do not constitute an automatic 9/10 pass.
 
 The authenticated challenge brief has been checked: its focus is MariaDB RAG and/or system-versioned tables. See [challenge mapping](docs/CHALLENGE.md). Existing SQL cache usage alone is not evidence of meeting that requirement.
 
@@ -107,7 +107,7 @@ Private repository: https://github.com/sebastiansalin/wikilens
 
 Invitations to `leosuojarvi` and `pitkenin` were visible as pending on 2026-11-13. Source publication to `main` was verified on 2026-11-14 (Europe/Helsinki) through the connected GitHub API. This session's local Git metadata remains unsynchronized; use the connector for further publication or a normal clone in a Git-enabled session.
 
-Repository access is now available; Vercel deployment remains a separate unresolved step. Deploy one **new** WikiLens Vercel project. Use Vite, `npm run build`, output `dist`, Node 24 and server-side MariaDB configuration. A local loopback database is not reachable by a deployed Vercel function. Leave `VITE_DATA_MODE` unset for server mode; explicitly set it to `browser` only for the live-Wikipedia alternative. Do not alter unrelated Vercel projects.
+The new deployment project is `wikilens` (`prj_Kqw8fHTEziyxEvod4W54L0LKbkMQ`) in team `mv-c84d`. Use Vite, `npm run build`, output `dist` and Node 24. A local loopback database is not reachable by a deployed Vercel function: the public conflict bundle carries the computed results without exposing the database. Leave `VITE_DATA_MODE` unset for server mode; explicitly set it to `browser` only for the live-Wikipedia alternative. Do not alter unrelated Vercel projects.
 
 ## Measurement boundaries
 

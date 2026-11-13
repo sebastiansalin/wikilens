@@ -11,7 +11,7 @@ export default function ConflictPanel({article,onExplore}:{article?:Article;onEx
   <div className="section-heading"><h2>Editing disagreement</h2><span>M · FI</span></div>
   {score?<>
    <div className="conflict-score"><strong style={{color:conflictColor(score.score)}}>{score.score??'—'}</strong><span>{score.score==null?'Insufficient history':'/ 100 conflict index'}<small>{score.period.from.slice(0,10)} — {score.period.to.slice(0,10)}</small></span></div>
-   <p className="section-hint">Repeated mutual reversals in the available history. A high score does not mean the article is wrong.</p>
+   <p className="section-hint">Repeated mutual reversals in the available history. Vandalism and cleanup can contribute; a high score does not mean the article is wrong.</p>
    <div className="article-facts"><span><strong>{score.disputedRevisions}</strong>disputed revisions</span><span><strong>{score.participants}</strong>participants</span><span><strong>{score.revisions.toLocaleString()}</strong>revisions read</span></div>
    {score.coverage.parentGaps>0?<p className="conflict-note">{score.coverage.parentGaps} history gaps; reversals crossing them were excluded.</p>:null}
    <details><summary>When did it happen?</summary><div className="conflict-timeline">{score.timeline.map(t=><div key={t.year} title={`${t.year}: ${t.disputedRevisions} disputed / ${t.revisions} revisions`}><span style={{height:`${Math.max(2,t.disputedRevisions/Math.max(1,...score.timeline.map(y=>y.disputedRevisions))*60)}px`}}/><small>{t.year.slice(2)}</small></div>)}</div><p className="section-hint">Disputed revisions per year; bar heights show counts, not yearly scores.</p></details>
