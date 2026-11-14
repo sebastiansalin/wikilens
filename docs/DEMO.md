@@ -16,7 +16,7 @@ Open https://wikilens-junction2026.vercel.app after checking the release status 
 
 Open [Talvisota across languages](https://wikilens-junction2026.vercel.app/?metric=language&title=Talvisota). Both scores appear together: editing patterns in the selected M window, and a separate frozen language comparison. The graph topology remains Finnish M connections.
 
-Select **FI ↔ RU** in the matrix. Inspect the end-date inconsistency and the different qualification of Soviet aims. Switch to **EN ↔ UK** to show a measured zero on these six axes. A zero does not establish complete agreement. Choose **Urho Kekkonen** to show why a short lead leaves five pairs insufficient and the aggregate unknown. Search **Viipuri** to show an article outside the precomputed sample, with no invented value.
+Select **FI ↔ RU** in the matrix. Inspect the different qualification of Soviet aims. Expand the excluded end-date comparison: a source footnote resolves an apparent difference, so it is not counted. Switch to **EN ↔ UK** to show a measured zero on six axes. A zero does not establish complete agreement. Choose **Urho Kekkonen** to show why a short lead leaves five pairs insufficient and the aggregate unknown. Search **Viipuri** to show an article outside the precomputed sample, with no invented value.
 
 Explain that eight articles were selected by Finnish readership from 30 heavily edited M candidates, not all Wikipedia. All 32 introductions are real revision-pinned captures; semantic labels and paraphrases were prepared by an AI assistant and remain unvalidated. The function computes the score deterministically from those visible annotations. It does not infer national opinions or decide which edition is true. See [method and exact results](LANGUAGE-METHOD.md).
 

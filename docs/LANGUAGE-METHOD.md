@@ -37,13 +37,17 @@ Framing and contradictions contribute equally to the display index but their cou
 | Nightwish | 17 | 6/6 | 5 |
 | Urho Kekkonen | Unknown | 1/6 | 5 |
 | Alexander Stubb | 0 | 6/6 | 5 |
-| Carl Gustaf Emil Mannerheim | 14 | 6/6 | 5 |
+| Carl Gustaf Emil Mannerheim | 8 | 6/6 | 5 |
 | Sauli Niinistö | 0 | 6/6 | 6 |
 | Suomen sisällissota | 13 | 6/6 | 6 |
 | Jatkosota | 17 | 6/6 | 6 |
-| Talvisota | 17 | 6/6 | 6 |
+| Talvisota | 9 | 6/6 | 6 |
 
 There are 44 selected axes, 264 pair-axis decisions and 43 measured article pairs. The other five pairs are explicitly insufficient. These results describe the frozen annotations; they are not accuracy estimates.
+
+Source context matters: a browser check of [Russian Winter War revision 155688701](https://ru.wikipedia.org/w/index.php?oldid=155688701) found an attached note clarifying that actual hostilities ended on 13 March. Its introduction says 12 March. That apparent difference was removed from the numerator and denominator because the dates describe different boundaries; this qualification is not in the paragraph-only capture. This check is not independent validation. Missing footnotes and context can still produce errors elsewhere.
+
+A second check of [Ukrainian Mannerheim revision 49146020](https://uk.wikipedia.org/w/index.php?oldid=49146020) found June in the introduction but July in its own infobox for the regency end. All pairs involving that Ukrainian date are uncertain and excluded. The final demo contains framing differences, but no remaining annotations labelled conflicting claims. The implementation supports that category; it does not manufacture examples of it.
 
 ## Reproduce and extend
 

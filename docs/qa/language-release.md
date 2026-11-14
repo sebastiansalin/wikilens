@@ -13,4 +13,6 @@
 
 ## Publication
 
-Application publication and production browser verification are pending at this checkpoint. The existing production atlas remains available. This file will be updated with the observed deployment result.
+- Application release `7a9e3755c17a0ffd4027d7acbc6e7d09041e0631` was published to private main by an expected-head non-force update. All 17 file blob hashes matched the remote tree.
+- Vercel reported success at https://vercel.com/mv-c84d/wikilens/Hey7j8jy46YaeSfXXyhcLNF6AfUa. Production loaded both scores, pair selection and evidence without browser console errors. Phone interaction and zero horizontal overflow were verified at 390 × 844.
+- Full source-link checks caught two apparent date differences that should not count: a Russian Winter War footnote explains 13 March hostilities, and the Ukrainian Mannerheim infobox contradicts its own June lead date. Both were excluded and regression assertions added. Final corrected aggregates are Talvisota 9 and Mannerheim 8. These are source-context checks by the same assistant, not independent validation.

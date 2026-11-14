@@ -22,7 +22,8 @@ test('committed demo is reproducible, source-anchored and keeps sparse compariso
  assert.equal(built.articles.length,8);
  assert.ok(built.articles.every(a=>a.pairs.length===6&&Object.values(a.editions).every(e=>e.status==='available'&&e.url.endsWith(String(e.revision)))));
  const sparse=built.articles.find(a=>a.id===1275);assert.equal(sparse.score,null);assert.equal(sparse.measuredPairs,1);
- const winter=built.articles.find(a=>a.id===1256);const pair=winter.pairs.find(p=>p.a==='fi'&&p.b==='ru');assert.equal(pair.framing,1);assert.equal(pair.conflicts,1);assert.equal(pair.comparable,6);
+ const winter=built.articles.find(a=>a.id===1256);const pair=winter.pairs.find(p=>p.a==='fi'&&p.b==='ru');assert.equal(pair.framing,1);assert.equal(pair.conflicts,0);assert.equal(pair.comparable,5);assert.equal(pair.annotations.find(a=>a.claimId==='period').relation,'not-comparable');
+ const mannerheim=built.articles.find(a=>a.id===6021);assert.ok(mannerheim.pairs.filter(p=>[p.a,p.b].includes('uk')).every(p=>p.annotations.find(a=>a.claimId==='regent').relation==='uncertain'));
  source.articles[0].editions.fi.paragraphs[0]+=' tampered';assert.throws(()=>buildLanguages(source),/integrity/);
 });
 
