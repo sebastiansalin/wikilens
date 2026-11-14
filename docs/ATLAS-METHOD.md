@@ -4,7 +4,7 @@ The question is: **which articles, and which passages, have editors repeatedly c
 
 ## Changes from the audited pilot
 
-The ten-source review remains in [CONFLICT-RESEARCH.md](CONFLICT-RESEARCH.md); the real-data v1 audit remains in [qa/conflict-score-audit.md](qa/conflict-score-audit.md). V1 is preserved in `pipeline/score-v1.mjs`. V2 is `wikilens-passages-v2` and has a different formula; the numeric scores are not comparable across versions.
+The ten-source review remains in [CONFLICT-RESEARCH.md](CONFLICT-RESEARCH.md); the real-data v1 audit remains in [qa/conflict-score-audit.md](qa/conflict-score-audit.md). V1 is preserved in `pipeline/score-v1.mjs`. The passage detector is v2 (published captures retain `wikilens-passages-v2`; future builds use `wikilens-passages-v2.1`). The displayed index is `wikilens-index-v2.1` and has a different formula; the numeric scores are not comparable across versions.
 
 V2 scores recurring normalized passage changes, including selected infobox fields. It therefore finds partial reversals even when unrelated changes prevent a whole-page checksum match. It groups passage tracks sharing a return revision into episodes, reducing the multiplication of evidence in bulk restorations. It separates content candidates, cleanup patterns, maintenance and uncertain cases, and reports monthly counts with recent-window controls.
 
@@ -21,9 +21,9 @@ These are concrete behavior changes. They do not establish higher population pre
 
 ## Formula and missing data
 
-For the selected calendar-month window, let E be content candidate episodes and C be eligible content-changing transitions. C includes uncertain transitions but excludes detected cleanup and maintenance. Rate = `100 * E / C`; index = `round(min(100, 2000 * E / C))`.
+For the selected calendar-month window, let E be content candidate episodes and C be eligible content-changing transitions. C includes uncertain transitions but excludes detected cleanup and maintenance. Rate = `100 * E / C`; index = `100 * E / (E + 0.05 * (C + 20))`, rounded to one decimal place. The old index clipped every rate of 5 or more episodes per 100 edits to 100. This smooth saturation preserves differences at the top, while 20 zero-episode prior edits reduce small-sample extremes. Constants are heuristic design choices, not fitted research parameters.
 
-The scale is fixed across articles and does not change when more articles are loaded. It is not a probability or learned calibration. Rare episodes in short histories can rank highly; inspect the visible episode and edit counts. The minimum is 20 revisions and 10 content edits in the window. More than 10% missing text, missing editor identities or parent gaps over the full captured history also makes the score null. Zero means no qualifying candidate was detected, not peace or consensus.
+The scale is fixed across articles and does not change when more articles are loaded. It is not a probability or learned calibration. Small samples are moderated but remain uncertain; inspect the visible episode and edit counts. The minimum is 20 revisions and 10 content edits in the window. More than 10% missing text, missing editor identities or parent gaps over the full captured history also makes the score null. Zero means no qualifying candidate was detected, not peace or consensus.
 
 The displayed whole-history baseline is exact checksum restoration within 100 revisions and 30 days, excluding consecutive identical saves. It includes cleanup. It is an identity-restoration baseline inspired by mwreverts, not a claim to reproduce every detail of mwreverts, Contropedia, Yasseri's M, or Controversy Rank.
 
@@ -44,6 +44,10 @@ Connections are explicit links in each article's latest M text. Redirect aliases
 The pack samples up to 12 cases per predicted category and split, so it is balanced/stratified rather than population representative. Candidate episodes and random central transitions are different units and must be evaluated separately. For a random transition, judge whether the central edit belongs to repeated content disagreement, reading surrounding history beyond the limited excerpts. The prediction is whether that central revision appears in retained candidate evidence; truncation can limit this diagnostic.
 
 `node pipeline/evaluate-review.mjs reviewer-a.json reviewer-b.json` validates versions, reports coverage, raw agreement and Cohen's kappa, and gives content confusion counts and sample precision/recall for consensus non-uncertain labels, separately by split and unit. Missing labels and disputed judgments remain visible in coverage. These diagnostics are not population accuracy estimates; proper prevalence weighting, adjudication, additional negative sampling and faithfully implemented published comparators are still needed before a superiority claim. No independent labels or results are fabricated in this repository.
+
+## Timeline and filtering
+
+The minimum-index filter applies to the ranking and graph, including both endpoints of every shown link. Zero includes insufficient-evidence nodes; positive thresholds exclude them. Scores are recomputed from captured monthly counts with prefix sums. Playback moves continuously between month boundaries, updates scores at monthly resolution, pauses on manual navigation, and stops at the final month. No intermediate revision history is invented. The index transformation does not require reimporting or redetecting episodes in the existing capture.
 
 ## Attribution
 

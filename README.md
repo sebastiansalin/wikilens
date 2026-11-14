@@ -20,7 +20,7 @@ The UI adapts the mint/charcoal palette, DM Sans and Space Grotesk, three-column
 4. Detect repeated passage/selected-infobox reversals. Group tracks sharing return revisions into episodes. Separate content candidates, cleanup, maintenance and uncertain cases.
 5. Export a searchable catalog and 64 evidence shards. Production serves static aggregates; raw dumps, editor identifiers, credentials and database files stay local and ignored.
 
-Index = `round(min(100, 2000 × content candidate episodes / content edits))`. Rate and counts are visible. The scale and thresholds are uncalibrated design choices. Small samples are gray. See [ATLAS-METHOD.md](docs/ATLAS-METHOD.md) for full rules, failure modes and review protocol.
+Index = `100 * E / (E + 0.05 * (C + 20))`, rounded to one decimal, where E is content candidate episodes and C is content edits. Smooth saturation replaces the old 100-point ceiling; 20 zero-episode prior edits moderate small samples. Rate and counts remain visible. Constants are uncalibrated design choices. Insufficient samples are gray. See [ATLAS-METHOD.md](docs/ATLAS-METHOD.md) for full rules, failure modes and review protocol.
 
 M is a selected Finnish-history collection, not all Finnish Wikipedia. Links use the latest captured text; the slider does not reconstruct historical connections. Classification uses the full snapshot retrospectively. Cleanup detection is imperfect. Independent accuracy validation is pending; no superiority over published methods is claimed.
 
