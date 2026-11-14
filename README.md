@@ -77,7 +77,7 @@ The main page omits the introductory title, selected metadata labels, and repeat
 
 ## Publication and maintenance
 
-Private repository: [sebastiansalin/wikilens](https://github.com/sebastiansalin/wikilens). Target: existing **wikilens** project, Vercel team **mv-c84d**, connected to `main`. Never deploy to unrelated projects.
+Public repository (visibility verified on 14 November 2026): [sebastiansalin/wikilens](https://github.com/sebastiansalin/wikilens). Target: existing **wikilens** project, Vercel team **mv-c84d**, connected to `main`. Never deploy to unrelated projects.
 
 This managed workspace has read-only Git metadata and cannot read GitHub CLI credentials. Publish through the connected GitHub API, preserving the latest remote tree with an expected-head, non-force update. Local Git metadata is not synchronized. A normal writable checkout may use the bootstrap's `--git-only` path; never force-push this stale workspace.
 
