@@ -2,7 +2,7 @@
 import {createHash} from 'node:crypto';
 import {prepare, wikiLinks} from './score-v1.mjs';
 export {wikiLinks} from './score-v1.mjs';
-export const METHOD='wikilens-passages-v2';
+export const METHOD='wikilens-passages-v2.2';
 const DAY=86400000;
 const hash=s=>createHash('sha1').update(s).digest('hex').slice(0,16);
 const cleanComment=s=>/vandal|roska(?:a|us)?|spam|testimuokkaus|test edit/i.test(s||'');
@@ -130,3 +130,4 @@ export function scoreArticle(input,options={}){
   baseline:{exactReverts,selfReverts,exactRevertRate:revisions.length>1?100*exactReverts/(revisions.length-1):0},latestRevision:latest.rev_id,bytes:latest.bytes??Buffer.byteLength(latest.text||''),links:wikiLinks(latest.text),
   interpretation:'Candidate content-dispute episodes, not truth or a probability. Unreviewed heuristic labels; historical classifications use the full snapshot.'};
 }
+

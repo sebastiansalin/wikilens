@@ -1,0 +1,16 @@
+{
+  "validated": true,
+  "method": "wikilens-language-coverage-v2",
+  "capturedAt": "2026-11-14T16:10:56.093Z",
+  "articles": 100,
+  "availableEditions": 323,
+  "missingEditions": 71,
+  "unavailableEditions": 6,
+  "measuredArticles": 72,
+  "measuredPairs": 417,
+  "anchoredQuotations": 6493,
+  "hashesVerified": 100,
+  "selectionVerified": true,
+  "allDetailCalculationsReproduced": true,
+  "independentSemanticValidation": false
+}

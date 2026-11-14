@@ -14,11 +14,13 @@ The UI adapts the mint/charcoal palette, DM Sans and Space Grotesk, three-column
 
 ## Four-language comparison
 
-`/?metric=language&title=Talvisota` adds a second, independent score for selected claims and framing in **Finnish, English, Ukrainian and Russian** introductions. Eight popular demo articles were selected by recent Finnish pageviews among the 30 most-revised M articles. All 32 editions are captured at fixed revision IDs; six pairwise comparisons show original quotations, English paraphrases and source links.
+The UI uses Leo's feature/article-size-scaling commit bd1d760 as its base: classic graph physics, article-size scaling, filtering, change summaries and smooth monthly playback up to 8×.
 
-The labels are **AI-assisted and unvalidated**, not an automatic general-purpose opinion detector. Five or six selected axes per article feed a deterministic function. Omissions, uncertainty and incomparable dates are excluded; seven articles have an aggregate and Kekkonen remains unknown because only one pair meets the evidence threshold. Zero means agreement on measured claims only. This November snapshot is separate from the monthly October M editing history. See [language method](docs/LANGUAGE-METHOD.md).
+The language view at /?metric=language&title=Talvisota compares **100 M articles connected from Talvisota** in Finnish, English, Ukrainian and Russian. It measures differences in linked-concept prominence throughout paragraph prose. Exact source passages expose the largest differences, and an Editions view shows introductions and article outlines. The snapshot contains 323 available editions and 417 measurable pairs; 72 articles meet the aggregate evidence threshold and 28 remain unscored.
 
-`npm run languages:build` reproduces the static output from the committed capture and annotations. `npm run languages:capture -- --refresh` needs public Wikimedia network access and new annotation review before a rebuild. Production builds use committed sources, with no Wikimedia or LLM requests. The new code passes all **100 Node tests, zero skipped**, including MariaDB integration, and the TypeScript/production build. Publication checks are recorded in [language release](docs/qa/language-release.md).
+This is **coverage distance**, not factual contradiction, political agreement, national opinion or truth. Missing editions remain unmeasured. The language capture stays frozen independently of the editing slider. See [neighborhood method](docs/LANGUAGE-NEIGHBORHOOD.md). The earlier eight-article AI-assisted claim study remains available as a separate disclosure for applicable articles; see [original method](docs/LANGUAGE-METHOD.md).
+
+Production builds reproduce both comparisons from committed captures without Wikimedia or LLM calls. Run npm run languages:neighborhood:build for the 100-article calculation and npm run languages:build for the earlier annotations. The combined code passed **117 Node tests, zero skipped**, including MariaDB integration, plus the TypeScript/production build. All 100 capture hashes and 6,493 source quotations validate. Publication is tracked separately in [release evidence](docs/qa/neighborhood-release.md).
 
 ## Pipeline
 
@@ -28,7 +30,7 @@ The labels are **AI-assisted and unvalidated**, not an automatic general-purpose
 4. Detect repeated passage/selected-infobox reversals. Group tracks sharing return revisions into episodes. Separate content candidates, cleanup, maintenance and uncertain cases.
 5. Export a searchable catalog and 64 evidence shards. Production serves static aggregates; raw dumps, editor identifiers, credentials and database files stay local and ignored.
 
-Index = `round(min(100, 2000 × content candidate episodes / content edits))`. Rate and counts are visible. The scale and thresholds are uncalibrated design choices. Small samples are gray. See [ATLAS-METHOD.md](docs/ATLAS-METHOD.md) for full rules, failure modes and review protocol.
+Index = `100 * E / (E + 0.01 * (C + 20))`, rounded to one decimal, where E is content candidate episodes and C is content edits. Smooth saturation replaces the old 100-point ceiling; 20 zero-episode prior edits moderate small samples. Rate and counts remain visible. Constants are uncalibrated design choices. Insufficient samples are gray. See [ATLAS-METHOD.md](docs/ATLAS-METHOD.md) for full rules, failure modes and review protocol.
 
 M is a selected Finnish-history collection, not all Finnish Wikipedia. Links use the latest captured text; the slider does not reconstruct historical connections. Classification uses the full snapshot retrospectively. Cleanup detection is imperfect. Independent accuracy validation is pending; no superiority over published methods is claimed.
 
@@ -70,6 +72,10 @@ The evaluator reports agreement, Cohen's kappa, coverage and sample confusion co
 - Full canonical readback verification and scoring completed: all **19,742** database histories matched the source digest. The [calculation report](docs/qa/atlas-calculation.json) records 138,735 connections and 2,846 classified episodes (1,190 content candidates, 376 cleanup, 627 maintenance and 653 uncertain).
 - The complete public export passes [atlas validation](docs/qa/atlas-validation.json), including all 64 evidence shards and monthly/count consistency. 7,118 articles have sufficient evidence for a lifetime numeric index; the remainder stay gray.
 - **Published and deployed to production on 14 November 2026.** Atlas release `5b843bf` passed Vercel's build and is live at the production URL. Brave checks confirmed desktop/phone layouts, full-catalog search, source evidence, monthly windows, graph expansion and hosted live-Wikipedia exploration. See [release checks](docs/qa/atlas-release.md) and the [demo guide](docs/DEMO.md).
+
+## Reading article changes
+
+The atlas includes a selected-period change overview and compact comparisons of recurring wordings with source diffs. The graph restores the original conflict-explorer canvas balls, lines, and magnetic forces, using cached artwork, batched lines, and a fixed simulation clock. Graph colors update separately from layout. See [change summaries and rendering notes](docs/CHANGE-SUMMARIES.md) for evidence limits, further options, and measured checks. This feature branch passed 102 Node tests (one database integration test skipped), TypeScript, and a production build; it has not been deployed to production.
 
 ## Existing explorer
 

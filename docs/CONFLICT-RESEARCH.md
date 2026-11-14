@@ -1,6 +1,6 @@
 # Research behind the WikiLens conflict pilot
 
-**Current implementation:** see [ATLAS-METHOD.md](ATLAS-METHOD.md) for the full-collection passage detector. The v1 formula below is retained for reproducibility. No comparative superiority claim has been validated.
+**Current implementation:** see [ATLAS-METHOD.md](ATLAS-METHOD.md) for the full-collection passage detector. The v1 formula below is retained for reproducibility. The current `wikilens-index-v2.2` uses a smooth saturating display scale with a 20-edit prior to reduce ceiling ties and small-sample extremes. These constants are design choices, not a validated published controversy formula; episode detection and raw counts are unchanged. No comparative superiority claim has been validated.
 
 Reviewed 2026-11-13. Ten distinct sources, including primary research papers and the authors' own tools/documentation. These methods measure different phenomena; there is no evidence that our prototype outperforms all of them.
 
@@ -49,3 +49,4 @@ Before claiming superiority: independently annotate actual revision episodes as 
 [Official M release](https://github.com/MariaDB/mariadb-wikipedia-datasets/releases/tag/m-2026-10): 19,742 Finnish Wikipedia articles about Finnish history, 862,076 revisions, 16 Parquet files, snapshot 2026-10-01. It is not the entirety of Finnish Wikipedia. Original text: Wikipedia contributors, CC BY-SA 4.0. Source revision links accompany displayed excerpts. Graph edges are explicit links in each selected article's last M revision; redirects and targets outside the pilot are not resolved.
 
 MariaDB ingestion uses the [official system-versioning approach](https://github.com/MariaDB/mariadb-system-versioning-wikipedia): original revision timestamps in system-time periods, deterministic microsecond ordering for same-second edits, and `FOR SYSTEM_TIME ALL` to read the scoring input. Suppressed/missing revisions can leave unknown intervals; as-of queries represent the last observed state, not a guarantee of complete source history.
+

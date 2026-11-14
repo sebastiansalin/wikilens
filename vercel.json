@@ -1,5 +1,5 @@
 {
-  "buildCommand": "node pipeline/build-languages.mjs && npm run build",
+  "buildCommand": "node pipeline/capture-neighborhood.mjs --offline && node pipeline/build-languages.mjs && npm run build",
   "outputDirectory": "dist",
   "framework": "vite",
   "regions": [

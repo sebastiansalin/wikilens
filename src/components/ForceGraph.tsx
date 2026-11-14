@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useId, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { conflictColor } from '../pilot';
 import type { CSSProperties, PointerEvent as ReactPointerEvent } from 'react';
 import { Maximize2, Minus, Pin, PinOff, Plus } from 'lucide-react';
@@ -7,11 +7,12 @@ import type { Simulation } from '../physics.mjs';
 import type { MeasuredFields, MeasuredLink } from '../graph-metrics.mjs';
 import type { GraphNode, Theme } from '../types';
 
-export type MapNode = GraphNode & MeasuredFields;
+export type MapNode = GraphNode & MeasuredFields & { articleRadius?: number };
+type MapLink = MeasuredLink & { articleWidth?: number };
 
 interface Props {
   nodes: MapNode[];
-  links: MeasuredLink[];
+  links: MapLink[];
   rootId: string;
   selectedId?: string;
   theme: Theme;
@@ -19,6 +20,7 @@ interface Props {
   onSelect: (node: GraphNode) => void;
   onExplore: (title: string) => void;
   pathIds?: string[];
+  scores?: ReadonlyMap<string, number | null>;
 }
 
 type View = { x: number; y: number; k: number };
@@ -33,10 +35,10 @@ type Gesture = {
 const clamp = (value: number, low: number, high: number) => Math.max(low, Math.min(high, value));
 const edgeKey = (source: string, target: string) => JSON.stringify([source, target]);
 const unorderedKey = (source: string, target: string) => JSON.stringify([source, target].sort());
-const starRadius = (node: MapNode, rootId: string) => Math.max(3.5, node.radius * (node.id === rootId ? 0.34 : 0.24));
+const starRadius = (node: MapNode, rootId: string) => node.articleRadius ?? Math.max(3.5, node.radius * (node.id === rootId ? 0.34 : 0.24));
 const label = (title: string) => title.length > 34 ? `${title.slice(0, 31).trimEnd()}…` : title;
 
-export default function ForceGraph({ nodes, links, rootId, selectedId, theme, motion, onSelect, onExplore, pathIds = [] }: Props) {
+export default function ForceGraph({ nodes, links, rootId, selectedId, theme, motion, onSelect, onExplore, pathIds = [], scores }: Props) {
   const host = useRef<HTMLDivElement>(null);
   const svg = useRef<SVGSVGElement>(null);
   const world = useRef<SVGGElement>(null);
@@ -59,13 +61,14 @@ export default function ForceGraph({ nodes, links, rootId, selectedId, theme, mo
   const [reducedMotion, setReducedMotion] = useState(() => typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
   const shouldAnimate = useRef(motion && !reducedMotion);
   shouldAnimate.current = motion && !reducedMotion;
-  const glowId = `force-glow-${useId().replace(/[^a-zA-Z0-9_-]/g, '')}`;
+  const paintNodes = useRef(new Map<string, Simulation<MapNode>['nodes'][number]>());
+  const paintEdges = useRef<{element: SVGLineElement; source: Simulation<MapNode>['nodes'][number]; target: Simulation<MapNode>['nodes'][number]; sourceRadius:number; targetRadius:number}[]>([]);
 
   const visibleNodes = useMemo(() => nodes.slice(0, 160), [nodes]);
   const visibleLinks = useMemo(() => {
     const ids = new Set(visibleNodes.map(node => node.id));
-    const unique = new Map<string, MeasuredLink>();
-    for (const edge of links) if (ids.has(edge.source) && ids.has(edge.target) && edge.source !== edge.target) unique.set(edgeKey(edge.source, edge.target), edge);
+    const unique = new Map<string, MapLink>();
+    for (const edge of links) if (ids.has(edge.source) && ids.has(edge.target) && edge.source !== edge.target) unique.set(unorderedKey(edge.source, edge.target), edge);
     return [...unique.values()];
   }, [links, visibleNodes]);
   const latest = useRef({ links: visibleLinks, rootId });
@@ -93,18 +96,24 @@ export default function ForceGraph({ nodes, links, rootId, selectedId, theme, mo
     degree: node.degree,
   })).filter(node => node.priority > 0).sort((a, b) => b.priority - a.priority || b.degree - a.degree || a.id.localeCompare(b.id));
 
+  // Bind DOM elements to mutable physics nodes once per render, not on every frame.
+  const cacheGeometry = useCallback(() => {
+    const byId = new Map(simulation.current?.nodes.map(node => [node.id, node]) || []);
+    paintNodes.current = byId;
+    paintEdges.current = latest.current.links.flatMap(edge => {
+      const element=edgeElements.current.get(edgeKey(edge.source,edge.target)),source=byId.get(edge.source),target=byId.get(edge.target);
+      return element&&source&&target?[{element,source,target,sourceRadius:starRadius(source,latest.current.rootId),targetRadius:starRadius(target,latest.current.rootId)}]:[];
+    });
+  }, []);
+
   const paint = useCallback(() => {
     const current = simulation.current;
     if (!current) return;
-    const byId = new Map(current.nodes.map(node => [node.id, node]));
+    const byId = paintNodes.current;
     for (const node of current.nodes) nodeElements.current.get(node.id)?.setAttribute('transform', `translate(${node.x.toFixed(2)} ${node.y.toFixed(2)})`);
-    for (const edge of latest.current.links) {
-      const element = edgeElements.current.get(edgeKey(edge.source, edge.target));
-      const source = byId.get(edge.source), target = byId.get(edge.target);
-      if (!element || !source || !target) continue;
+    for (const {element,source,target,sourceRadius,targetRadius} of paintEdges.current) {
       const dx = target.x - source.x, dy = target.y - source.y;
       const distance = Math.max(0.01, Math.hypot(dx, dy));
-      const sourceRadius = starRadius(source, latest.current.rootId), targetRadius = starRadius(target, latest.current.rootId);
       element.setAttribute('x1', String(source.x + dx / distance * sourceRadius));
       element.setAttribute('y1', String(source.y + dy / distance * sourceRadius));
       element.setAttribute('x2', String(target.x - dx / distance * targetRadius));
@@ -245,13 +254,14 @@ export default function ForceGraph({ nodes, links, rootId, selectedId, theme, mo
     if (changedRoot || !shouldAnimate.current) {
       for (let index = 0; index < (shouldAnimate.current ? 160 : 360); index++) current.tick();
     }
+    cacheGeometry();
     if (changedRoot) fit();
     paint();
     refreshPins(version => version + 1);
     wake();
-  }, [visibleNodes, visibleLinks, rootId, fit, paint, wake]);
+  }, [visibleNodes, visibleLinks, rootId, fit, paint, wake, cacheGeometry]);
 
-  useLayoutEffect(() => { paint(); });
+  useLayoutEffect(() => { cacheGeometry(); paint(); });
 
   useEffect(() => {
     if (!host.current) return;
@@ -333,7 +343,8 @@ export default function ForceGraph({ nodes, links, rootId, selectedId, theme, mo
     else if (current.id && current.moved) {
       const point = toWorld(event.clientX, event.clientY);
       simulation.current?.dragTo(current.id, point.x + current.offsetX, point.y + current.offsetY);
-      paint(); wake();
+      if (!shouldAnimate.current) paint();
+      wake();
     }
   };
   const end = (event: ReactPointerEvent<SVGSVGElement>, cancelled = false) => {
@@ -362,25 +373,25 @@ export default function ForceGraph({ nodes, links, rootId, selectedId, theme, mo
 
   return <div ref={host} className={`force-map force-map-${theme}`} style={{ position: 'relative', width: '100%', height: '100%', overflow: 'hidden', isolation: 'isolate' }}>
     <svg ref={svg} width="100%" height="100%" role="group" aria-label="Wikipedia connection map. Drag a star to move its neighbours, scroll to zoom, or select an article to inspect it." style={{ display: 'block', overflow: 'hidden', touchAction: 'none', userSelect: 'none' }} onPointerDown={event => start(event)} onPointerMove={move} onPointerUp={event => end(event)} onPointerCancel={event => end(event, true)} onLostPointerCapture={event => end(event, true)}>
-      <defs><filter id={glowId} x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="1.8" /></filter></defs>
       <g ref={world}>
         <g aria-hidden="true" pointerEvents="none">
           {visibleLinks.map(edge => {
             const inPath = pathEdges.has(unorderedKey(edge.source, edge.target));
             const active = Boolean(focus && (edge.source === focus || edge.target === focus));
             const rootEdge = edge.source === rootId || edge.target === rootId;
-            return <line key={edgeKey(edge.source, edge.target)} ref={element => { if (element) edgeElements.current.set(edgeKey(edge.source, edge.target), element); else edgeElements.current.delete(edgeKey(edge.source, edge.target)); }} className={`force-edge${inPath ? ' is-path' : ''}${active ? ' is-active' : ''}`} data-source={edge.source} data-target={edge.target} stroke={inPath ? '#e3c37d' : 'var(--map-edge, #799792)'} strokeWidth={inPath ? 1.8 : active ? 1.1 : 0.65} vectorEffect="non-scaling-stroke" style={{ opacity: inPath ? 0.85 : focus ? active ? 0.55 : 0.045 : rootEdge ? 0.18 : 0.09 }} />;
+            return <line key={edgeKey(edge.source, edge.target)} ref={element => { if (element) edgeElements.current.set(edgeKey(edge.source, edge.target), element); else edgeElements.current.delete(edgeKey(edge.source, edge.target)); }} className={`force-edge${inPath ? ' is-path' : ''}${active ? ' is-active' : ''}`} data-source={edge.source} data-target={edge.target} stroke={inPath ? '#e3c37d' : 'var(--map-edge, #799792)'} strokeWidth={edge.articleWidth ?? (inPath ? 1.8 : active ? 1.1 : 0.65)} vectorEffect="non-scaling-stroke" style={{ opacity: inPath ? 0.85 : focus ? active ? 0.55 : 0.045 : rootEdge ? 0.18 : 0.09 }} />;
           })}
         </g>
         {visibleNodes.map(node => {
           const root = node.id === rootId, selected = node.id === selectedId, inPath = path.has(node.id), hoveredNode = node.id === hovered;
           const pinned = simulation.current?.isPinned(node.id) || false;
           const radius = starRadius(node, rootId);
-          const color = 'disagreementScore' in node ? conflictColor(node.disagreementScore) : node.conflict ? conflictColor(node.conflict.score) : inPath ? '#e3c37d' : selected ? theme === 'paper' ? '#72479b' : '#c1b4ff' : root ? theme === 'paper' ? '#285f56' : '#74e6ce' : theme === 'paper' ? '#557b71' : '#a6cfc5';
+          const score = scores?.get(node.id);
+          const color = scores?.has(node.id) ? conflictColor(score ?? null) : 'disagreementScore' in node ? conflictColor(node.disagreementScore) : node.conflict ? conflictColor(node.conflict.score) : inPath ? '#e3c37d' : selected ? theme === 'paper' ? '#72479b' : '#c1b4ff' : root ? theme === 'paper' ? '#285f56' : '#74e6ce' : theme === 'paper' ? '#557b71' : '#a6cfc5';
           return <g key={node.id} ref={element => { if (element) nodeElements.current.set(node.id, element); else nodeElements.current.delete(node.id); }} className={`force-node${root ? ' is-root' : ''}${selected ? ' is-selected' : ''}${inPath ? ' is-path' : ''}${pinned ? ' is-pinned' : ''}`} data-node-id={node.id} role="button" tabIndex={0} aria-label={`${node.title}${root ? ', current topic' : ''}${pinned ? ', pinned' : ''}. ${node.degree} connections in this map.`} aria-pressed={selected} style={{ color, cursor: 'grab', outline: 'none', opacity: focus && !neighbours.has(node.id) && !inPath && !root ? 0.4 : 1 } as CSSProperties} onPointerDown={event => start(event, node.id)} onDoubleClick={() => onExplore(node.title)} onMouseEnter={() => setHovered(node.id)} onMouseLeave={() => setHovered(current => current === node.id ? null : current)} onFocus={() => setHovered(node.id)} onBlur={() => setHovered(current => current === node.id ? null : current)} onKeyDown={event => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); onSelect(node); } else if (event.key.toLowerCase() === 'e') { event.preventDefault(); onExplore(node.title); } }}>
-            <title>{node.title}{'disagreementScore' in node ? ` · Disagreement index: ${node.disagreementScore ?? 'insufficient data'}` : node.conflict ? ` · Conflict: ${node.conflict.score ?? 'insufficient data'}` : ''}</title>
+            <title>{node.title}{scores?.has(node.id) ? ` · Disagreement index: ${score ?? 'insufficient data'}` : 'disagreementScore' in node ? ` · Disagreement index: ${node.disagreementScore ?? 'insufficient data'}` : node.conflict ? ` · Conflict: ${node.conflict.score ?? 'insufficient data'}` : ''}</title>
             <circle r={Math.max(15 / zoomLevel, radius + 7)} fill="transparent" className="force-hit-area" />
-            {theme !== 'paper' && <circle r={radius * 1.7} fill="currentColor" opacity={root || selected ? 0.15 : 0.075} filter={`url(#${glowId})`} pointerEvents="none" />}
+            {theme !== 'paper' && <circle r={radius * 1.4} fill="currentColor" opacity={root || selected ? 0.10 : 0.035} pointerEvents="none" />}
             {(root || selected || inPath || hoveredNode) && <circle r={radius + 7} fill="none" stroke="currentColor" strokeWidth="0.7" opacity={selected || hoveredNode ? 0.75 : 0.3} pointerEvents="none" />}
             <circle className="force-circle" r={radius} fill="currentColor" opacity={root || selected ? 1 : 0.88} pointerEvents="none" />
             {theme !== 'paper' && <circle r={radius * 0.4} fill="#f6fffb" opacity={root ? 0.9 : 0.65} pointerEvents="none" />}
@@ -399,3 +410,4 @@ export default function ForceGraph({ nodes, links, rootId, selectedId, theme, mo
     <span className="sr-only" role="status">{announcement}</span>
   </div>;
 }
+

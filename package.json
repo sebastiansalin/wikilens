@@ -20,7 +20,9 @@
     "atlas:build": "node --env-file=.env --max-old-space-size=6144 pipeline/build-atlas.mjs",
     "atlas:review": "node pipeline/evaluate-review.mjs",
     "languages:capture": "node pipeline/capture-languages.mjs",
-    "languages:build": "node pipeline/build-languages.mjs"
+    "languages:build": "node pipeline/build-languages.mjs",
+    "languages:neighborhood": "node pipeline/capture-neighborhood.mjs",
+    "languages:neighborhood:build": "node pipeline/capture-neighborhood.mjs --offline"
   },
   "dependencies": {
     "react": "19.2.8",
