@@ -63,6 +63,10 @@ The evaluator reports agreement, Cohen's kappa, coverage and sample confusion co
 - The complete public export passes [atlas validation](docs/qa/atlas-validation.json), including all 64 evidence shards and monthly/count consistency. 7,118 articles have sufficient evidence for a lifetime numeric index; the remainder stay gray.
 - **Published and deployed to production on 14 November 2026.** Atlas release `5b843bf` passed Vercel's build and is live at the production URL. Brave checks confirmed desktop/phone layouts, full-catalog search, source evidence, monthly windows, graph expansion and hosted live-Wikipedia exploration. See [release checks](docs/qa/atlas-release.md) and the [demo guide](docs/DEMO.md).
 
+## Reading article changes
+
+The atlas includes a selected-period change overview and compact comparisons of recurring wordings with source diffs. Graph colors update separately from layout; reciprocal lines and expensive blur effects have been reduced. See [change summaries and rendering notes](docs/CHANGE-SUMMARIES.md) for evidence limits, further options, and measured checks. This feature branch passed 97 Node tests (one database integration test skipped), TypeScript, and a production build; it has not been deployed to production.
+
 ## Existing explorer
 
 `/?mode=live&title=Talvisota&lang=fi` opens live search, incoming/outgoing links, previews, bounded expansion, directed routing and cross-language link overlap via Wikidata. Similarity is link overlap, not truth or political agreement. Paper, Ink and Galaxy remain available. Drag, zoom, pinning, stable layouts and reduced motion remain in the shared graph.
