@@ -1,0 +1,23 @@
+{
+  "method": "wikilens-language-coverage-v2",
+  "generatedAt": "2026-11-14T22:17:46.502Z",
+  "articles": 100,
+  "availableEditions": 210,
+  "measuredPairs": 173,
+  "selection": {
+    "count": 100,
+    "policy": "Top 100 eligible M articles by all-history editing disagreement index (v2.2), descending. Ties: possible disputes, revisions, then ascending page ID. No replacement for missing language editions. Independent of the monthly slider.",
+    "rankingMethod": "wikilens-index-v2.2",
+    "window": "all-history",
+    "through": "2026-10"
+  },
+  "captureMetrics": {
+    "seconds": 347,
+    "requests": 535,
+    "retries": 0
+  },
+  "articlesWithAnyPair": 55,
+  "missingEditions": 189,
+  "unavailableEditions": 1,
+  "sourceBytes": 2311881
+}
