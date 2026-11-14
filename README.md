@@ -57,6 +57,8 @@ The evaluator reports agreement, Cohen's kappa, coverage and sample confusion co
 
 ## Current status
 
+- **Latest release (14 November 2026, 21:28 Europe/Helsinki):** Leo's reviewed main version `7e6e120` is deployed at the production URL through release commit `d1ff35c`. Both commits use the exact same source tree. Vercel deployment `DSW8bPJssb4QyykqrYccrrcXupKq` reached Ready / Production / Current after an 18-second build. Brave checks confirmed the atlas, Talvisota index 35, the monthly previous-month control, and no captured console errors. This release exposes the atlas-only interface described below.
+
 - MariaDB import completed: **19,742 articles / 862,076 revisions**. Original pilot capture preserved.
 - **93 Node tests passed, zero skipped**, including real database integration; two Python tests passed. TypeScript and production build passed before the final export.
 - Full canonical readback verification and scoring completed: all **19,742** database histories matched the source digest. The [calculation report](docs/qa/atlas-calculation.json) records 138,735 connections and 2,846 classified episodes (1,190 content candidates, 376 cleanup, 627 maintenance and 653 uncertain).
@@ -65,11 +67,11 @@ The evaluator reports agreement, Cohen's kappa, coverage and sample confusion co
 
 ## Reading article changes
 
-The atlas includes a selected-period change overview and compact comparisons of recurring wordings with source diffs. The graph restores the original conflict-explorer canvas balls, lines, and magnetic forces, using cached artwork, batched lines, and a fixed simulation clock. Graph colors update separately from layout. See [change summaries and rendering notes](docs/CHANGE-SUMMARIES.md) for evidence limits, further options, and measured checks. This feature branch passed 102 Node tests (one database integration test skipped), TypeScript, and a production build; it has not been deployed to production.
+The atlas includes a selected-period change overview and compact comparisons of recurring wordings with source diffs. The graph restores the original conflict-explorer canvas balls, lines, and magnetic forces, using cached artwork, batched lines, and a fixed simulation clock. Graph colors update separately from layout. See [change summaries and rendering notes](docs/CHANGE-SUMMARIES.md) for evidence limits, further options, and measured checks. Before release, this version passed 102 Node tests (one database integration test skipped), TypeScript, and a production build. It is now deployed; see the latest release entry above. The earlier test results were not rerun in this deployment-only task.
 
 ## Atlas-only interface
 
-The current feature branch exposes only the conflict atlas. The Live Explorer entry point, navigation, loading-page link, and route selection have been removed. Older live-mode URLs now open the atlas. The archived explorer source and API/database adapters remain available for development, but the explorer UI and its stylesheet are no longer loaded by this entry point.
+The current main branch and production release expose only the conflict atlas. The Live Explorer entry point, navigation, loading-page link, and route selection have been removed. Older live-mode URLs now open the atlas. The archived explorer source and API/database adapters remain available for development, but the explorer UI and its stylesheet are no longer loaded by this entry point.
 
 The main page omits the introductory title, selected metadata labels, and repeated explanatory captions requested for the presentation. Methodology, source attribution, index limitations, and the latest-snapshot link limitation remain available in the Methodology dialog. Graph controls, article search, evidence links, timeline, and change summaries are retained. Graph labels now use double-resolution cached text, a crisp dark outline instead of a blurred shadow, brighter medium-weight lettering, and screen-pixel alignment. TypeScript and production build validation passed for this UI cleanup.
 
