@@ -1,4 +1,4 @@
-# Four-language release checks — 14 November 2026
+# Four-language release checks - 14 November 2026
 
 ## Completed before publication
 
@@ -9,10 +9,11 @@
 - `node --env-file=.env --test tests/*.test.mjs` with `WIKILENS_DB_INTEGRATION=1`: **100 passed, zero failed, zero skipped**, including MariaDB integration.
 - TypeScript and Vite production build passed. No additional dependencies.
 - Brave local desktop: two independent score cards, all six Talvisota pair selections, matrix symmetry, original quotations, sparse Kekkonen comparisons, full-catalog Viipuri search and unprepared state, return to monthly editing controls.
-- Brave phone viewport (390 × 844): comparison matrix and both scores render within the viewport, with no horizontal document overflow. Screenshot visually inspected.
+- Brave phone viewport (390 x 844): comparison matrix and both scores render within the viewport, with no horizontal document overflow. Screenshot visually inspected.
 
 ## Publication
 
 - Application release `7a9e3755c17a0ffd4027d7acbc6e7d09041e0631` was published to private main by an expected-head non-force update. All 17 file blob hashes matched the remote tree.
-- Vercel reported success at https://vercel.com/mv-c84d/wikilens/Hey7j8jy46YaeSfXXyhcLNF6AfUa. Production loaded both scores, pair selection and evidence without browser console errors. Phone interaction and zero horizontal overflow were verified at 390 × 844.
+- Vercel reported success at https://vercel.com/mv-c84d/wikilens/Hey7j8jy46YaeSfXXyhcLNF6AfUa. Production loaded both scores, pair selection and evidence without browser console errors. Phone interaction and zero horizontal overflow were verified at 390 x 844.
 - Full source-link checks caught two apparent date differences that should not count: a Russian Winter War footnote explains 13 March hostilities, and the Ukrainian Mannerheim infobox contradicts its own June lead date. Both were excluded and regression assertions added. Final corrected aggregates are Talvisota 9 and Mannerheim 8. These are source-context checks by the same assistant, not independent validation.
+- Corrected release `089b8cf12344f90a5ea174981691c73e6260ea9b` deployed successfully: https://vercel.com/mv-c84d/wikilens/73KkBhJUcAfsLkNL7NhsfhDTPttL. All six changed file hashes matched GitHub. The seven language tests passed again after the corrections. Production Brave inspection confirmed Talvisota **9**, FI/RU **20** from five comparable axes, zero conflicting claims and one excluded date axis; the source qualification expands correctly. The live comparison tab was left open and temporary phone viewport overrides reset.
