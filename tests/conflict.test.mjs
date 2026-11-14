@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { scoreArticle, wikiLinks, qualifyEpisodes } from '../pipeline/score.mjs';
+import { scoreArticle, wikiLinks, qualifyEpisodes } from '../pipeline/score-v1.mjs';
 function history(states, users = []) {
   return states.map((sha1,i)=>({page_id:42,title:'Example',rev_id:i+1,parent_id:i,timestamp:new Date(Date.UTC(2020,0,1,i)).toISOString(),user:users[i]||`editor-${i}`,sha1,text:`This is a sufficiently long paragraph about a historical topic with enough context for the paragraph detector. ${sha1}`,comment:''}));
 }

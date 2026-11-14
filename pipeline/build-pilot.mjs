@@ -1,6 +1,6 @@
 import { writeFile, mkdir } from 'node:fs/promises';
 import { resolve, dirname } from 'node:path';
-import { scoreArticle, METHOD } from './score.mjs';
+import { scoreArticle, METHOD } from './score-v1.mjs';
 import { verifiedManifest, articleHistories } from './input.mjs';
 
 const input = process.argv[2];

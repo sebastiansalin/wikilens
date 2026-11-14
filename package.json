@@ -14,7 +14,11 @@
     "pilot:prepare": "python pipeline/prepare_m.py",
     "pilot:database": "node pipeline/mariadb-pilot.mjs .local/m-pilot.jsonl",
     "pilot:build": "node pipeline/build-pilot.mjs .local/m-pilot.jsonl",
-    "pilot:build:database": "node pipeline/build-pilot.mjs .local/m-pilot-from-db.jsonl"
+    "pilot:build:database": "node pipeline/build-pilot.mjs .local/m-pilot-from-db.jsonl",
+    "atlas:prepare": "python pipeline/prepare_m.py --count 0 --output .local/m-atlas.jsonl",
+    "atlas:import": "node --env-file=.env --max-old-space-size=6144 pipeline/import-atlas.mjs",
+    "atlas:build": "node --env-file=.env --max-old-space-size=6144 pipeline/build-atlas.mjs",
+    "atlas:review": "node pipeline/evaluate-review.mjs"
   },
   "dependencies": {
     "react": "19.2.8",

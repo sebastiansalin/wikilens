@@ -1,0 +1,725 @@
+{
+  "version": "8c49def8e1abc47f",
+  "predictions": {
+    "episode:62410:2331924": {
+      "category": "content",
+      "split": "development",
+      "pageId": 62410,
+      "kind": "candidate"
+    },
+    "episode:18561:11072871": {
+      "category": "content",
+      "split": "development",
+      "pageId": 18561,
+      "kind": "candidate"
+    },
+    "episode:11443:17706022": {
+      "category": "content",
+      "split": "development",
+      "pageId": 11443,
+      "kind": "candidate"
+    },
+    "episode:11446:15216493": {
+      "category": "content",
+      "split": "development",
+      "pageId": 11446,
+      "kind": "candidate"
+    },
+    "episode:324620:24034799": {
+      "category": "content",
+      "split": "development",
+      "pageId": 324620,
+      "kind": "candidate"
+    },
+    "episode:681977:11511271": {
+      "category": "content",
+      "split": "development",
+      "pageId": 681977,
+      "kind": "candidate"
+    },
+    "episode:1445320:17769550": {
+      "category": "content",
+      "split": "development",
+      "pageId": 1445320,
+      "kind": "candidate"
+    },
+    "episode:18561:8710010": {
+      "category": "content",
+      "split": "development",
+      "pageId": 18561,
+      "kind": "candidate"
+    },
+    "episode:438706:10650603": {
+      "category": "content",
+      "split": "development",
+      "pageId": 438706,
+      "kind": "candidate"
+    },
+    "episode:16431:16951901": {
+      "category": "content",
+      "split": "development",
+      "pageId": 16431,
+      "kind": "candidate"
+    },
+    "episode:70925:11542652": {
+      "category": "content",
+      "split": "development",
+      "pageId": 70925,
+      "kind": "candidate"
+    },
+    "episode:11396:4932259": {
+      "category": "content",
+      "split": "development",
+      "pageId": 11396,
+      "kind": "candidate"
+    },
+    "episode:5759:4598370": {
+      "category": "cleanup",
+      "split": "development",
+      "pageId": 5759,
+      "kind": "candidate"
+    },
+    "episode:7314:2575094": {
+      "category": "cleanup",
+      "split": "development",
+      "pageId": 7314,
+      "kind": "candidate"
+    },
+    "episode:93400:18049952": {
+      "category": "cleanup",
+      "split": "development",
+      "pageId": 93400,
+      "kind": "candidate"
+    },
+    "episode:109123:9438160": {
+      "category": "cleanup",
+      "split": "development",
+      "pageId": 109123,
+      "kind": "candidate"
+    },
+    "episode:1187:11979843": {
+      "category": "cleanup",
+      "split": "development",
+      "pageId": 1187,
+      "kind": "candidate"
+    },
+    "episode:752:2037662": {
+      "category": "cleanup",
+      "split": "development",
+      "pageId": 752,
+      "kind": "candidate"
+    },
+    "episode:1401247:17768232": {
+      "category": "cleanup",
+      "split": "development",
+      "pageId": 1401247,
+      "kind": "candidate"
+    },
+    "episode:132470:17857533": {
+      "category": "cleanup",
+      "split": "development",
+      "pageId": 132470,
+      "kind": "candidate"
+    },
+    "episode:1326259:16154142": {
+      "category": "cleanup",
+      "split": "development",
+      "pageId": 1326259,
+      "kind": "candidate"
+    },
+    "episode:106913:4420369": {
+      "category": "cleanup",
+      "split": "development",
+      "pageId": 106913,
+      "kind": "candidate"
+    },
+    "episode:10907:4878939": {
+      "category": "cleanup",
+      "split": "development",
+      "pageId": 10907,
+      "kind": "candidate"
+    },
+    "episode:926182:24074985": {
+      "category": "cleanup",
+      "split": "development",
+      "pageId": 926182,
+      "kind": "candidate"
+    },
+    "episode:9144:10932178": {
+      "category": "maintenance",
+      "split": "development",
+      "pageId": 9144,
+      "kind": "candidate"
+    },
+    "episode:29:2250158": {
+      "category": "maintenance",
+      "split": "development",
+      "pageId": 29,
+      "kind": "candidate"
+    },
+    "episode:111118:2228756": {
+      "category": "maintenance",
+      "split": "development",
+      "pageId": 111118,
+      "kind": "candidate"
+    },
+    "episode:1069:11312120": {
+      "category": "maintenance",
+      "split": "development",
+      "pageId": 1069,
+      "kind": "candidate"
+    },
+    "episode:341954:11161611": {
+      "category": "maintenance",
+      "split": "development",
+      "pageId": 341954,
+      "kind": "candidate"
+    },
+    "episode:1256:16996269": {
+      "category": "maintenance",
+      "split": "development",
+      "pageId": 1256,
+      "kind": "candidate"
+    },
+    "episode:440:12328125": {
+      "category": "maintenance",
+      "split": "development",
+      "pageId": 440,
+      "kind": "candidate"
+    },
+    "episode:1275:11293686": {
+      "category": "maintenance",
+      "split": "development",
+      "pageId": 1275,
+      "kind": "candidate"
+    },
+    "episode:1135:10083528": {
+      "category": "maintenance",
+      "split": "development",
+      "pageId": 1135,
+      "kind": "candidate"
+    },
+    "episode:489243:17261356": {
+      "category": "maintenance",
+      "split": "development",
+      "pageId": 489243,
+      "kind": "candidate"
+    },
+    "episode:13785:14120099": {
+      "category": "maintenance",
+      "split": "development",
+      "pageId": 13785,
+      "kind": "candidate"
+    },
+    "episode:12585:3311380": {
+      "category": "maintenance",
+      "split": "development",
+      "pageId": 12585,
+      "kind": "candidate"
+    },
+    "episode:961267:23010380": {
+      "category": "uncertain",
+      "split": "development",
+      "pageId": 961267,
+      "kind": "candidate"
+    },
+    "episode:1206344:17357176": {
+      "category": "uncertain",
+      "split": "development",
+      "pageId": 1206344,
+      "kind": "candidate"
+    },
+    "episode:1141935:14015053": {
+      "category": "uncertain",
+      "split": "development",
+      "pageId": 1141935,
+      "kind": "candidate"
+    },
+    "episode:13925:20780545": {
+      "category": "uncertain",
+      "split": "development",
+      "pageId": 13925,
+      "kind": "candidate"
+    },
+    "episode:242817:24048229": {
+      "category": "uncertain",
+      "split": "development",
+      "pageId": 242817,
+      "kind": "candidate"
+    },
+    "episode:1401247:17062389": {
+      "category": "uncertain",
+      "split": "development",
+      "pageId": 1401247,
+      "kind": "candidate"
+    },
+    "episode:23596:21835217": {
+      "category": "uncertain",
+      "split": "development",
+      "pageId": 23596,
+      "kind": "candidate"
+    },
+    "episode:1275:686299": {
+      "category": "uncertain",
+      "split": "development",
+      "pageId": 1275,
+      "kind": "candidate"
+    },
+    "episode:1401247:16701722": {
+      "category": "uncertain",
+      "split": "development",
+      "pageId": 1401247,
+      "kind": "candidate"
+    },
+    "episode:5759:12192188": {
+      "category": "uncertain",
+      "split": "development",
+      "pageId": 5759,
+      "kind": "candidate"
+    },
+    "episode:6021:13636805": {
+      "category": "uncertain",
+      "split": "development",
+      "pageId": 6021,
+      "kind": "candidate"
+    },
+    "episode:1651294:21935214": {
+      "category": "uncertain",
+      "split": "development",
+      "pageId": 1651294,
+      "kind": "candidate"
+    },
+    "transition:97987:19021019": {
+      "category": "no-detected-episode",
+      "split": "development",
+      "pageId": 97987,
+      "kind": "random-transition"
+    },
+    "transition:429179:20140719": {
+      "category": "no-detected-episode",
+      "split": "development",
+      "pageId": 429179,
+      "kind": "random-transition"
+    },
+    "transition:563044:21383503": {
+      "category": "no-detected-episode",
+      "split": "development",
+      "pageId": 563044,
+      "kind": "random-transition"
+    },
+    "transition:531079:4897068": {
+      "category": "no-detected-episode",
+      "split": "development",
+      "pageId": 531079,
+      "kind": "random-transition"
+    },
+    "transition:1115229:23896305": {
+      "category": "no-detected-episode",
+      "split": "development",
+      "pageId": 1115229,
+      "kind": "random-transition"
+    },
+    "transition:1168983:19956236": {
+      "category": "no-detected-episode",
+      "split": "development",
+      "pageId": 1168983,
+      "kind": "random-transition"
+    },
+    "transition:1668740:20139261": {
+      "category": "no-detected-episode",
+      "split": "development",
+      "pageId": 1668740,
+      "kind": "random-transition"
+    },
+    "transition:156574:1028736": {
+      "category": "no-detected-episode",
+      "split": "development",
+      "pageId": 156574,
+      "kind": "random-transition"
+    },
+    "transition:675595:17986413": {
+      "category": "no-detected-episode",
+      "split": "development",
+      "pageId": 675595,
+      "kind": "random-transition"
+    },
+    "transition:190678:3741292": {
+      "category": "no-detected-episode",
+      "split": "development",
+      "pageId": 190678,
+      "kind": "random-transition"
+    },
+    "transition:744544:16413608": {
+      "category": "no-detected-episode",
+      "split": "development",
+      "pageId": 744544,
+      "kind": "random-transition"
+    },
+    "transition:171535:11150459": {
+      "category": "no-detected-episode",
+      "split": "development",
+      "pageId": 171535,
+      "kind": "random-transition"
+    },
+    "episode:64071:965516": {
+      "category": "content",
+      "split": "heldout",
+      "pageId": 64071,
+      "kind": "candidate"
+    },
+    "episode:41622:4169215": {
+      "category": "content",
+      "split": "heldout",
+      "pageId": 41622,
+      "kind": "candidate"
+    },
+    "episode:559233:14331866": {
+      "category": "content",
+      "split": "heldout",
+      "pageId": 559233,
+      "kind": "candidate"
+    },
+    "episode:1673294:22153024": {
+      "category": "content",
+      "split": "heldout",
+      "pageId": 1673294,
+      "kind": "candidate"
+    },
+    "episode:272228:2082038": {
+      "category": "content",
+      "split": "heldout",
+      "pageId": 272228,
+      "kind": "candidate"
+    },
+    "episode:1082:3674857": {
+      "category": "content",
+      "split": "heldout",
+      "pageId": 1082,
+      "kind": "candidate"
+    },
+    "episode:559233:8063242": {
+      "category": "content",
+      "split": "heldout",
+      "pageId": 559233,
+      "kind": "candidate"
+    },
+    "episode:1150:17913910": {
+      "category": "content",
+      "split": "heldout",
+      "pageId": 1150,
+      "kind": "candidate"
+    },
+    "episode:1082:12632686": {
+      "category": "content",
+      "split": "heldout",
+      "pageId": 1082,
+      "kind": "candidate"
+    },
+    "episode:333401:8915857": {
+      "category": "content",
+      "split": "heldout",
+      "pageId": 333401,
+      "kind": "candidate"
+    },
+    "episode:79445:14597231": {
+      "category": "content",
+      "split": "heldout",
+      "pageId": 79445,
+      "kind": "candidate"
+    },
+    "episode:19101:12070747": {
+      "category": "content",
+      "split": "heldout",
+      "pageId": 19101,
+      "kind": "candidate"
+    },
+    "episode:795:4792077": {
+      "category": "cleanup",
+      "split": "heldout",
+      "pageId": 795,
+      "kind": "candidate"
+    },
+    "episode:32885:14489869": {
+      "category": "cleanup",
+      "split": "heldout",
+      "pageId": 32885,
+      "kind": "candidate"
+    },
+    "episode:200769:17521986": {
+      "category": "cleanup",
+      "split": "heldout",
+      "pageId": 200769,
+      "kind": "candidate"
+    },
+    "episode:15600:5347969": {
+      "category": "cleanup",
+      "split": "heldout",
+      "pageId": 15600,
+      "kind": "candidate"
+    },
+    "episode:10858:12073265": {
+      "category": "cleanup",
+      "split": "heldout",
+      "pageId": 10858,
+      "kind": "candidate"
+    },
+    "episode:9030:11255334": {
+      "category": "cleanup",
+      "split": "heldout",
+      "pageId": 9030,
+      "kind": "candidate"
+    },
+    "episode:1096144:20025223": {
+      "category": "cleanup",
+      "split": "heldout",
+      "pageId": 1096144,
+      "kind": "candidate"
+    },
+    "episode:8789:5983076": {
+      "category": "cleanup",
+      "split": "heldout",
+      "pageId": 8789,
+      "kind": "candidate"
+    },
+    "episode:795:3800913": {
+      "category": "cleanup",
+      "split": "heldout",
+      "pageId": 795,
+      "kind": "candidate"
+    },
+    "episode:1100:5196575": {
+      "category": "cleanup",
+      "split": "heldout",
+      "pageId": 1100,
+      "kind": "candidate"
+    },
+    "episode:8377:22363200": {
+      "category": "cleanup",
+      "split": "heldout",
+      "pageId": 8377,
+      "kind": "candidate"
+    },
+    "episode:10858:13974693": {
+      "category": "cleanup",
+      "split": "heldout",
+      "pageId": 10858,
+      "kind": "candidate"
+    },
+    "episode:926261:14045657": {
+      "category": "maintenance",
+      "split": "heldout",
+      "pageId": 926261,
+      "kind": "candidate"
+    },
+    "episode:952979:10701263": {
+      "category": "maintenance",
+      "split": "heldout",
+      "pageId": 952979,
+      "kind": "candidate"
+    },
+    "episode:1256715:23402662": {
+      "category": "maintenance",
+      "split": "heldout",
+      "pageId": 1256715,
+      "kind": "candidate"
+    },
+    "episode:284823:13712850": {
+      "category": "maintenance",
+      "split": "heldout",
+      "pageId": 284823,
+      "kind": "candidate"
+    },
+    "episode:12617:2704013": {
+      "category": "maintenance",
+      "split": "heldout",
+      "pageId": 12617,
+      "kind": "candidate"
+    },
+    "episode:18658:107108": {
+      "category": "maintenance",
+      "split": "heldout",
+      "pageId": 18658,
+      "kind": "candidate"
+    },
+    "episode:149230:10518731": {
+      "category": "maintenance",
+      "split": "heldout",
+      "pageId": 149230,
+      "kind": "candidate"
+    },
+    "episode:109439:2222519": {
+      "category": "maintenance",
+      "split": "heldout",
+      "pageId": 109439,
+      "kind": "candidate"
+    },
+    "episode:19564:16556470": {
+      "category": "maintenance",
+      "split": "heldout",
+      "pageId": 19564,
+      "kind": "candidate"
+    },
+    "episode:761150:13926113": {
+      "category": "maintenance",
+      "split": "heldout",
+      "pageId": 761150,
+      "kind": "candidate"
+    },
+    "episode:96734:16699042": {
+      "category": "maintenance",
+      "split": "heldout",
+      "pageId": 96734,
+      "kind": "candidate"
+    },
+    "episode:32885:21075877": {
+      "category": "maintenance",
+      "split": "heldout",
+      "pageId": 32885,
+      "kind": "candidate"
+    },
+    "episode:130804:5664388": {
+      "category": "uncertain",
+      "split": "heldout",
+      "pageId": 130804,
+      "kind": "candidate"
+    },
+    "episode:200769:16006639": {
+      "category": "uncertain",
+      "split": "heldout",
+      "pageId": 200769,
+      "kind": "candidate"
+    },
+    "episode:8673:17595031": {
+      "category": "uncertain",
+      "split": "heldout",
+      "pageId": 8673,
+      "kind": "candidate"
+    },
+    "episode:7984:8892193": {
+      "category": "uncertain",
+      "split": "heldout",
+      "pageId": 7984,
+      "kind": "candidate"
+    },
+    "episode:136099:11703122": {
+      "category": "uncertain",
+      "split": "heldout",
+      "pageId": 136099,
+      "kind": "candidate"
+    },
+    "episode:284823:16043504": {
+      "category": "uncertain",
+      "split": "heldout",
+      "pageId": 284823,
+      "kind": "candidate"
+    },
+    "episode:1150:14947605": {
+      "category": "uncertain",
+      "split": "heldout",
+      "pageId": 1150,
+      "kind": "candidate"
+    },
+    "episode:495698:21632362": {
+      "category": "uncertain",
+      "split": "heldout",
+      "pageId": 495698,
+      "kind": "candidate"
+    },
+    "episode:981456:13690058": {
+      "category": "uncertain",
+      "split": "heldout",
+      "pageId": 981456,
+      "kind": "candidate"
+    },
+    "episode:124014:13825988": {
+      "category": "uncertain",
+      "split": "heldout",
+      "pageId": 124014,
+      "kind": "candidate"
+    },
+    "episode:1622608:24096595": {
+      "category": "uncertain",
+      "split": "heldout",
+      "pageId": 1622608,
+      "kind": "candidate"
+    },
+    "episode:795:492124": {
+      "category": "uncertain",
+      "split": "heldout",
+      "pageId": 795,
+      "kind": "candidate"
+    },
+    "transition:547676:19308440": {
+      "category": "no-detected-episode",
+      "split": "heldout",
+      "pageId": 547676,
+      "kind": "random-transition"
+    },
+    "transition:317676:16245119": {
+      "category": "no-detected-episode",
+      "split": "heldout",
+      "pageId": 317676,
+      "kind": "random-transition"
+    },
+    "transition:1606077:19604215": {
+      "category": "no-detected-episode",
+      "split": "heldout",
+      "pageId": 1606077,
+      "kind": "random-transition"
+    },
+    "transition:757210:12627233": {
+      "category": "no-detected-episode",
+      "split": "heldout",
+      "pageId": 757210,
+      "kind": "random-transition"
+    },
+    "transition:371589:8274313": {
+      "category": "no-detected-episode",
+      "split": "heldout",
+      "pageId": 371589,
+      "kind": "random-transition"
+    },
+    "transition:344358:5543995": {
+      "category": "no-detected-episode",
+      "split": "heldout",
+      "pageId": 344358,
+      "kind": "random-transition"
+    },
+    "transition:74946:1498151": {
+      "category": "no-detected-episode",
+      "split": "heldout",
+      "pageId": 74946,
+      "kind": "random-transition"
+    },
+    "transition:279705:2134902": {
+      "category": "no-detected-episode",
+      "split": "heldout",
+      "pageId": 279705,
+      "kind": "random-transition"
+    },
+    "transition:935964:15634726": {
+      "category": "no-detected-episode",
+      "split": "heldout",
+      "pageId": 935964,
+      "kind": "random-transition"
+    },
+    "transition:595813:20675776": {
+      "category": "no-detected-episode",
+      "split": "heldout",
+      "pageId": 595813,
+      "kind": "random-transition"
+    },
+    "transition:320963:11410863": {
+      "category": "no-detected-episode",
+      "split": "heldout",
+      "pageId": 320963,
+      "kind": "random-transition"
+    },
+    "transition:1041492:21098769": {
+      "category": "no-detected-episode",
+      "split": "heldout",
+      "pageId": 1041492,
+      "kind": "random-transition"
+    }
+  }
+}

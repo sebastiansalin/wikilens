@@ -22,7 +22,7 @@ export function loadPilot():Promise<ConflictPilot|null> {
 }
 export function conflictColor(score:number|null|undefined) {
  if(score==null)return '#89949d';
- const stops=[[87,171,213],[239,188,97],[218,83,94]],t=Math.max(0,Math.min(100,score))/50,index=Math.min(1,Math.floor(t)),f=t-index;
+ const stops=[[167,226,187],[239,188,97],[242,101,88]],t=Math.max(0,Math.min(100,score))/50,index=Math.min(1,Math.floor(t)),f=t-index;
  return `rgb(${stops[index].map((v,i)=>Math.round(v+(stops[index+1][i]-v)*f)).join(',')})`;
 }
 export function pilotArticle(a:ConflictScore):Article {

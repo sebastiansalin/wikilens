@@ -1,4 +1,4 @@
-"""Download, verify and select 20 full article histories from the official M release.
+"""Download, verify and select complete article histories from the official M release.
 Raw dumps and editor names stay local. The public aggregate omits editor names.
 Requires pyarrow; install with `python -m pip install -r pipeline/requirements.txt`.
 """
@@ -51,7 +51,8 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--directory', default='.local/dataset-m')
     parser.add_argument('--output', default='.local/m-pilot.jsonl')
-    parser.add_argument('--titles', help='Optional JSON array of exactly 20 exact titles; otherwise 20 most-revised pages')
+    parser.add_argument('--count', type=int, default=20, help='Number of most-revised pages; 0 selects the entire M dataset')
+    parser.add_argument('--titles', help='Optional JSON array of exact, unique article titles')
     args = parser.parse_args()
     import pyarrow as pa
     import pyarrow.compute as pc
@@ -79,15 +80,17 @@ def main():
         print(f'Verified {name}', flush=True)
     if args.titles:
         requested = json.loads(Path(args.titles).read_text(encoding='utf-8'))
-        if len(set(requested)) != 20:
-            raise ValueError('Exactly 20 unique titles are required')
+        if not requested or len(set(requested)) != len(requested):
+            raise ValueError('A nonempty list of unique titles is required')
         selected = {page for page,title in titles.items() if title in requested}
-        if len(selected) != 20:
+        if len(selected) != len(requested):
             raise ValueError(f'Titles absent or ambiguous in M: {sorted(set(requested)-{titles[p] for p in selected})}')
-        selection = '20 explicitly selected titles; full available M histories'
+        selection = f'{len(selected)} explicitly selected titles; full available M histories'
     else:
-        selected = set(sorted(counts, key=lambda page:(-counts[page], page))[:20])
-        selection = '20 pages with the most revisions in M, ties by page ID; selected before scoring. Activity-biased demonstration, not a representative sample.'
+        if args.count < 0:
+            raise ValueError('Count must be zero (all) or positive')
+        selected = set(counts if args.count == 0 else sorted(counts, key=lambda page:(-counts[page], page))[:args.count])
+        selection = (f'All {len(selected)} articles in the Finnish-history M dataset; complete available histories. Not all of Finnish Wikipedia.' if args.count == 0 else f'{len(selected)} pages with the most revisions in M, ties by page ID; selected before scoring. Activity-biased demonstration, not a representative sample.')
     output = Path(args.output)
     output.parent.mkdir(parents=True, exist_ok=True)
     temporary = Path(str(output) + '.part')

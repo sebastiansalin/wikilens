@@ -3,7 +3,7 @@ export type Language = 'en'|'fi'|'ru'|'uk'|'de'|'fr'|'es'|'ja';
 export type Theme = 'paper'|'ink'|'galaxy';
 export type Variant = 'atlas'|'prism'|'cosmos';
 export interface Article { conflict?: ConflictScore; id: string; title: string; lang: Language; qid: string|null; description: string; extract: string; url: string; thumbnail?: string; length: number; touched?: string; pageviews?: number|null; pageviewDays?: number; pageviewStart?: string|null; pageviewEnd?: string|null; }
-export interface GraphNode extends Article { group?: number; root?: boolean; direction?: 'incoming'|'outgoing'|'both'; hopDistance?:number|null; affinity?:number; degree?:number; }
+export interface GraphNode extends Article { disagreementScore?:number|null; group?: number; root?: boolean; direction?: 'incoming'|'outgoing'|'both'; hopDistance?:number|null; affinity?:number; degree?:number; }
 export interface GraphLink { source: string; target: string; }
 export interface GraphData { root: Article; nodes: GraphNode[]; links: GraphLink[]; stats: { outgoing: number; incoming: number; incomingAvailable?: boolean; outgoingComplete: boolean; incomingComplete: boolean; mapped: number; }; fetchedAt: string; source: 'mariadb'|'wikipedia'|'m-snapshot'; notices?: string[]; }
 export interface CompareEdition { lang: Language; article: Article|null; graph: GraphData|null; error?: string; }

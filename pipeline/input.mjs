@@ -22,7 +22,8 @@ export async function* jsonLines(chunks) {
 
 export async function verifiedManifest(input) {
  const manifest=JSON.parse(await readFile(`${input}.manifest.json`,'utf8'));
- if(manifest.dataset!=='m-2026-10'||!manifest.checksumsVerified||manifest.selected?.length!==20)throw new Error('A verified M manifest selecting exactly 20 articles is required');
+ if(manifest.dataset!=='m-2026-10'||!manifest.checksumsVerified||!manifest.selected?.length||manifest.selected.length>19742)throw new Error('A verified M manifest selecting 1–19742 complete articles is required');
+ if(new Set(manifest.selected.map(p=>p.pageId)).size!==manifest.selected.length||manifest.selected.some(p=>!Number.isSafeInteger(p.pageId)||!Number.isSafeInteger(p.revisions)||p.revisions<1))throw new Error('Invalid selected history identities or counts');
  const hash=createHash('sha256');for await(const chunk of createReadStream(input))hash.update(chunk);
  if(hash.digest('hex')!==manifest.exportSha256)throw new Error('Revision export checksum mismatch');
  return manifest;
@@ -40,5 +41,5 @@ export async function* articleHistories(input,manifest) {
   rows.push(row);
  }
  if(current!==null){validate();yield rows;seen.add(current);}
- if(seen.size!==20)throw new Error(`Exactly 20 histories required; found ${seen.size}`);
+ if(seen.size!==expected.size)throw new Error(`Expected ${expected.size} complete histories; found ${seen.size}`);
 }

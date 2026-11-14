@@ -3,7 +3,7 @@ import {readFile, writeFile} from 'node:fs/promises';
 import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 import {getPool, closeDatabase} from '../server/database.mjs';
-import {scoreArticle, qualifyEpisodes} from '../pipeline/score.mjs';
+import {scoreArticle, qualifyEpisodes} from '../pipeline/score-v1.mjs';
 const raw=await readFile('public/data/conflict-pilot.json','utf8');
 const pilot=JSON.parse(raw), DAY=86400000;
 const cleanup=c=>/vandal|roskaa|roskaus|spam|test edit|testimuokkaus/i.test(c||'');

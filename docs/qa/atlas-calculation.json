@@ -1,0 +1,20 @@
+{
+  "version": "8c49def8e1abc47f",
+  "method": "wikilens-passages-v2",
+  "capture": "m-2026-10-atlas",
+  "pages": 19742,
+  "revisions": 862076,
+  "edges": 138735,
+  "generatedAt": "2026-11-14T00:24:15.947Z",
+  "sourceSha256": "2aa551f8a97c8587c6d0e2db0fd4ba90e12d467d1309e73a8f9ab64d8ae887c3",
+  "readbackDigestMatches": 19742,
+  "reviewCases": 120,
+  "independentReview": "pending",
+  "categories": [
+    1190,
+    376,
+    627,
+    653
+  ],
+  "measured": 7118
+}

@@ -1,5 +1,7 @@
 # Research behind the WikiLens conflict pilot
 
+**Current implementation:** see [ATLAS-METHOD.md](ATLAS-METHOD.md) for the full-collection passage detector. The v1 formula below is retained for reproducibility. No comparative superiority claim has been validated.
+
 Reviewed 2026-11-13. Ten distinct sources, including primary research papers and the authors' own tools/documentation. These methods measure different phenomena; there is no evidence that our prototype outperforms all of them.
 
 | # | Source | What it measures / how it works | Decision for WikiLens |

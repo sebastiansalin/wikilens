@@ -4,17 +4,19 @@ Team: Sebastian, Aksu and Leo.
 
 ## Challenge fit
 
-The authenticated [Junction challenge](https://hackjunction.app/participate/45/challenges/307), read on 13 November 2026, offers native MariaDB vector/RAG and system-versioned-table tracks. WikiLens targets the **SVT track**: choose an imported Wikipedia article, select a revision or UTC date, and see how its explicit article links changed. Native vector search and a RAG answer generator are not implemented.
+The authenticated [Junction challenge](https://hackjunction.app/participate/45/challenges/307), read on 13 November 2026, offers native MariaDB vector/RAG and system-versioned-table tracks. WikiLens targets the **SVT track** with a disagreement atlas calculated from the complete Finnish-history M capture in MariaDB. Choose an article and monthly observation window, then inspect repeated passage changes and source revision diffs. Native vector search and a RAG answer generator are not implemented. The earlier live explorer and bounded historical-link API remain separate features.
 
 The published criteria each carry 20%: creative/effective use of MariaDB RAG and/or SVT; implementation and scalability; usefulness; design and demo; originality. These are judging criteria, not scores or a claim that this implementation has passed them.
 
 | Criterion | Concrete evidence to demonstrate | Remaining limitation |
 | --- | --- | --- |
-| MariaDB | `WITH SYSTEM VERSIONING`, imported edit times, `FOR SYSTEM_TIME AS OF`, and `FOR SYSTEM_TIME ALL` | Actual SQL needs a running MariaDB 10.11+ instance and integration verification |
-| Implementation | Bounded imports, indexed article/time lookup, transactional writes, continuation handling, explicit missing-data responses | At most 100 revisions per article; no full-dataset import or measured load benchmark |
-| Usefulness | Open the exact source revision; inspect added and removed connections over time | Link changes describe editorial structure, not factual correctness or political agreement |
-| Design/demo | A persistent sidebar and graph that expose selection and coverage | Visual review is separate from backend tests |
-| Originality | Connect spatial Wikipedia exploration with historical link changes and language comparisons | Cross-language similarity remains link overlap; no semantic or truth score |
+| MariaDB | Full M import into system-versioned tables; `FOR SYSTEM_TIME ALL` readback of 19,742 articles / 862,076 revisions; every canonical history digest matched | Production serves the verified static export, not a remotely hosted MariaDB instance |
+| Implementation | Transactional article checkpoints, immutable captures, 64 evidence shards, searchable full catalog, 160-node event horizon | No production concurrency/load benchmark; M is a selected collection, not all Finnish Wikipedia |
+| Usefulness | Monthly content-candidate rates, passage alternatives, cleanup/maintenance/uncertain categories, exact source diffs | Heuristic classification remains unvalidated; detected reversals do not establish truth or bias |
+| Design/demo | Mint/charcoal atlas, monthly controls, graph navigation and responsive article inspector | See release-specific browser checks; automated tests do not establish UI quality |
+| Originality | Explore recurring changes in their article-link neighborhood and inspect the evidence | Links use latest captured text, not historical slider dates; language overlap is a separate live feature |
+
+The complete import, readback and scoring are recorded in [atlas-calculation.json](qa/atlas-calculation.json). Export consistency checks are in [atlas-validation.json](qa/atlas-validation.json). Real MariaDB integration tests passed on 14 November 2026. Independent accuracy labels and comparative precision/recall remain pending. The following sections document the separate bounded historical-link API, not the full atlas importer.
 
 ## Two different clocks
 
@@ -64,6 +66,6 @@ Wikipedia and its contributors remain the source. Revision URLs provide attribut
 
 ## Scaling path and verification
 
-The official [challenge datasets](https://github.com/MariaDB/mariadb-wikipedia-datasets) provide a larger route beyond small live-API captures. A production importer should stream historical data, preserve gaps and source hashes, checkpoint article transactions, and benchmark the `(lang, page_id, row_start)` index against real workloads. Full-dataset ingestion, partitioning, multilingual embeddings and native vector search are not implemented here. Do not scale the live-API importer into a whole-Wikipedia crawler.
+The official [challenge datasets](https://github.com/MariaDB/mariadb-wikipedia-datasets) provide a larger route beyond small live-API captures. The atlas implements that route for all M histories through `pipeline/import-atlas.mjs` and `pipeline/build-atlas.mjs`, preserving source hashes and article checkpoints. It does not add partitioning, multilingual embeddings or native vector search. Do not scale the separate live-API importer into a whole-Wikipedia crawler.
 
-`node --test tests/history.test.mjs` checks calendar validation, link extraction, same-second boundaries, hidden content, revision-chain gaps, continuation, parameterized time selection, coverage failures, transactional rollback and safe re-import behavior. These tests use fixtures/mocked connections and do not prove MariaDB SQL compatibility or performance. At this checkpoint, an actual MariaDB runtime has not been available; a successful real import and query must be demonstrated before claiming the historical database flow is verified.
+`node --test tests/history.test.mjs` checks calendar validation, link extraction, same-second boundaries, hidden content, revision-chain gaps, continuation, parameterized time selection, coverage failures, transactional rollback and safe re-import behavior. These tests use fixtures/mocked connections. The additional real MariaDB integration test exercises directed neighborhoods, shortest paths and system-versioned observations; full M import/readback is evidenced separately by the calculation report. Neither is a production performance benchmark or proof of every legacy `/api/history` flow.

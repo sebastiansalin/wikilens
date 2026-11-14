@@ -1,0 +1,294 @@
+{
+  "version": "8c49def8e1abc47f",
+  "validatedAt": "2026-11-14T12:24:08.636Z",
+  "articles": 19742,
+  "revisions": 862076,
+  "edges": 138735,
+  "episodes": 2846,
+  "indexBytes": 12831485,
+  "indexGzipBytes": 2100223,
+  "indexAndEvidenceBytes": 22461941,
+  "knownDevelopmentCases": [
+    {
+      "case": "Nightwish genre partial reversals",
+      "page": 14398,
+      "revision": 3791251,
+      "expected": "content",
+      "observed": [
+        "content"
+      ]
+    },
+    {
+      "case": "Sauli lead-name replacement",
+      "page": 1137,
+      "revision": 23674279,
+      "expected": "uncertain",
+      "observed": [
+        "uncertain"
+      ]
+    },
+    {
+      "case": "Ahtisaari bot language-link cycle",
+      "page": 5901,
+      "revision": 9843761,
+      "expected": "maintenance",
+      "observed": [
+        "maintenance"
+      ]
+    },
+    {
+      "case": "Jatkosota outcome wording",
+      "page": 440,
+      "revision": 14002301,
+      "expected": "content",
+      "observed": [
+        "content"
+      ]
+    }
+  ],
+  "comparison": [
+    {
+      "title": "Sauli Niinistö",
+      "pageId": 1137,
+      "v1Index": 76.4,
+      "v2Index": 19,
+      "contentCandidates": 11,
+      "cleanup": 9,
+      "maintenance": 9,
+      "uncertain": 8,
+      "recentFiveYearCandidates": 0,
+      "recentFiveYearIndex": 0
+    },
+    {
+      "title": "Tarja Halonen",
+      "pageId": 1187,
+      "v1Index": 73.8,
+      "v2Index": 14,
+      "contentCandidates": 12,
+      "cleanup": 23,
+      "maintenance": 11,
+      "uncertain": 11,
+      "recentFiveYearCandidates": 0,
+      "recentFiveYearIndex": 0
+    },
+    {
+      "title": "Suomen sisällissota",
+      "pageId": 1150,
+      "v1Index": 67.1,
+      "v2Index": 8,
+      "contentCandidates": 10,
+      "cleanup": 2,
+      "maintenance": 1,
+      "uncertain": 13,
+      "recentFiveYearCandidates": 1,
+      "recentFiveYearIndex": 15
+    },
+    {
+      "title": "Suomen tasavallan presidentti",
+      "pageId": 1069,
+      "v1Index": 66.1,
+      "v2Index": 12,
+      "contentCandidates": 4,
+      "cleanup": 4,
+      "maintenance": 20,
+      "uncertain": 6,
+      "recentFiveYearCandidates": 1,
+      "recentFiveYearIndex": 29
+    },
+    {
+      "title": "Urho Kekkonen",
+      "pageId": 1275,
+      "v1Index": 62.5,
+      "v2Index": 3,
+      "contentCandidates": 2,
+      "cleanup": 5,
+      "maintenance": 7,
+      "uncertain": 12,
+      "recentFiveYearCandidates": 0,
+      "recentFiveYearIndex": 0
+    },
+    {
+      "title": "Alexander Stubb",
+      "pageId": 11396,
+      "v1Index": 61.5,
+      "v2Index": 25,
+      "contentCandidates": 12,
+      "cleanup": 5,
+      "maintenance": 3,
+      "uncertain": 4,
+      "recentFiveYearCandidates": 3,
+      "recentFiveYearIndex": 14
+    },
+    {
+      "title": "Vanhoillislestadiolaisuus",
+      "pageId": 11594,
+      "v1Index": 52.2,
+      "v2Index": 8,
+      "contentCandidates": 4,
+      "cleanup": 5,
+      "maintenance": 0,
+      "uncertain": 1,
+      "recentFiveYearCandidates": 0,
+      "recentFiveYearIndex": 0
+    },
+    {
+      "title": "Jatkosota",
+      "pageId": 440,
+      "v1Index": 50,
+      "v2Index": 26,
+      "contentCandidates": 14,
+      "cleanup": 1,
+      "maintenance": 2,
+      "uncertain": 8,
+      "recentFiveYearCandidates": 0,
+      "recentFiveYearIndex": 0
+    },
+    {
+      "title": "Talvisota",
+      "pageId": 1256,
+      "v1Index": 49.6,
+      "v2Index": 11,
+      "contentCandidates": 8,
+      "cleanup": 4,
+      "maintenance": 2,
+      "uncertain": 8,
+      "recentFiveYearCandidates": 0,
+      "recentFiveYearIndex": 0
+    },
+    {
+      "title": "Kalevala",
+      "pageId": 498,
+      "v1Index": 48.7,
+      "v2Index": 5,
+      "contentCandidates": 2,
+      "cleanup": 1,
+      "maintenance": 0,
+      "uncertain": 6,
+      "recentFiveYearCandidates": 0,
+      "recentFiveYearIndex": 0
+    },
+    {
+      "title": "Koronaviruspandemia Suomessa",
+      "pageId": 1562418,
+      "v1Index": 44.9,
+      "v2Index": 1,
+      "contentCandidates": 1,
+      "cleanup": 2,
+      "maintenance": 1,
+      "uncertain": 2,
+      "recentFiveYearCandidates": 0,
+      "recentFiveYearIndex": 0
+    },
+    {
+      "title": "Martti Ahtisaari",
+      "pageId": 5901,
+      "v1Index": 40.5,
+      "v2Index": 7,
+      "contentCandidates": 3,
+      "cleanup": 5,
+      "maintenance": 5,
+      "uncertain": 0,
+      "recentFiveYearCandidates": 0,
+      "recentFiveYearIndex": 0
+    },
+    {
+      "title": "Carl Gustaf Emil Mannerheim",
+      "pageId": 6021,
+      "v1Index": 35.6,
+      "v2Index": 10,
+      "contentCandidates": 7,
+      "cleanup": 6,
+      "maintenance": 7,
+      "uncertain": 3,
+      "recentFiveYearCandidates": 0,
+      "recentFiveYearIndex": 0
+    },
+    {
+      "title": "Lestadiolaisuus",
+      "pageId": 5759,
+      "v1Index": 23.9,
+      "v2Index": 4,
+      "contentCandidates": 2,
+      "cleanup": 4,
+      "maintenance": 1,
+      "uncertain": 4,
+      "recentFiveYearCandidates": 0,
+      "recentFiveYearIndex": 0
+    },
+    {
+      "title": "Mikael Agricola",
+      "pageId": 7314,
+      "v1Index": 20.1,
+      "v2Index": 2,
+      "contentCandidates": 1,
+      "cleanup": 4,
+      "maintenance": 1,
+      "uncertain": 5,
+      "recentFiveYearCandidates": 0,
+      "recentFiveYearIndex": 0
+    },
+    {
+      "title": "Hanoi Rocks",
+      "pageId": 327,
+      "v1Index": 0,
+      "v2Index": 5,
+      "contentCandidates": 2,
+      "cleanup": 2,
+      "maintenance": 0,
+      "uncertain": 0,
+      "recentFiveYearCandidates": 0,
+      "recentFiveYearIndex": 0
+    },
+    {
+      "title": "Matti Vanhanen",
+      "pageId": 795,
+      "v1Index": 0,
+      "v2Index": 5,
+      "contentCandidates": 2,
+      "cleanup": 4,
+      "maintenance": 2,
+      "uncertain": 4,
+      "recentFiveYearCandidates": 0,
+      "recentFiveYearIndex": 0
+    },
+    {
+      "title": "Nightwish",
+      "pageId": 14398,
+      "v1Index": 0,
+      "v2Index": 9,
+      "contentCandidates": 3,
+      "cleanup": 1,
+      "maintenance": 2,
+      "uncertain": 4,
+      "recentFiveYearCandidates": 0,
+      "recentFiveYearIndex": 0
+    },
+    {
+      "title": "Jokelan koulusurmat",
+      "pageId": 436339,
+      "v1Index": 0,
+      "v2Index": 16,
+      "contentCandidates": 7,
+      "cleanup": 2,
+      "maintenance": 1,
+      "uncertain": 1,
+      "recentFiveYearCandidates": 0,
+      "recentFiveYearIndex": 0
+    },
+    {
+      "title": "Suomen lähetyskunta",
+      "pageId": 1517061,
+      "v1Index": 0,
+      "v2Index": 0,
+      "contentCandidates": 0,
+      "cleanup": 0,
+      "maintenance": 0,
+      "uncertain": 0,
+      "recentFiveYearCandidates": 0,
+      "recentFiveYearIndex": 0
+    }
+  ],
+  "reviewCases": 120,
+  "independentReview": "pending",
+  "warning": "Known cases are development regressions, not blind accuracy validation; v1 and v2 scores have different scales."
+}

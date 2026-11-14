@@ -8,7 +8,9 @@ export default function ConflictPanel({article,onExplore}:{article?:Article;onEx
  useEffect(()=>{let active=true;loadPilot().then(p=>{if(active)setPilot(p);}).catch(e=>{if(active)setError(e.message);}).finally(()=>{if(active)setLoaded(true);});return()=>{active=false;};},[]);
  const score=article?.conflict;
  return <section className="sidebar-section conflict-section">
-  <div className="section-heading"><h2>Editing disagreement</h2><span>M · FI</span></div>
+  <div className="section-heading"><h2>Archived v1 baseline</h2><span>M · FI</span></div>
+  <p className="section-hint">Retained for audit: whole-page restores can include cleanup and miss partial changes. These scores are not comparable to the current atlas.</p>
+  <a className="conflict-evidence" href={`/?mode=conflict&title=${encodeURIComponent(article?.title||'Talvisota')}&lang=fi`}>Open the monthly conflict atlas ↗</a>
   {score?<>
    <div className="conflict-score"><strong style={{color:conflictColor(score.score)}}>{score.score??'—'}</strong><span>{score.score==null?'Insufficient history':'/ 100 conflict index'}<small>{score.period.from.slice(0,10)} — {score.period.to.slice(0,10)}</small></span></div>
    <p className="section-hint">Repeated mutual reversals in the available history. Vandalism and cleanup can contribute; a high score does not mean the article is wrong.</p>

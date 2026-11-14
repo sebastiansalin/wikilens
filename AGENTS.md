@@ -3,9 +3,12 @@
 Team: Sebastian, Aksu, Leo. Build a beautiful Wikipedia graph explorer and honest cross-language connection comparison using MariaDB.
 
 ## Current product direction
-- Add an evidence-backed editing-disagreement map for a 20-article pilot from the Finnish-history M dataset. Reuse the existing graph; node color represents the conflict index.
+- Explore all 19,742 articles / 862,076 revisions in the Finnish-history M dataset. Node color represents the selected-window disagreement index; the event horizon limits visible nodes to 160 while search includes every article.
 - The index measures repeated editor reversals, not truth, political bias or cross-language agreement. Unmeasured/insufficient evidence is gray, never a fabricated zero.
-- Implementation: pipeline/score.mjs, verified Parquet selection, optional MariaDB SVT import/readback, public/data/conflict-pilot.json, src/pilot.ts and ConflictPanel.
+- Current implementation: pipeline/score-v2.mjs, src/atlas-model.mjs (shared monthly math), pipeline/import-atlas.mjs, pipeline/build-atlas.mjs, public/data/atlas/, src/Atlas.tsx. Keep score-v1.mjs and the twenty-page export reproducible as an audit baseline.
+- The v2 labels are heuristic content candidates, cleanup, maintenance or uncertain. Classification is retrospective and unvalidated. Number-only changes and unmatched deletions are deliberately uncertain. Never claim superiority or accuracy without independent labels.
+- Default UI ports the feature/conflict-explorer branch's DM Sans / Space Grotesk, mint/charcoal layout. Preserve the React graph physics and explicit live-Wikipedia explorer.
+- Time controls and edit bars are monthly. Article links use the latest captured text, not the slider's historical date; say so in the UI.
 - Research and formula: docs/CONFLICT-RESEARCH.md. Read pipeline/AGENTS.md before editing the pipeline.
 - Maintain README.md with actual validation/publication status. Never equate prepared code with completed calculations, database execution, GitHub upload or deployment.
 
@@ -26,4 +29,4 @@ Team: Sebastian, Aksu, Leo. Build a beautiful Wikipedia graph explorer and hones
 - Language codes allowed: en, fi, ru, uk, de, fr, es, ja.
 - Work must function without a database via explicit live-Wikipedia mode; never label that MariaDB mode.
 - Test algorithms, normalization, continuation, and missing-data behavior. Test UI flows manually with screenshots.
-- Deployment scope: one new wikilens project in the connected Vercel team, never existing projects.
+- Deployment scope: the existing wikilens project (prj_Kqw8fHTEziyxEvod4W54L0LKbkMQ) in team_lBtXgtam1kgPVZNZWEAqkCNc. Never deploy to unrelated projects or create a replacement project.

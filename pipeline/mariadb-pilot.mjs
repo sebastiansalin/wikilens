@@ -4,7 +4,7 @@ import { readFile, writeFile, open } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import { loadEnvFile } from 'node:process';
 import { getPool, closeDatabase } from '../server/database.mjs';
-import { scoreArticle } from './score.mjs';
+import { scoreArticle } from './score-v1.mjs';
 import { verifiedManifest, articleHistories } from './input.mjs';
 if(existsSync('.env'))loadEnvFile('.env');
 const input=process.argv[2],output=process.argv[3]||'.local/m-pilot-from-db.jsonl';
