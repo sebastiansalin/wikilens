@@ -10,7 +10,7 @@ Which articles—and which passages—have editors repeatedly changed back and f
 
 The atlas covers **all 19,742 articles and 862,076 revisions in MariaDB's Finnish-history M dataset**. Search the full collection, expand the graph's event horizon or recenter on another article. At most 160 nodes are drawn. Green, amber and red show the selected-window disagreement index; gray means insufficient evidence. This measures editing patterns, not truth, bias, article reliability or cross-language agreement.
 
-The UI adapts the mint/charcoal palette, DM Sans and Space Grotesk, three-column layout and inspector from `feature/conflict-explorer`, retaining the React graph physics and live explorer. Charts and the timeline use **calendar months**, with all-history, five-year, twelve-month and three-month windows.
+The UI adapts the mint/charcoal palette, DM Sans and Space Grotesk, three-column layout and inspector from `feature/conflict-explorer`, with the classic canvas graph and article inspector. Charts and the timeline use **calendar months**, with all-history, five-year, twelve-month and three-month windows.
 
 ## Pipeline
 
@@ -67,11 +67,11 @@ The evaluator reports agreement, Cohen's kappa, coverage and sample confusion co
 
 The atlas includes a selected-period change overview and compact comparisons of recurring wordings with source diffs. The graph restores the original conflict-explorer canvas balls, lines, and magnetic forces, using cached artwork, batched lines, and a fixed simulation clock. Graph colors update separately from layout. See [change summaries and rendering notes](docs/CHANGE-SUMMARIES.md) for evidence limits, further options, and measured checks. This feature branch passed 102 Node tests (one database integration test skipped), TypeScript, and a production build; it has not been deployed to production.
 
-## Existing explorer
+## Atlas-only interface
 
-`/?mode=live&title=Talvisota&lang=fi` opens live search, incoming/outgoing links, previews, bounded expansion, directed routing and cross-language link overlap via Wikidata. Similarity is link overlap, not truth or political agreement. Paper, Ink and Galaxy remain available. Drag, zoom, pinning, stable layouts and reduced motion remain in the shared graph.
+The current feature branch exposes only the conflict atlas. The Live Explorer entry point, navigation, loading-page link, and route selection have been removed. Older live-mode URLs now open the atlas. The archived explorer source and API/database adapters remain available for development, but the explorer UI and its stylesheet are no longer loaded by this entry point.
 
-API/database adapters stay in `api/` and `server/`. Cache, recursive queries, historical import and `FOR SYSTEM_TIME AS OF` API work when configured. See [database setup](db/README.md), [graph architecture](docs/MAP-ARCHITECTURE.md) and [challenge mapping](docs/CHALLENGE.md) for boundaries and unverified claims.
+The main page omits the introductory title, selected metadata labels, and repeated explanatory captions requested for the presentation. Methodology, source attribution, index limitations, and the latest-snapshot link limitation remain available in the Methodology dialog. Graph controls, article search, evidence links, timeline, and change summaries are retained. Graph labels now use double-resolution cached text, a crisp dark outline instead of a blurred shadow, brighter medium-weight lettering, and screen-pixel alignment. TypeScript and production build validation passed for this UI cleanup.
 
 ## Publication and maintenance
 
