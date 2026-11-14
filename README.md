@@ -65,7 +65,7 @@ The evaluator reports agreement, Cohen's kappa, coverage and sample confusion co
 
 ## Reading article changes
 
-The atlas includes a selected-period change overview and compact comparisons of recurring wordings with source diffs. Graph colors update separately from layout; reciprocal lines and expensive blur effects have been reduced. See [change summaries and rendering notes](docs/CHANGE-SUMMARIES.md) for evidence limits, further options, and measured checks. This feature branch passed 97 Node tests (one database integration test skipped), TypeScript, and a production build; it has not been deployed to production.
+The atlas includes a selected-period change overview and compact comparisons of recurring wordings with source diffs. The graph restores the original conflict-explorer canvas balls, lines, and magnetic forces, using cached artwork, batched lines, and a fixed simulation clock. Graph colors update separately from layout. See [change summaries and rendering notes](docs/CHANGE-SUMMARIES.md) for evidence limits, further options, and measured checks. This feature branch passed 101 Node tests (one database integration test skipped), TypeScript, and a production build; it has not been deployed to production.
 
 ## Existing explorer
 
