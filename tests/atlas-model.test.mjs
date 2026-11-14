@@ -14,7 +14,7 @@ test('calendar windows include December/January and leap years without annual bu
  assert.deepEqual(monthRange('2023-12','2024-03'),['2023-12','2024-01','2024-02','2024-03']);assert.equal(windowStart('2024-02',3),'2023-12');assert.equal(windowStart('2024-02',12),'2023-03');assert.equal(windowStart('2024-02',60),'2019-03');assert.equal(windowStart('2024-02',0),'');
 });
 test('rate uses candidate episodes only, distinguishes insufficient from observed zero',()=>{
- assert.equal(summarizeMonths([['2024-01',100,80,0,8,9,10]]).score,0);assert.equal(summarizeMonths([['2024-01',19,18,0,0,0,0]]).score,null);assert.equal(summarizeMonths([['2024-01',100,80,2,8,9,10]]).score,28.6);
+ assert.equal(summarizeMonths([['2024-01',100,80,0,8,9,10]]).score,0);assert.equal(summarizeMonths([['2024-01',19,18,0,0,0,0]]).score,null);assert.equal(summarizeMonths([['2024-01',100,80,2,8,9,10]]).score,66.7);
 });
 test('high rates remain distinct instead of clipping at 100, with sparse-data shrinkage',()=>{
  const score=(episodes,edits)=>summarizeMonths([['2024-01',edits+20,edits,episodes,0,0,0]]).score;

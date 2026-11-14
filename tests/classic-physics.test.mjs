@@ -28,3 +28,10 @@ test('a full scene settles within three seconds and stays still until interactio
  const positions=s.nodes.map(n=>[n.x,n.y]);for(let i=0;i<120;i++)s.tick();assert.deepEqual(s.nodes.map(n=>[n.x,n.y]),positions);
  s.startDrag('0',s.nodes[1].x+1,s.nodes[1].y+1);assert.equal(s.isActive(),true);s.tick();s.endDrag();
 });
+test('the held ball follows the latest input exactly while nearby nodes continue simulating',()=>{
+ const s=createClassicSimulation(input(),edges());s.startDrag('0',0,0);
+ s.dragTo('0',20,30);s.dragTo('0',100,120);s.tick(1000/120);
+ assert.equal(s.nodes[0].x,100);assert.equal(s.nodes[0].previousX,100);assert.equal(s.nodes[0].y,120);
+ const before=s.nodes[1].x;for(let i=0;i<12;i++)s.tick();
+ assert.equal(s.nodes[0].x,100);assert.equal(s.nodes[0].y,120);assert.notEqual(s.nodes[1].x,before);s.endDrag();
+});

@@ -20,7 +20,7 @@ The UI adapts the mint/charcoal palette, DM Sans and Space Grotesk, three-column
 4. Detect repeated passage/selected-infobox reversals. Group tracks sharing return revisions into episodes. Separate content candidates, cleanup, maintenance and uncertain cases.
 5. Export a searchable catalog and 64 evidence shards. Production serves static aggregates; raw dumps, editor identifiers, credentials and database files stay local and ignored.
 
-Index = `100 * E / (E + 0.05 * (C + 20))`, rounded to one decimal, where E is content candidate episodes and C is content edits. Smooth saturation replaces the old 100-point ceiling; 20 zero-episode prior edits moderate small samples. Rate and counts remain visible. Constants are uncalibrated design choices. Insufficient samples are gray. See [ATLAS-METHOD.md](docs/ATLAS-METHOD.md) for full rules, failure modes and review protocol.
+Index = `100 * E / (E + 0.01 * (C + 20))`, rounded to one decimal, where E is content candidate episodes and C is content edits. Smooth saturation replaces the old 100-point ceiling; 20 zero-episode prior edits moderate small samples. Rate and counts remain visible. Constants are uncalibrated design choices. Insufficient samples are gray. See [ATLAS-METHOD.md](docs/ATLAS-METHOD.md) for full rules, failure modes and review protocol.
 
 M is a selected Finnish-history collection, not all Finnish Wikipedia. Links use the latest captured text; the slider does not reconstruct historical connections. Classification uses the full snapshot retrospectively. Cleanup detection is imperfect. Independent accuracy validation is pending; no superiority over published methods is claimed.
 
@@ -65,7 +65,7 @@ The evaluator reports agreement, Cohen's kappa, coverage and sample confusion co
 
 ## Reading article changes
 
-The atlas includes a selected-period change overview and compact comparisons of recurring wordings with source diffs. The graph restores the original conflict-explorer canvas balls, lines, and magnetic forces, using cached artwork, batched lines, and a fixed simulation clock. Graph colors update separately from layout. See [change summaries and rendering notes](docs/CHANGE-SUMMARIES.md) for evidence limits, further options, and measured checks. This feature branch passed 101 Node tests (one database integration test skipped), TypeScript, and a production build; it has not been deployed to production.
+The atlas includes a selected-period change overview and compact comparisons of recurring wordings with source diffs. The graph restores the original conflict-explorer canvas balls, lines, and magnetic forces, using cached artwork, batched lines, and a fixed simulation clock. Graph colors update separately from layout. See [change summaries and rendering notes](docs/CHANGE-SUMMARIES.md) for evidence limits, further options, and measured checks. This feature branch passed 102 Node tests (one database integration test skipped), TypeScript, and a production build; it has not been deployed to production.
 
 ## Existing explorer
 

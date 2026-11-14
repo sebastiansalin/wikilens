@@ -1,10 +1,10 @@
 /** Shared deterministic math for the pipeline and browser. No network or DOM. */
-export const INDEX_METHOD='wikilens-index-v2.1';
+export const INDEX_METHOD='wikilens-index-v2.2';
 function summarizeTotals(sums){
  const [revisions,contentEdits,episodeCount,cleanup,maintenance,uncertain]=sums,rate=contentEdits?100*episodeCount/contentEdits:0;
  // Twenty zero-episode edits shrink noisy small samples. A smooth saturation
  // replaces the old hard ceiling; 100 is approached, never clipped to.
- const score=revisions>=20&&contentEdits>=10?Math.round(1000*episodeCount/(episodeCount+.05*(contentEdits+20)))/10:null;
+ const score=revisions>=20&&contentEdits>=10?Math.round(1000*episodeCount/(episodeCount+.01*(contentEdits+20)))/10:null;
  return {score,rate:Math.round(rate*100)/100,revisions,contentEdits,episodeCount,cleanup,maintenance,uncertain,band:score==null?'insufficient':episodeCount===0?'none':score<20?'low':score<60?'elevated':'high'};
 }
 export function summarizeMonths(months,from='',to='9999-12'){

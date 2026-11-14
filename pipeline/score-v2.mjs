@@ -2,7 +2,7 @@
 import {createHash} from 'node:crypto';
 import {prepare, wikiLinks} from './score-v1.mjs';
 export {wikiLinks} from './score-v1.mjs';
-export const METHOD='wikilens-passages-v2.1';
+export const METHOD='wikilens-passages-v2.2';
 const DAY=86400000;
 const hash=s=>createHash('sha1').update(s).digest('hex').slice(0,16);
 const cleanComment=s=>/vandal|roska(?:a|us)?|spam|testimuokkaus|test edit/i.test(s||'');
