@@ -6,7 +6,7 @@ A Wikipedia editing-disagreement atlas by **Sebastian, Aksu and Leo**, for Junct
 
 ## The question
 
-Which articles—and which passages—have editors repeatedly changed back and forth?
+Which articles-and which passages-have editors repeatedly changed back and forth?
 
 The atlas covers **all 19,742 articles and 862,076 revisions in MariaDB's Finnish-history M dataset**. Search the full collection, expand the graph's event horizon or recenter on another article. At most 160 nodes are drawn. Green, amber and red show the selected-window disagreement index; gray means insufficient evidence. This measures editing patterns, not truth, bias, article reliability or cross-language agreement.
 
@@ -14,7 +14,9 @@ The UI adapts the mint/charcoal palette, DM Sans and Space Grotesk, three-column
 
 ## Four-language comparison
 
-The UI uses Leo's feature/article-size-scaling commit bd1d760 as its base: classic graph physics, article-size scaling, filtering, change summaries and smooth monthly playback up to 8×.
+**Live in production:** [open Talvisota](https://wikilens-junction2026.vercel.app/?metric=language&title=Talvisota). Release e60184 combines Leo's graph with the 100-article language snapshot; production behavior was checked in Brave.
+
+The UI uses Leo's feature/article-size-scaling commit bd1d760 as its base: classic graph physics, article-size scaling, filtering, change summaries and smooth monthly playback up to 8x.
 
 The language view at /?metric=language&title=Talvisota compares **100 M articles connected from Talvisota** in Finnish, English, Ukrainian and Russian. It measures differences in linked-concept prominence throughout paragraph prose. Exact source passages expose the largest differences, and an Editions view shows introductions and article outlines. The snapshot contains 323 available editions and 417 measurable pairs; 72 articles meet the aggregate evidence threshold and 28 remain unscored.
 
@@ -75,7 +77,7 @@ The evaluator reports agreement, Cohen's kappa, coverage and sample confusion co
 
 ## Reading article changes
 
-The atlas includes a selected-period change overview and compact comparisons of recurring wordings with source diffs. The graph restores the original conflict-explorer canvas balls, lines, and magnetic forces, using cached artwork, batched lines, and a fixed simulation clock. Graph colors update separately from layout. See [change summaries and rendering notes](docs/CHANGE-SUMMARIES.md) for evidence limits, further options, and measured checks. This feature branch passed 102 Node tests (one database integration test skipped), TypeScript, and a production build; it has not been deployed to production.
+The atlas includes a selected-period change overview and compact comparisons of recurring wordings with source diffs. The graph restores the original conflict-explorer canvas balls, lines, and magnetic forces, using cached artwork, batched lines, and a fixed simulation clock. Graph colors update separately from layout. See [change summaries and rendering notes](docs/CHANGE-SUMMARIES.md) for evidence limits, further options, and measured checks. The combined release passed 117 Node tests with zero skips (including MariaDB integration), TypeScript and the production build. Leo's branch is integrated into production.
 
 ## Existing explorer
 
