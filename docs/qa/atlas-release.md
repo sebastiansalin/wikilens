@@ -22,7 +22,24 @@ Observed in Sebastian's connected Brave browser against the local Vite app:
 - Methodology dialog exposed the formula, provenance and limitations.
 - At a verified 390 x 844 CSS-pixel viewport, Map and Inspect tabs rendered without horizontal overflow. Screenshots of the desktop map, mobile map and mobile inspector were inspected in-session.
 - No browser console errors observed during those atlas flows.
+- Empty search showed an explicit no-match state. The blind-review workspace loaded 120 cases with zero labels; no independent annotations were created.
+- Added an accessible name to the mobile graph-motion button. The live explorer now labels its old pilot as an archived v1 baseline and links to the monthly atlas.
 
 ## Release state
 
-Publication and production verification are in progress. Independent classifier validation remains pending and is not supplied by these checks.
+Published through the GitHub connector with an expected-head, non-force update:
+
+- Repository: `sebastiansalin/wikilens`, branch `main`.
+- Previous head: `9f7ac9f23205933ab58b34c7341a66398df336a6`.
+- Atlas release commit: `5b843bfe20ec906fce3d0f1ac42dc9aa0dd49073`.
+- Release tree: `0b3f7c644faec722281d7373709a379b9ff7351b`.
+- All 209 published file hashes matched the checked local snapshot; no missing/extra files and a complete recursive tree response. Existing remote contents were preserved through the base tree.
+- Vercel Git integration deployed the existing `wikilens` project in team `mv-c84d`. Dashboard status: **Ready / Production / Current**, build duration 15 seconds.
+- Deployment: `dpl_5s8xvUbde666fL6kGbxw8rp6tWs8`, https://wikilens-mg4dbk7n9-mv-c84d.vercel.app.
+- Public URL: https://wikilens-junction2026.vercel.app.
+
+Production browser checks confirmed 19,742 articles / 862,076 revisions, Talvisota index 11, Nightwish search and its January 2009 genre alternatives with two diff links, and a five-year window ending September 2026 with zero Nightwish candidate episodes. No console errors were observed in these flows. The hosted live-Wikipedia explorer loaded Talvisota and 49 articles. The local live API could not reach Wikipedia under this session's outbound network restrictions; that did not affect the static atlas or the hosted API.
+
+The Vercel connector returned 404/403 for the configured project. Its existing Git integration and authenticated dashboard remained functional; no project replacement, credential extraction or permission change was needed. Local `.git` metadata remains unsynchronized and read-only. This status record and README correction follow the application release as a documentation-only commit.
+
+Independent classifier validation remains pending and is not supplied by these checks. No population accuracy, research superiority, production load benchmark or judging score is claimed.

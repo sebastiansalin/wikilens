@@ -61,7 +61,7 @@ The evaluator reports agreement, Cohen's kappa, coverage and sample confusion co
 - **93 Node tests passed, zero skipped**, including real database integration; two Python tests passed. TypeScript and production build passed before the final export.
 - Full canonical readback verification and scoring completed: all **19,742** database histories matched the source digest. The [calculation report](docs/qa/atlas-calculation.json) records 138,735 connections and 2,846 classified episodes (1,190 content candidates, 376 cleanup, 627 maintenance and 653 uncertain).
 - The complete public export passes [atlas validation](docs/qa/atlas-validation.json), including all 64 evidence shards and monthly/count consistency. 7,118 articles have sufficient evidence for a lifetime numeric index; the remainder stay gray.
-- Release verification is in progress. Production still serves the prior pilot until the atlas release is confirmed. See [release checks](docs/qa/atlas-release.md) and the [demo guide](docs/DEMO.md).
+- **Published and deployed to production on 14 November 2026.** Atlas release `5b843bf` passed Vercel's build and is live at the production URL. Brave checks confirmed desktop/phone layouts, full-catalog search, source evidence, monthly windows, graph expansion and hosted live-Wikipedia exploration. See [release checks](docs/qa/atlas-release.md) and the [demo guide](docs/DEMO.md).
 
 ## Existing explorer
 
