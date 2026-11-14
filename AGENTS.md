@@ -12,14 +12,12 @@ Team: Sebastian, Aksu, Leo. Build a beautiful Wikipedia graph explorer and hones
 - Research and formula: docs/CONFLICT-RESEARCH.md. Read pipeline/AGENTS.md before editing the pipeline.
 - Maintain README.md with actual validation/publication status. Never equate prepared code with completed calculations, database execution, GitHub upload or deployment.
 
-- The optional, closable Language differences tab compares FI/EN/UK/RU linked-concept coverage for the exact top 100 eligible M articles by all-history editing score. No blended scores or graph recoloring. Snapshot is independent of the monthly slider. Missing translations remain missing. See docs/LANGUAGE-DIFFERENCES.md; reproduce and audit with languages:build and languages:validate.
-
 ## Collaboration
 - Always use Sebastian's own connected browser (currently Brave), never the Codex/in-app browser. If it is unavailable or a browser action is blocked, ask for help instead of switching browsers.
 - Root owns shared UI, contracts, package.json and deployment.
 - Delegated agents may edit only their assigned directories. Do not undo another agent's work.
 - Do not read, print, or commit credentials. Keep .env and local runtime files ignored.
-- GitHub access was repaired on 2026-11-14: `sebastiansalin/wikilens` is selected in the existing connector installation. Source is published to public `main`; see docs/qa/github-publication.md.
+- GitHub access was repaired on 2026-11-14: `sebastiansalin/wikilens` is selected in the existing connector installation. Source is published to private `main`; see docs/qa/github-publication.md.
 - This managed session has read-only `.git` metadata and cannot read the GitHub CLI configuration. Use the connected GitHub API for publication, preserving the current remote tree and using an expected-head, non-force branch update. Do not run denied commands through a UI terminal or alter sandbox protections. Local Git metadata has not been synchronized with the remote history.
 - Never invent data, similarity scores, API success, screenshots, reviews, or grading compliance.
 - Connection similarity measures link overlap, not truth or political agreement.
@@ -32,4 +30,3 @@ Team: Sebastian, Aksu, Leo. Build a beautiful Wikipedia graph explorer and hones
 - Work must function without a database via explicit live-Wikipedia mode; never label that MariaDB mode.
 - Test algorithms, normalization, continuation, and missing-data behavior. Test UI flows manually with screenshots.
 - Deployment scope: the existing wikilens project (prj_Kqw8fHTEziyxEvod4W54L0LKbkMQ) in team_lBtXgtam1kgPVZNZWEAqkCNc. Never deploy to unrelated projects or create a replacement project.
-
