@@ -130,4 +130,3 @@ export function scoreArticle(input,options={}){
   baseline:{exactReverts,selfReverts,exactRevertRate:revisions.length>1?100*exactReverts/(revisions.length-1):0},latestRevision:latest.rev_id,bytes:latest.bytes??Buffer.byteLength(latest.text||''),links:wikiLinks(latest.text),
   interpretation:'Candidate content-dispute episodes, not truth or a probability. Unreviewed heuristic labels; historical classifications use the full snapshot.'};
 }
-

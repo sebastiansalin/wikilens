@@ -17,4 +17,3 @@ test('summary respects qualification month, separates uncertain patterns and doe
  assert.deepEqual(result.topics,[['Introduction',2]]);assert.equal(result.latest.id,'later');assert.deepEqual(result.highlights.map(e=>e.id),['later','first']);assert.equal(episodes[0].id,'old');
  const empty=summarizeChanges([],episodes,'2025-01','2025-12');assert.equal(empty.peak,null);assert.equal(empty.latest,null);assert.equal(empty.contentCount,0);
 });
-

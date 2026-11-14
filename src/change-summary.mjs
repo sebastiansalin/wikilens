@@ -17,4 +17,3 @@ export function summarizeChanges(months,episodes,from='',to='9999-12') {
  const topics=[...sections].sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0]));
  return {edits,peak:peak&&peak[1]>0?{month:peak[0],edits:peak[1]}:null,contentCount:content.length,otherCount:visible.length-content.length,topics,latest:content[0]||null,highlights:content.slice(0,3)};
 }
-

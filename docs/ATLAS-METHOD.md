@@ -52,4 +52,3 @@ The minimum-index filter applies to the ranking and graph, including both endpoi
 ## Attribution
 
 Wikipedia contributor text is CC BY-SA 4.0. Each excerpt links the originating article and revision diffs. Dataset: [MariaDB M, October 2026](https://github.com/MariaDB/mariadb-wikipedia-datasets/releases/tag/m-2026-10). UI appearance is adapted from this repository's `feature/conflict-explorer` at `62db465ff78447a6c6b60b14caed6264787ea0e9`; the React architecture, bounded graph physics and live explorer remain.
-

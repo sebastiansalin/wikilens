@@ -8,7 +8,7 @@ Purpose: calculate inspectable editing-disagreement evidence for all 19,742 Finn
 - Preserve source checksums, selection policy, method version, history coverage and calculation engine. A Parquet calculation is not proof of MariaDB execution.
 - Test self-reverts, no-ops, suppressed/gapped history, duplicate imports, sparse data, time windows and multiple-target restores.
 - Change METHOD and docs/CONFLICT-RESEARCH.md when score semantics change. Do not claim better accuracy without an actual comparative evaluation.
-- M is Finnish history, not every Finnish Wikipedia page. A separate frozen FI/EN/UK/RU introduction comparison is in language-model.mjs, capture-languages.mjs, language-demo-labels.mjs and build-languages.mjs. Its annotations are AI-assisted and unvalidated, not an automatic semantic classifier. Preserve exact evidence anchors and capture hashes; no invented labels or automatic relabelling on refresh. See docs/LANGUAGE-METHOD.md.
+- M is Finnish history, not every Finnish Wikipedia page. No cross-language disagreement is currently measured.
 - The MariaDB importer is immutable and additive; never overwrite an existing different capture or disable certificate checks to connect.
 - The atlas capture is m-2026-10-atlas. It has transactional per-page checkpoints and a complete-capture marker. Do not score a partial capture as complete.
 - Verify canonical database rows against source histories, not just counts. First-parent null normalizes to zero consistently with prepare(). All scoring inputs, including comments and identities, participate in the private digest.

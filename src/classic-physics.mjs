@@ -52,4 +52,3 @@ export function createClassicSimulation(initialNodes=[],initialLinks=[]){
   endDrag(){dragging=null;wake();},isPinned:id=>pinned.has(id),pin(id){if(!byId.has(id))return false;if(pinned.has(id))pinned.delete(id);else pinned.add(id);wake();return pinned.has(id);},
  };
 }
-

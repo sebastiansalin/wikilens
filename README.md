@@ -6,23 +6,11 @@ A Wikipedia editing-disagreement atlas by **Sebastian, Aksu and Leo**, for Junct
 
 ## The question
 
-Which articles-and which passages-have editors repeatedly changed back and forth?
+Which articles—and which passages—have editors repeatedly changed back and forth?
 
 The atlas covers **all 19,742 articles and 862,076 revisions in MariaDB's Finnish-history M dataset**. Search the full collection, expand the graph's event horizon or recenter on another article. At most 160 nodes are drawn. Green, amber and red show the selected-window disagreement index; gray means insufficient evidence. This measures editing patterns, not truth, bias, article reliability or cross-language agreement.
 
-The UI adapts the mint/charcoal palette, DM Sans and Space Grotesk, three-column layout and inspector from `feature/conflict-explorer`, retaining the React graph physics and live explorer. Charts and the timeline use **calendar months**, with all-history, five-year, twelve-month and three-month windows.
-
-## Four-language comparison
-
-**Live in production:** [open Talvisota](https://wikilens-junction2026.vercel.app/?metric=language&title=Talvisota). Release fe60184 combines Leo's graph with the 100-article language snapshot; production behavior was checked in Brave.
-
-The UI uses Leo's feature/article-size-scaling commit bd1d760 as its base: classic graph physics, article-size scaling, filtering, change summaries and smooth monthly playback up to 8x.
-
-The language view at /?metric=language&title=Talvisota compares **100 M articles connected from Talvisota** in Finnish, English, Ukrainian and Russian. It measures differences in linked-concept prominence throughout paragraph prose. Exact source passages expose the largest differences, and an Editions view shows introductions and article outlines. The snapshot contains 323 available editions and 417 measurable pairs; 72 articles meet the aggregate evidence threshold and 28 remain unscored.
-
-This is **coverage distance**, not factual contradiction, political agreement, national opinion or truth. Missing editions remain unmeasured. The language capture stays frozen independently of the editing slider. See [neighborhood method](docs/LANGUAGE-NEIGHBORHOOD.md). The earlier eight-article AI-assisted claim study remains available as a separate disclosure for applicable articles; see [original method](docs/LANGUAGE-METHOD.md).
-
-Production builds reproduce both comparisons from committed captures without Wikimedia or LLM calls. Run npm run languages:neighborhood:build for the 100-article calculation and npm run languages:build for the earlier annotations. The combined code passed **117 Node tests, zero skipped**, including MariaDB integration, plus the TypeScript/production build. All 100 capture hashes and 6,493 source quotations validate. Publication is tracked separately in [release evidence](docs/qa/neighborhood-release.md).
+The UI adapts the mint/charcoal palette, DM Sans and Space Grotesk, three-column layout and inspector from `feature/conflict-explorer`, with the classic canvas graph and article inspector. Charts and the timeline use **calendar months**, with all-history, five-year, twelve-month and three-month windows.
 
 ## Pipeline
 
@@ -77,13 +65,13 @@ The evaluator reports agreement, Cohen's kappa, coverage and sample confusion co
 
 ## Reading article changes
 
-The atlas includes a selected-period change overview and compact comparisons of recurring wordings with source diffs. The graph restores the original conflict-explorer canvas balls, lines, and magnetic forces, using cached artwork, batched lines, and a fixed simulation clock. Graph colors update separately from layout. See [change summaries and rendering notes](docs/CHANGE-SUMMARIES.md) for evidence limits, further options, and measured checks. The combined release passed 117 Node tests with zero skips (including MariaDB integration), TypeScript and the production build. Leo's branch is integrated into production.
+The atlas includes a selected-period change overview and compact comparisons of recurring wordings with source diffs. The graph restores the original conflict-explorer canvas balls, lines, and magnetic forces, using cached artwork, batched lines, and a fixed simulation clock. Graph colors update separately from layout. See [change summaries and rendering notes](docs/CHANGE-SUMMARIES.md) for evidence limits, further options, and measured checks. This feature branch passed 102 Node tests (one database integration test skipped), TypeScript, and a production build; it has not been deployed to production.
 
-## Existing explorer
+## Atlas-only interface
 
-`/?mode=live&title=Talvisota&lang=fi` opens live search, incoming/outgoing links, previews, bounded expansion, directed routing and cross-language link overlap via Wikidata. Similarity is link overlap, not truth or political agreement. Paper, Ink and Galaxy remain available. Drag, zoom, pinning, stable layouts and reduced motion remain in the shared graph.
+The current feature branch exposes only the conflict atlas. The Live Explorer entry point, navigation, loading-page link, and route selection have been removed. Older live-mode URLs now open the atlas. The archived explorer source and API/database adapters remain available for development, but the explorer UI and its stylesheet are no longer loaded by this entry point.
 
-API/database adapters stay in `api/` and `server/`. Cache, recursive queries, historical import and `FOR SYSTEM_TIME AS OF` API work when configured. See [database setup](db/README.md), [graph architecture](docs/MAP-ARCHITECTURE.md) and [challenge mapping](docs/CHALLENGE.md) for boundaries and unverified claims.
+The main page omits the introductory title, selected metadata labels, and repeated explanatory captions requested for the presentation. Methodology, source attribution, index limitations, and the latest-snapshot link limitation remain available in the Methodology dialog. Graph controls, article search, evidence links, timeline, and change summaries are retained. Graph labels now use double-resolution cached text, a crisp dark outline instead of a blurred shadow, brighter medium-weight lettering, and screen-pixel alignment. TypeScript and production build validation passed for this UI cleanup.
 
 ## Publication and maintenance
 

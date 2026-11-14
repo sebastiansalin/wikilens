@@ -35,4 +35,3 @@ test('the held ball follows the latest input exactly while nearby nodes continue
  const before=s.nodes[1].x;for(let i=0;i<12;i++)s.tick();
  assert.equal(s.nodes[0].x,100);assert.equal(s.nodes[0].y,120);assert.notEqual(s.nodes[1].x,before);s.endDrag();
 });
-

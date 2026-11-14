@@ -42,3 +42,7 @@ The renderer reuses mutable draw points and binds line endpoints to them when ge
 
 Validation for the latency/index/playback update: 102 Node tests passed, one database integration test skipped; TypeScript and production build passed. The regression case checks that repeated drag inputs leave the held node at the latest coordinates while neighbors continue simulating. Timeline playback now offers 8× speed.
 
+
+## Graph label clarity
+
+Graph labels use a minimum 2x offscreen raster resolution, 11-pixel medium-weight text (12-pixel semibold for the selection), a dark outline instead of the previous six-pixel blurred shadow, and screen-pixel-aligned compositing independent of graph zoom. The label cache remains bounded at 320 entries. Ball artwork and physics are unchanged by this typography update.

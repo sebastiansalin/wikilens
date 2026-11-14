@@ -49,4 +49,3 @@ export function eventHorizon(index,rootId,{limit=64,rings=1,rank=()=>0}={}){
  for(const id of visible){for(const target of index.neighbours.get(id)||[])if(!visible.has(target))beyond.add(target);for(const target of index.byId.get(id).links)if(visible.has(target)&&target!==id)links.push({source:String(id),target:String(target)});}
  return {ids:[...visible],links,frontier:beyond.size};
 }
-

@@ -410,4 +410,3 @@ export default function ForceGraph({ nodes, links, rootId, selectedId, theme, mo
     <span className="sr-only" role="status">{announcement}</span>
   </div>;
 }
-

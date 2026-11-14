@@ -12,4 +12,3 @@ export function monthRange(from:string,to:string):string[];
 export function windowStart(to:string,months:number):string;
 export function atlasIndexes<T extends IndexedArticle>(articles:T[]):AtlasIndex<T>;
 export function eventHorizon<T extends IndexedArticle>(index:AtlasIndex<T>,rootId:number,options?:{limit?:number;rings?:number;rank?:(id:number)=>number}):{ids:number[];links:{source:string;target:string}[];frontier:number};
-

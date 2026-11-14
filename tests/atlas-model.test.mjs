@@ -35,4 +35,3 @@ test('minimum score includes the exact boundary and treats gray nodes explicitly
  assert.equal(meetsMinimumScore(35,35),true);assert.equal(meetsMinimumScore(34.9,35),false);
  assert.equal(meetsMinimumScore(0,0),true);
 });
-
