@@ -18,7 +18,10 @@
     "atlas:prepare": "python pipeline/prepare_m.py --count 0 --output .local/m-atlas.jsonl",
     "atlas:import": "node --env-file=.env --max-old-space-size=6144 pipeline/import-atlas.mjs",
     "atlas:build": "node --env-file=.env --max-old-space-size=6144 pipeline/build-atlas.mjs",
-    "atlas:review": "node pipeline/evaluate-review.mjs"
+    "atlas:review": "node pipeline/evaluate-review.mjs",
+    "languages:capture": "node pipeline/capture-top-languages.mjs",
+    "languages:build": "node pipeline/capture-top-languages.mjs --offline",
+    "languages:validate": "node pipeline/validate-language-differences.mjs"
   },
   "dependencies": {
     "react": "19.2.8",

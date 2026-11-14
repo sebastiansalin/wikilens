@@ -57,7 +57,7 @@ The evaluator reports agreement, Cohen's kappa, coverage and sample confusion co
 
 ## Current status
 
-- **Latest release (14 November 2026, 21:28 Europe/Helsinki):** Leo's reviewed main version `7e6e120` is deployed at the production URL through release commit `d1ff35c`. Both commits use the exact same source tree. Vercel deployment `DSW8bPJssb4QyykqrYccrrcXupKq` reached Ready / Production / Current after an 18-second build. Brave checks confirmed the atlas, Talvisota index 35, the monthly previous-month control, and no captured console errors. This release exposes the atlas-only interface described below.
+- **Previous atlas release (14 November 2026, 21:28 Europe/Helsinki):** Leo's reviewed main version `7e6e120` is deployed at the production URL through release commit `d1ff35c`. Both commits use the exact same source tree. Vercel deployment `DSW8bPJssb4QyykqrYccrrcXupKq` reached Ready / Production / Current after an 18-second build. Brave checks confirmed the atlas, Talvisota index 35, the monthly previous-month control, and no captured console errors. This release exposes the atlas-only interface described below.
 
 - MariaDB import completed: **19,742 articles / 862,076 revisions**. Original pilot capture preserved.
 - **93 Node tests passed, zero skipped**, including real database integration; two Python tests passed. TypeScript and production build passed before the final export.
@@ -69,9 +69,9 @@ The evaluator reports agreement, Cohen's kappa, coverage and sample confusion co
 
 The atlas includes a selected-period change overview and compact comparisons of recurring wordings with source diffs. The graph restores the original conflict-explorer canvas balls, lines, and magnetic forces, using cached artwork, batched lines, and a fixed simulation clock. Graph colors update separately from layout. See [change summaries and rendering notes](docs/CHANGE-SUMMARIES.md) for evidence limits, further options, and measured checks. Before release, this version passed 102 Node tests (one database integration test skipped), TypeScript, and a production build. It is now deployed; see the latest release entry above. The earlier test results were not rerun in this deployment-only task.
 
-## Atlas-only interface
+## Atlas interface
 
-The current main branch and production release expose only the conflict atlas. The Live Explorer entry point, navigation, loading-page link, and route selection have been removed. Older live-mode URLs now open the atlas. The archived explorer source and API/database adapters remain available for development, but the explorer UI and its stylesheet are no longer loaded by this entry point.
+The atlas remains the default interface. The optional language tab described below does not alter its editing scores, graph or timeline. The Live Explorer entry point, navigation, loading-page link, and route selection have been removed. Older live-mode URLs now open the atlas. The archived explorer source and API/database adapters remain available for development, but the explorer UI and its stylesheet are no longer loaded by this entry point.
 
 The main page omits the introductory title, selected metadata labels, and repeated explanatory captions requested for the presentation. Methodology, source attribution, index limitations, and the latest-snapshot link limitation remain available in the Methodology dialog. Graph controls, article search, evidence links, timeline, and change summaries are retained. Graph labels now use double-resolution cached text, a crisp dark outline instead of a blurred shadow, brighter medium-weight lettering, and screen-pixel alignment. TypeScript and production build validation passed for this UI cleanup.
 
@@ -82,3 +82,12 @@ Public repository (visibility verified on 14 November 2026): [sebastiansalin/wik
 This managed workspace has read-only Git metadata and cannot read GitHub CLI credentials. Publish through the connected GitHub API, preserving the latest remote tree with an expected-head, non-force update. Local Git metadata is not synchronized. A normal writable checkout may use the bootstrap's `--git-only` path; never force-push this stale workspace.
 
 Read [AGENTS.md](AGENTS.md), [pipeline/AGENTS.md](pipeline/AGENTS.md) and [scripts/AGENTS.md](scripts/AGENTS.md). Wikipedia contributor text is CC BY-SA 4.0; article/revision attribution accompanies excerpts. Wikidata data is CC0. WikiLens is independent of Wikimedia. Vendored Wikigraph code is copyright 2026 Toby Penner, MIT, with license retained. Original team code has no selected distribution license yet.
+
+
+## Optional language differences
+
+A closable **Language differences** tab compares FI/EN/UK/RU linked-concept coverage for the exact top 100 eligible articles by full-history editing index. It uses separate pair scores, with no blended editing/language score. This is coverage distance, not contradictory-opinion detection. The November snapshot is independent of the monthly editing slider. See [method and scaling](docs/LANGUAGE-DIFFERENCES.md).
+
+The real capture completed on 14 November 2026: 100 selected topics, 210 available editions, 189 missing sitelinks and one rejected identity mismatch. 55 topics have at least one measurable pair (173 pairs total); the other 45 remain explicit unavailable/insufficient comparisons. Capture took 347 seconds, 535 requests and zero retries; saved sources and computed evidence total about 4.9 MB. At this sample rate, 1,000 topics would take about one hour and 49 MB, an estimate rather than a guaranteed throughput. Several thousand are feasible in resumable background batches.
+
+Validation: 111 Node tests passed, one database integration test skipped; TypeScript and production build passed. The offline audit verified all 100 source hashes, exact top-100 selection, all 173 measured pairs and 2,553 anchored concept quotations. Deployment/browser verification status is recorded in [release checks](docs/qa/language-differences-release.md).
