@@ -14,7 +14,7 @@ The UI adapts the mint/charcoal palette, DM Sans and Space Grotesk, three-column
 
 ## Four-language comparison
 
-**Live in production:** [open Talvisota](https://wikilens-junction2026.vercel.app/?metric=language&title=Talvisota). Release e60184 combines Leo's graph with the 100-article language snapshot; production behavior was checked in Brave.
+**Live in production:** [open Talvisota](https://wikilens-junction2026.vercel.app/?metric=language&title=Talvisota). Release fe60184 combines Leo's graph with the 100-article language snapshot; production behavior was checked in Brave.
 
 The UI uses Leo's feature/article-size-scaling commit bd1d760 as its base: classic graph physics, article-size scaling, filtering, change summaries and smooth monthly playback up to 8x.
 
