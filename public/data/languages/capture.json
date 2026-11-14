@@ -1,0 +1,949 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-11-14T15:09:16.376Z",
+  "atlasVersion": "8c49def8e1abc47f",
+  "languages": [
+    "fi",
+    "en",
+    "uk",
+    "ru"
+  ],
+  "selection": {
+    "policy": "Top eight by observed Finnish pageviews among the 30 most-revised articles in M; not a ranking of all Wikipedia or all M readership.",
+    "metric": "MediaWiki PageViewInfo, last 30 days; at least 28 reported days",
+    "candidates": [
+      {
+        "id": 1150,
+        "title": "Suomen sisällissota",
+        "revisions": 3357,
+        "qid": "Q211855",
+        "views": 7591,
+        "days": 29,
+        "from": "2026-10-15",
+        "to": "2026-11-12"
+      },
+      {
+        "id": 1187,
+        "title": "Tarja Halonen",
+        "revisions": 3078,
+        "qid": "Q29213",
+        "views": 4694,
+        "days": 30,
+        "from": "2026-10-15",
+        "to": "2026-11-13"
+      },
+      {
+        "id": 6021,
+        "title": "Carl Gustaf Emil Mannerheim",
+        "revisions": 2400,
+        "qid": "Q152306",
+        "views": 9142,
+        "days": 30,
+        "from": "2026-10-15",
+        "to": "2026-11-13"
+      },
+      {
+        "id": 1275,
+        "title": "Urho Kekkonen",
+        "revisions": 2384,
+        "qid": "Q179858",
+        "views": 10691,
+        "days": 30,
+        "from": "2026-10-15",
+        "to": "2026-11-13"
+      },
+      {
+        "id": 1137,
+        "title": "Sauli Niinistö",
+        "revisions": 2257,
+        "qid": "Q29207",
+        "views": 8162,
+        "days": 30,
+        "from": "2026-10-15",
+        "to": "2026-11-13"
+      },
+      {
+        "id": 1256,
+        "title": "Talvisota",
+        "revisions": 2143,
+        "qid": "Q134949",
+        "views": 7574,
+        "days": 29,
+        "from": "2026-10-15",
+        "to": "2026-11-12"
+      },
+      {
+        "id": 1562418,
+        "title": "Koronaviruspandemia Suomessa",
+        "revisions": 2009,
+        "qid": "Q84055415",
+        "views": 647,
+        "days": 30,
+        "from": "2026-10-15",
+        "to": "2026-11-13"
+      },
+      {
+        "id": 7314,
+        "title": "Mikael Agricola",
+        "revisions": 1726,
+        "qid": "Q215346",
+        "views": 3101,
+        "days": 29,
+        "from": "2026-10-15",
+        "to": "2026-11-12"
+      },
+      {
+        "id": 1069,
+        "title": "Suomen tasavallan presidentti",
+        "revisions": 1689,
+        "qid": "Q29558",
+        "views": 6624,
+        "days": 30,
+        "from": "2026-10-15",
+        "to": "2026-11-13"
+      },
+      {
+        "id": 440,
+        "title": "Jatkosota",
+        "revisions": 1671,
+        "qid": "Q122100",
+        "views": 7584,
+        "days": 30,
+        "from": "2026-10-15",
+        "to": "2026-11-13"
+      },
+      {
+        "id": 5759,
+        "title": "Lestadiolaisuus",
+        "revisions": 1657,
+        "qid": "Q730475",
+        "views": 4229,
+        "days": 30,
+        "from": "2026-10-15",
+        "to": "2026-11-13"
+      },
+      {
+        "id": 11396,
+        "title": "Alexander Stubb",
+        "revisions": 1546,
+        "qid": "Q503143",
+        "views": 9827,
+        "days": 29,
+        "from": "2026-10-15",
+        "to": "2026-11-12"
+      },
+      {
+        "id": 436339,
+        "title": "Jokelan koulusurmat",
+        "revisions": 1495,
+        "qid": "Q600836",
+        "views": 4753,
+        "days": 30,
+        "from": "2026-10-15",
+        "to": "2026-11-13"
+      },
+      {
+        "id": 5901,
+        "title": "Martti Ahtisaari",
+        "revisions": 1484,
+        "qid": "Q29230",
+        "views": 5858,
+        "days": 30,
+        "from": "2026-10-15",
+        "to": "2026-11-13"
+      },
+      {
+        "id": 795,
+        "title": "Matti Vanhanen",
+        "revisions": 1457,
+        "qid": "Q182043",
+        "views": 2017,
+        "days": 30,
+        "from": "2026-10-15",
+        "to": "2026-11-13"
+      },
+      {
+        "id": 11594,
+        "title": "Vanhoillislestadiolaisuus",
+        "revisions": 1445,
+        "qid": "Q3736120",
+        "views": 1433,
+        "days": 30,
+        "from": "2026-10-15",
+        "to": "2026-11-13"
+      },
+      {
+        "id": 498,
+        "title": "Kalevala",
+        "revisions": 1414,
+        "qid": "Q130924",
+        "views": 4912,
+        "days": 30,
+        "from": "2026-10-15",
+        "to": "2026-11-13"
+      },
+      {
+        "id": 14398,
+        "title": "Nightwish",
+        "revisions": 1391,
+        "qid": "Q43510",
+        "views": 21368,
+        "days": 30,
+        "from": "2026-10-15",
+        "to": "2026-11-13"
+      },
+      {
+        "id": 327,
+        "title": "Hanoi Rocks",
+        "revisions": 1376,
+        "qid": "Q1428813",
+        "views": 5475,
+        "days": 30,
+        "from": "2026-10-15",
+        "to": "2026-11-13"
+      },
+      {
+        "id": 1517061,
+        "title": "Suomen lähetyskunta",
+        "revisions": 1339,
+        "qid": "Q65244810",
+        "views": 49,
+        "days": 30,
+        "from": "2026-10-15",
+        "to": "2026-11-13"
+      },
+      {
+        "id": 1100,
+        "title": "Suomen muinaiset kuninkaat",
+        "revisions": 1313,
+        "qid": "Q4752967",
+        "views": 600,
+        "days": 30,
+        "from": "2026-10-15",
+        "to": "2026-11-13"
+      },
+      {
+        "id": 41622,
+        "title": "Timo Soini",
+        "revisions": 1287,
+        "qid": "Q355463",
+        "views": 3039,
+        "days": 30,
+        "from": "2026-10-15",
+        "to": "2026-11-13"
+      },
+      {
+        "id": 7283,
+        "title": "Saamelaiset",
+        "revisions": 1279,
+        "qid": "Q48199",
+        "views": 3829,
+        "days": 30,
+        "from": "2026-10-15",
+        "to": "2026-11-13"
+      },
+      {
+        "id": 20040,
+        "title": "Paavo Väyrynen",
+        "revisions": 1269,
+        "qid": "Q560930",
+        "views": 3051,
+        "days": 30,
+        "from": "2026-10-15",
+        "to": "2026-11-13"
+      },
+      {
+        "id": 11477,
+        "title": "Lapuanliike",
+        "revisions": 1200,
+        "qid": "Q1412941",
+        "views": 2874,
+        "days": 30,
+        "from": "2026-10-15",
+        "to": "2026-11-13"
+      },
+      {
+        "id": 18561,
+        "title": "Pekka Haavisto",
+        "revisions": 1165,
+        "qid": "Q317485",
+        "views": 2076,
+        "days": 30,
+        "from": "2026-10-15",
+        "to": "2026-11-13"
+      },
+      {
+        "id": 1516979,
+        "title": "Bengt Laurikainen",
+        "revisions": 1162,
+        "qid": "Q65229900",
+        "views": 7,
+        "days": 28,
+        "from": "2026-10-15",
+        "to": "2026-11-13"
+      },
+      {
+        "id": 1302,
+        "title": "Viikingit",
+        "revisions": 1155,
+        "qid": "Q12567",
+        "views": 1813,
+        "days": 30,
+        "from": "2026-10-15",
+        "to": "2026-11-13"
+      },
+      {
+        "id": 13182,
+        "title": "Elias Lönnrot",
+        "revisions": 1153,
+        "qid": "Q153159",
+        "views": 4044,
+        "days": 29,
+        "from": "2026-10-15",
+        "to": "2026-11-12"
+      },
+      {
+        "id": 23596,
+        "title": "Irwin Goodman",
+        "revisions": 1103,
+        "qid": "Q1673308",
+        "views": 6907,
+        "days": 30,
+        "from": "2026-10-15",
+        "to": "2026-11-13"
+      }
+    ],
+    "selected": [
+      14398,
+      1275,
+      11396,
+      6021,
+      1137,
+      1150,
+      440,
+      1256
+    ]
+  },
+  "articles": [
+    {
+      "id": 14398,
+      "title": "Nightwish",
+      "qid": "Q43510",
+      "readership": {
+        "id": 14398,
+        "title": "Nightwish",
+        "revisions": 1391,
+        "qid": "Q43510",
+        "views": 21368,
+        "days": 30,
+        "from": "2026-10-15",
+        "to": "2026-11-13"
+      },
+      "editions": {
+        "fi": {
+          "status": "available",
+          "title": "Nightwish",
+          "pageId": 14398,
+          "qid": "Q43510",
+          "revision": 24320369,
+          "timestamp": "2026-10-15T12:35:34Z",
+          "url": "https://fi.wikipedia.org/w/index.php?oldid=24320369",
+          "paragraphs": [
+            "Nightwish on suomalainen, Kiteellä vuonna 1996 perustettu sinfonista metallia esittävä yhtye. Nightwish on yksi niistä yhtyeistä, jotka 1990-luvun lopulla kehittivät ja nostivat sinfonisen metallin suosioon. Nightwish on yksi menestyneimmistä suomalaisista yhtyeistä yli kymmenen miljoonan levymyynnillään.",
+            "Yhtyeen musiikkia on kuvailtu muun muassa sinfoniseksi metalliksi, progressiiviseksi metalliksi, neoklassiseksi metalliksi ja power metalliksi, vaikkei Nightwish varsinaisesti olekaan tyylilajin edustaja. Tuomas Holopainen kuvaili kerran yhtyeen musiikkia ”melodiseksi hevimetalliksi naisäänellä”. Myöhemmin hän on kuitenkin määritellyt yhtyeen tyylin sinfoniseksi metalliksi.",
+            "Yhtyeen useimmat kappaleet säveltää sekä sanoittaa kosketinsoittaja ja yhtyeen johtohahmo Tuomas Holopainen. Nightwishin tunnettavuutta nosti etenkin klassisesti koulutettu laulaja Tarja Turunen äänellään. Turunen lauloi yhtyeen viidellä ensimmäisellä albumilla, jotka ilmestyivät vuosina 1997–2004. Uuden solistin, ruotsalaisen Anette Olzonin, aikana yhtye julkaisi albumit Dark Passion Play (2007) ja Imaginaerum (2011). Laulaja Floor Jansenin aikana yhtye julkaisi kolme albumia: Endless Forms Most Beautiful (2015), Human. :II: Nature. (2020) ja Yesterwynde (2024). Yhtyeen muut jäsenet ovat kitaristi Emppu Vuorinen, multi-instrumentalisti Troy Donockley, basisti Jukka Koskinen ja rumpali Kai Hahto.",
+            "Nightwish esiintyi 19. joulukuuta 2015 ensimmäisenä suomalaisena yhtyeenä Lontoon Wembley Arenalla pääesiintyjänä. Nightwish on vuoden 2018 gaalan jälkeen eniten Emma-palkintoja (15) saanut artisti. Vuonna 2024 Forbes julkaisi listan 38 parhaasta heavy metal -yhtyeestä. Nightwish on listalla sijalla 31."
+          ]
+        },
+        "en": {
+          "status": "available",
+          "title": "Nightwish",
+          "pageId": 83440,
+          "qid": "Q43510",
+          "revision": 1384502661,
+          "timestamp": "2026-11-08T15:25:24Z",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1384502661",
+          "paragraphs": [
+            "Nightwish are a Finnish symphonic metal band from Kitee. The band was formed in 1996 by keyboardist Tuomas Holopainen, guitarist Emppu Vuorinen, and former lead vocalist Tarja Turunen. The lineup grew with drummer Jukka Nevalainen and bassist Sami Vänskä. In 2001, Vänskä was replaced by Marko Hietala, who also took over the male vocalist role previously filled by Holopainen or guest singers. Nightwish has been successful in Finland since the release of their debut album, Angels Fall First (1997), and were later recognized internationally through the release of their albums Oceanborn (1998), Wishmaster (2000), Century Child (2002) and Once (2004).",
+            "After Turunen's dismissal from the band in 2005, Anette Olzon joined as her replacement and recorded two albums with the band: Dark Passion Play (2007) and Imaginaerum (2011), before leaving in 2012. In 2013, Floor Jansen took over as lead vocalist and became a permanent member of the band alongside Troy Donockley. After the release of Endless Forms Most Beautiful (2015), Nevalainen left the band in 2019, and Kai Hahto, who had acted as his replacement since 2014, became the official drummer. Hietala left the band in 2021, and Jukka Koskinen was announced as his replacement in 2022. The band's ninth and tenth studio albums, Human. :II: Nature. and Yesterwynde, were released in 2020 and 2024, respectively. Ahead of the release of Yesterwynde, the band announced they would be going on a touring hiatus. Jansen left the band in October 2026.",
+            "Nightwish is the third-best-selling musical act in Finland with certified sales of nearly 900,000 copies. The group has sold more than 10 million records and received over 60 gold and platinum awards. In 2018, Nightwish was inducted into the Finnish Music Hall of Fame, becoming the honorary gallery's 11th member."
+          ]
+        },
+        "uk": {
+          "status": "available",
+          "title": "Nightwish",
+          "pageId": 78064,
+          "qid": "Q43510",
+          "revision": 49003154,
+          "timestamp": "2026-10-19T20:58:19Z",
+          "url": "https://uk.wikipedia.org/w/index.php?oldid=49003154",
+          "paragraphs": [
+            "Nightwish — фінський метал-гурт, створений 1996 року в місті Кітее, який виконує музику в стилі симфо-павер-метал (засновником вважається Therion). Особливістю творчості гурту є поєднання жіночого оперного вокалу із атмосферою павер-металу. Nightwish — це найуспішніший із фінських гуртів: альбоми та сингли продавались у всьому світі накладом 7 мільйонів копій; серед нагород — 1 срібна, 11 — золотих та 30 — платинових.",
+            "Зайнявши чільне місце у Фінляндії вже з виходом першого синглу «The Carpenter» та дебютного альбому «Angels Fall First», гурт Nightwish не досяг світового успіху до появи альбомів «Oceanborn», «Wishmaster» і «Century Child», що вийшли у 1998, 2000 і 2002 роках, відповідно. У 2004 вийшов альбом «Once» (наклад: понад мільйон копій). Відеокліпи з цього альбому показувалися на «MTV» у Сполучених Штатах, деякі пісні Nightwish навіть включено до саундтреків американських кінострічок. Найбільший успіх у США — сингл «Wish I Had an Angel» (2004), увійшов до трьох кінострічок та сприяв туру гурту Північною Америкою. До звільнення з гурту вокалістки Тар'ї Турунен гурт встиг випустити ще три сингли та два кліпи для альбому, — а також «Sleeping Sun» (2005), та збірку найкращих пісень під назвою «Highest Hopes».",
+            "У травні 2007 року представлено колишню вокалістку гурту «Alyson Avenue» Анетт Ользон як заміну Турунен — і восени, гурт випускає новий альбом «Dark Passion Play». Тур для підтримки нового альбому відбувся з 6 жовтня 2007 по 19 вересня 2009 року. Новий EP/Live альбом «Made in Hong Kong (And in Various Other Places)» вийшов у березні 2009 року в форматах CD та MCD. Сьомий студійний альбом Imaginaerum вийшов 30 листопада 2011 року у Фінляндії та 2 грудня в інших країнах Європи.",
+            "Nightwish є третьою за успіхом гурту та третьою за продажами у рідній Фінляндії, понад 890 000 сертифікованих копій та також є найуспішнішим фінським гуртом у світі з понад 7 мільйонами проданих копій та 60 золотими та платиновими нагородами.",
+            "1 жовтня 2012 року, на вебсайті гурту та на сторінці у Facebook було оголошено про вихід вокалістки Анетт Ользон зі складу гурту."
+          ]
+        },
+        "ru": {
+          "status": "available",
+          "title": "Nightwish",
+          "pageId": 109461,
+          "qid": "Q43510",
+          "revision": 155628990,
+          "timestamp": "2026-10-15T13:24:21Z",
+          "url": "https://ru.wikipedia.org/w/index.php?oldid=155628990",
+          "paragraphs": [
+            "Nightwish (с англ. — «Ночное желание») — финская симфоник-метал-группа с женским вокалом, исполняющая песни преимущественно на английском языке. Основана Туомасом Холопайненом, Эмппу Вуориненом и Тарьей Турунен в 1996 году в городе Китеэ.",
+            "Nightwish — одна из первых и самых влиятельных групп в жанре симфоник-метал, наряду с Therion и Within Temptation. Раннее творчество Nightwish отличалось сочетанием женского «оперного» вокала, клавишно-симфонической аранжировки и быстрых гитарных соло, характерных для пауэр-метала. В более поздних альбомах Nightwish отошли от пауэр-метала и исключительно «оперного» вокала, а роль симфонических аранжировок и народных инструментов, наоборот, увеличилась.",
+            "За свою историю Nightwish дважды меняли вокалистку: на смену Тарье Турунен в 2007 году пришла Анетт Ользон, а её в 2012 году сменила Флор Янсен (экс-After Forever), которая проработала в группе до 2026 года. В записях отдельных песен принимали участие и приглашённые мужчины-вокалисты, а в 2001—2021 годы роль второго вокалиста исполнял басист Марко Хиетала. Бессменными членами группы остаются гитарист Эмппу Вуоринен и клавишник Туомас Холопайнен, он же — основной композитор Nightwish и автор большинства текстов. Поэзия Холопайнена в основном посвящена природе, сказкам, фантазиям и личным эмоциям.",
+            "На основе песен группы в 2012 году был снят музыкальный фильм «Воображариум».",
+            "Ошибка в сносках: Для существующих тегов <ref> группы «комм.» не найдено соответствующего тега <references group=\"комм.\"/>"
+          ]
+        }
+      },
+      "hash": "5416259a86a8887392c22c45a23bd44b5295ba274bd4abfe48dc8e489ef6fc46"
+    },
+    {
+      "id": 1275,
+      "title": "Urho Kekkonen",
+      "qid": "Q179858",
+      "readership": {
+        "id": 1275,
+        "title": "Urho Kekkonen",
+        "revisions": 2384,
+        "qid": "Q179858",
+        "views": 10691,
+        "days": 30,
+        "from": "2026-10-15",
+        "to": "2026-11-13"
+      },
+      "editions": {
+        "fi": {
+          "status": "available",
+          "title": "Urho Kekkonen",
+          "pageId": 1275,
+          "qid": "Q179858",
+          "revision": 24228013,
+          "timestamp": "2026-09-09T10:09:17Z",
+          "url": "https://fi.wikipedia.org/w/index.php?oldid=24228013",
+          "paragraphs": [
+            "Urho Kaleva Kekkonen (3. syyskuuta 1900 Pielavesi – 31. elokuuta 1986 Helsinki) oli suomalainen poliitikko ja kahdeksas Suomen tasavallan presidentti. Hän oli tasavallan presidentti yhtäjaksoisesti vuodesta 1956 alkuvuoteen 1982, yli 25 vuoden ajan. Viimeinen presidenttikausi jäi kesken sairauden takia. Kekkosen presidenttikauden ja kylmän sodan aikana Suomi säilyi Euroopan länsiryhmässä Neuvostoliiton painostuksesta huolimatta.",
+            "Kekkonen on Suomen historian pitkäaikaisin presidentti. Hän on ensimmäinen, joka toimi tasavallan presidenttinä kaksi kokonaista kautta ja ainoa, joka on valittu toimeensa useammaksi kuin kahdeksi kaudeksi. Ennen presidenttiyttään Kekkonen toimi muun muassa oikeusministerinä, eduskunnan puhemiehenä sekä viiden hallituksen pääministerinä, ja ennen poliittista uraansa hän oli poliisi, juristi ja yleisurheilija.",
+            "Kekkonen hyväksyi valtakaudellaan kansanrintamahallituksia, joihin kuuluivat edustamansa puolue Maalaisliitto sekä SDP ja SKDL. Kekkonen piti Kokoomusta hallituspaitsiossa vedoten sen ulkopoliittiseen epäluotettavuuteen. Poliittisena johtajana Kekkonen oli kiinnostunut teollisuuspolitiikasta ja Pohjois-Suomen olojen kohentamisesta."
+          ]
+        },
+        "en": {
+          "status": "available",
+          "title": "Urho Kekkonen",
+          "pageId": 32048,
+          "qid": "Q179858",
+          "revision": 1384286096,
+          "timestamp": "2026-11-07T14:39:15Z",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1384286096",
+          "paragraphs": [
+            "Urho Kaleva Kekkonen (3 September 1900 – 31 August 1986), often referred to by his initials UKK, was a Finnish politician who served as the eighth and longest-serving president of Finland from 1956 to 1982. He also served as prime minister (1950–1953, 1954–1956), and held various other cabinet positions. He was the third and most recent president from the Agrarian League/Centre Party. Head of state for nearly 26 years, he dominated Finnish politics for 31 years overall. Holding a large amount of power, he won his later elections with little opposition and has often been classified as an autocrat.",
+            "As president, Kekkonen continued the \"active neutrality\" policy of his predecessor President Juho Kusti Paasikivi that came to be known as the Paasikivi–Kekkonen doctrine, under which Finland was to retain its independence while maintaining good relations and extensive trade with members of both NATO and the Warsaw Pact. Critical commentators referred to this policy of appeasement pejoratively as Finlandization. He is credited by Finnish historians for his foreign and trade policies, which allowed Finland's market economy to keep pace with Western Europe even with the Soviet Union as a neighbor, and for Finland to gradually take part in the European integration process. On the other hand, his perceived autocracy, divide-and-rule attitude in domestic politics and the lack of genuine political opposition, especially during the latter part of his presidency, significantly weakened Finnish democracy during his presidency. Kekkonen was nominated for the Nobel Peace Prize in 1962 for his \"tireless efforts and success at keeping peace and security in the Nordic countries, and therefore contributing to civic peace and reconciliation in the World\". He was also considered a potential candidate for the prize on later occasions.",
+            "Narrowly elected in the 1956 presidential election, Kekkonen consolidated power by successfully presenting himself as an indispensable \"guarantor\" of Soviet relations in a tense and politically unstable period. He was reelected in 1962 in the aftermath of the Note Crisis and the withdrawal of the main opposition candidate. Kekkonen typically favoured appointing \"popular front\" cabinets composed of centrist and left-wing parties trusted by the Soviet Union while leaving out the major right-wing National Coalition Party. He was elected to a third six-year term in 1968 and achieved the height of his power in the 1970s; in 1973, an emergency law extending his term by four years passed the Parliament with 170 votes for and only 28 against. In 1975, considered the peak year of his career, Kekkonen hosted the Conference on Security and Co-operation in Europe in Helsinki and resolved a domestic political crisis by pressuring party leaders into joining a new \"popular front\" cabinet in front of television cameras. He was elected to his fourth and final term by an overwhelming margin in 1978, but his health and mental faculties visibly deteriorated, forcing him to submit his resignation in late 1981 and retire. After Kekkonen's presidency, the reform of the Constitution of Finland was initiated by his successors to increase the power of the Parliament and the prime minister at the expense of the president and to introduce a term limit.",
+            "Kekkonen was a member of the Parliament of Finland from 1936 until his rise to the presidency. Either prior, during or between his premierships, he served as minister of justice (1936–37, 1944–46, 1951), minister of the interior (1937–39, 1950–51), speaker of the Finnish Parliament (1948–50) and minister of foreign affairs (1952–53, 1954). In addition to his extensive political career, he was a lawyer by education, a policeman and athlete in his youth, a veteran of the Finnish Civil War, and an enthusiastic writer. During World War II, his anonymous reports on the war and foreign politics received a large audience in the Suomen Kuvalehti magazine. Even during his presidency, he wrote humorous, informal columns (causerie) for the same magazine, edited by his long-time friend Ilmari Turja, under several pseudonyms.",
+            "Cite error: There are <ref group=lower-alpha> tags or {{efn}} templates on this page, but the references will not show without a {{reflist|group=lower-alpha}} template or {{notelist}} template (see the help page)."
+          ]
+        },
+        "uk": {
+          "status": "available",
+          "title": "Урго Кекконен",
+          "pageId": 891925,
+          "qid": "Q179858",
+          "revision": 48808566,
+          "timestamp": "2026-09-07T19:50:33Z",
+          "url": "https://uk.wikipedia.org/w/index.php?oldid=48808566",
+          "paragraphs": [
+            "У́рго Ка́лева Ке́кконен (фін. Urho Kaleva Kekkonen, 3 вересня 1900, Піелавесі — 31 серпня 1986 Гельсінки) — фінський державний діяч, восьмий президент Фінляндії (1956—1982)."
+          ]
+        },
+        "ru": {
+          "status": "available",
+          "title": "Кекконен, Урхо",
+          "pageId": 29047,
+          "qid": "Q179858",
+          "revision": 153780910,
+          "timestamp": "2026-07-01T17:41:04Z",
+          "url": "https://ru.wikipedia.org/w/index.php?oldid=153780910",
+          "paragraphs": [
+            "У́рхо Ка́лева Ке́кконен (фин. Urho Kaleva Kekkonen; 3 сентября 1900, Пиэлавеси — 31 августа 1986, Хельсинки) — финский политик, восьмой президент Финляндии."
+          ]
+        }
+      },
+      "hash": "03878c41185cbf3246a17b628ef396647d525be45b743e942af78057dc2e40d7"
+    },
+    {
+      "id": 11396,
+      "title": "Alexander Stubb",
+      "qid": "Q503143",
+      "readership": {
+        "id": 11396,
+        "title": "Alexander Stubb",
+        "revisions": 1546,
+        "qid": "Q503143",
+        "views": 9827,
+        "days": 29,
+        "from": "2026-10-15",
+        "to": "2026-11-12"
+      },
+      "editions": {
+        "fi": {
+          "status": "available",
+          "title": "Alexander Stubb",
+          "pageId": 11396,
+          "qid": "Q503143",
+          "revision": 24368024,
+          "timestamp": "2026-11-10T11:33:10Z",
+          "url": "https://fi.wikipedia.org/w/index.php?oldid=24368024",
+          "paragraphs": [
+            "Cai-Göran Alexander Stubb (s. 1. huhtikuuta 1968 Helsinki) on suomalainen kokoomustaustainen poliitikko ja Suomen tasavallan 13. presidentti. Hän aloitti tehtävässään 1. maaliskuuta 2024.",
+            "Aiemmin Stubb on toiminut ulkoministerinä vuosina 2008–2011, ulkomaankauppa- ja eurooppaministerinä 2011–2014, Suomen pääministerinä 2014–2015 ja valtiovarainministerinä 2015–2016. Lisäksi hän on toiminut europarlamentaarikkona vuosina 2004–2008, kansanedustajana 2011–2017 ja Kansallisen Kokoomuksen puheenjohtajana 2014–2016.",
+            "Vuosina 2017–2020 Stubb toimi Euroopan investointipankin varapääjohtajana. Sen jälkeen hänet valittiin professoriksi ja School of Transnational Governance -yksikön johtajaksi Italian Firenzessä toimivaan Yliopistolliseen Eurooppa-instituuttiin (EUI).",
+            "Tasavallan presidentiksi Stubb valittiin hänen voitettuaan vuoden 2024 presidentinvaalin toisen kierroksen. Presidentin tehtävässä hän seuraa Sauli Niinistöä."
+          ]
+        },
+        "en": {
+          "status": "available",
+          "title": "Alexander Stubb",
+          "pageId": 1767274,
+          "qid": "Q503143",
+          "revision": 1384847576,
+          "timestamp": "2026-11-10T10:09:49Z",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1384847576",
+          "paragraphs": [
+            "Cai-Göran Alexander Stubb (born 1 April 1968) is a Finnish politician serving as the president of Finland since 2024. A member of the National Coalition Party, he previously served as prime minister of Finland from 2014 to 2015 and has held several senior ministerial posts since 2008.",
+            "Rising in politics as a researcher specialised in the European Union, he was elected to the European Parliament in 2004 and was appointed Minister for Foreign Affairs in 2008. In 2011, he was elected to the Parliament of Finland and was later appointed Minister for European Affairs and Trade in the Cabinet of Jyrki Katainen.",
+            "In 2014, Stubb succeeded Katainen as leader of the National Coalition Party and was appointed prime minister by President Sauli Niinistö on 24 June, forming a five-party coalition government. Following his party's loss in the 2015 parliamentary election, he served as Minister of Finance under Prime Minister Juha Sipilä. After losing the party leadership to Petteri Orpo in June 2016, Stubb stepped down as finance minister and resigned from parliament in 2017 to become vice-president of the European Investment Bank. He later served as director and professor at the European University Institute's School of Transnational Governance until 2023.",
+            "In 2023, Stubb announced his candidacy in the 2024 Finnish presidential election. He won the second round with 51.6% of the vote against former foreign minister Pekka Haavisto and took office as president in March 2024. Stubb is the second Finland-Swedish president in Finland's history, after Carl Gustaf Emil Mannerheim, and the first to be elected to the office.",
+            "Cite error: There are <ref group=lower-alpha> tags or {{efn}} templates on this page, but the references will not show without a {{reflist|group=lower-alpha}} template or {{notelist}} template (see the help page)."
+          ]
+        },
+        "uk": {
+          "status": "available",
+          "title": "Александр Стубб",
+          "pageId": 890959,
+          "qid": "Q503143",
+          "revision": 48640617,
+          "timestamp": "2026-08-25T14:38:08Z",
+          "url": "https://uk.wikipedia.org/w/index.php?oldid=48640617",
+          "paragraphs": [
+            "Кай-Єран Александер Стубб (швед. Cai-Göran Alexander Stubb; нар. 1 квітня 1968, Гельсінкі, Фінляндія) — фінський і європейський державний діяч, дипломат. Президент Фінляндії з 1 березня 2024 року, колишній Прем'єр-міністр Фінляндії (2014—2015).",
+            "Був міністром з європейських справ і зовнішньої торгівлі в уряді Юркі Катайнена у 2011 — 2014. У 2008 —2011 роках був міністром закордонних справ Фінляндії. У 2008 році обіймав посаду голови Організації з безпеки і співробітництва в Європі (ОБСЄ). У 2004—2008 роках був членом Європарламенту від фінської правоцентристської Національної коаліційної партії. Працював у представництві Фінляндії в Європейському Союзі."
+          ]
+        },
+        "ru": {
+          "status": "available",
+          "title": "Стубб, Александр",
+          "pageId": 1500554,
+          "qid": "Q503143",
+          "revision": 155494140,
+          "timestamp": "2026-10-08T16:42:22Z",
+          "url": "https://ru.wikipedia.org/w/index.php?oldid=155494140",
+          "paragraphs": [
+            "Кай-Йоран Александр Стубб (швед. Cai-Göran Alexander Stubb; род. 1 апреля 1968, Хельсинки) — финский государственный и политический деятель. Президент Финляндии с 1 марта 2024 года.",
+            "Член консервативной Национальной коалиционной партии и её председатель с 2014 по 2016 год. Начал политическую карьеру как дипломат в 1999 году, в 2004 году избран в Европарламент VI созыва. В течение 2008 года возглавлял ОБСЕ. До избрания президентом занимал должность министра иностранных дел (2008—2011), министра по делам ЕС и внешней торговли (2011—2014), премьер-министра (2014—2015), министра финансов (2015—2016), депутата Парламента (2011—2017) и заместителя президента Европейского инвестиционного банка (EIB) (2017—2020).",
+            "В 2023 году Стубб объявил о своём участии в президентских выборах 2024 года. В первом туре он получил 27,21 % голосов и вышел во второй тур вместе с бывшим министром иностранных дел Пеккой Хаависто. По результатам второго тура Стубб получил 51,62 %, тем самым выиграв выборы. Александр Стубб стал вторым президентом Финляндии финско-шведского происхождения после Карла Густава Маннергейма."
+          ]
+        }
+      },
+      "hash": "2a33b4675842e11e2c0d7fd5ea08e0081981843ee88bd9c780348a025b840a46"
+    },
+    {
+      "id": 6021,
+      "title": "Carl Gustaf Emil Mannerheim",
+      "qid": "Q152306",
+      "readership": {
+        "id": 6021,
+        "title": "Carl Gustaf Emil Mannerheim",
+        "revisions": 2400,
+        "qid": "Q152306",
+        "views": 9142,
+        "days": 30,
+        "from": "2026-10-15",
+        "to": "2026-11-13"
+      },
+      "editions": {
+        "fi": {
+          "status": "available",
+          "title": "Carl Gustaf Emil Mannerheim",
+          "pageId": 6021,
+          "qid": "Q152306",
+          "revision": 24345690,
+          "timestamp": "2026-10-29T09:05:49Z",
+          "url": "https://fi.wikipedia.org/w/index.php?oldid=24345690",
+          "paragraphs": [
+            "Carl Gustaf Emil Mannerheim (4. kesäkuuta 1867 Askainen – 27. tammikuuta 1951 Lausanne, Sveitsi) oli vapaaherra, itsenäisen Suomen toinen valtionhoitaja (1918–1919), kuudes presidentti (1944–1946), sotien aikainen puolustusvoimien ylipäällikkö (1918–1919 ja 1939–1945) ja Suomen marsalkka. Ennen Suomen itsenäistymistä Mannerheim palveli lähes kolmekymmentä vuotta Venäjän keisarillisessa armeijassa, jossa osallistui Venäjän–Japanin sotaan ja ensimmäisen maailmansodan itärintaman taisteluihin. Mannerheim käytti itsestään useimmiten etunimeä Gustaf.",
+            "Muiden toimiensa ohella Mannerheim johti Suomen Punaista Ristiä 30 vuotta ja perusti Mannerheimin Lastensuojeluliiton. Mannerheim on yksi itsenäisen Suomen historian keskeisistä henkilöistä, ja jo eläessään hän oli sekä maan arvostetuimpia että kiistellyimpiä ihmisiä. Vuonna 2004 hänet äänestettiin suurimmaksi suomalaiseksi Yleisradion Suuret suomalaiset -kilpailuohjelmassa."
+          ]
+        },
+        "en": {
+          "status": "available",
+          "title": "Carl Gustaf Emil Mannerheim",
+          "pageId": 164614,
+          "qid": "Q152306",
+          "revision": 1384694134,
+          "timestamp": "2026-11-09T16:58:47Z",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1384694134",
+          "paragraphs": [
+            "Baron Carl Gustaf Emil Mannerheim (Finland Swedish: [kɑːrl ˈɡʉstɑv ˈeːmil ˈmɑnːærhejm] , 4 June 1867 – 27 January 1951) was a Finnish military commander and statesman. He served as the military leader of the Whites in the Finnish Civil War (1918), as regent of Finland (1918–1919), as commander-in-chief of the Finnish Defence Forces during World War II (1939–1945), and as the president of Finland (1944–1946). He became Finland's only field marshal in 1933 and was appointed honorary Marshal of Finland in 1942.",
+            "Born into a Swedish-speaking aristocratic family in the Grand Duchy of Finland, Mannerheim made a career in the Imperial Russian Army, serving in the Russo-Japanese War and the Eastern Front of World War I and rising by 1917 to the rank of lieutenant general. He had a prominent place in the 1896 coronation ceremonies for Emperor Nicholas II and later had several private meetings with him. After the Bolshevik coup of November 1917 in Russia, Finland declared its independence on 6 December, but soon became embroiled in the 1918 Finnish Civil War between the Whites, who were the troops of the Senate of Finland (supported by troops of the German Empire), and the socialist Reds.",
+            "A Finnish delegation appointed Mannerheim as the military chief of the Whites in January 1918, and he led them to victory, holding a triumphal victory parade in Helsinki in May. After spending some time abroad, he was invited back to Finland to serve as the country's second regent, or head of state, from December 1918 to July 1919. He secured the recognition of Finnish independence by multiple Entente powers and, despite being a monarchist, formally ratified the republican Constitution of Finland. He then ran against K. J. Ståhlberg in the first Finnish presidential elections in 1919 but lost and quit politics. Mannerheim helped found the Mannerheim League for Child Welfare in 1920 and headed the Finnish Red Cross from 1922 to his death. He was restored to a central role in national defence policy when President Svinhufvud appointed him as the Chairman of the Finnish Defence Council in 1931, tasked with making preparations for a potential war with the Soviet Union. It was also agreed that he would temporarily take over as commander-in-chief of the country's armed forces in the event of a war.",
+            "Accordingly, after the Soviet Union invaded Finland in November 1939 in what became the Winter War, Mannerheim replaced President Kyösti Kallio as commander-in-chief, and occupied the post for the next five years. He became a unifying symbol of the war effort and part of the core leadership of the country. He personally participated in the planning of Operation Barbarossa and led the Finnish Defence Forces in an invasion of the Soviet Union alongside Nazi Germany known as the Continuation War (1941–1944). In 1944, when the prospect of Nazi Germany's defeat in World War II became clear, the Parliament of Finland unanimously appointed Mannerheim as the President, and he oversaw peace negotiations with the Soviet Union and the United Kingdom, leading to the Lapland War. Already in declining health, he resigned the presidency in 1946 and spent much of his remaining life in a sanatorium in Switzerland, where he wrote his memoirs, and where he died in 1951.",
+            "Participants in a Finnish survey taken 53 years after his death voted Mannerheim the greatest Finn of all time. During his own lifetime he became, alongside Jean Sibelius, the best-known Finnish personage at home and abroad. According to historian Tuomas Tepora, a cult of personality began to be built around Mannerheim after the civil war.",
+            "Given the broad recognition in Finland and elsewhere of his unparalleled role in establishing and later preserving Finland's independence from the Soviet Union, Mannerheim has long been referred to as the father of modern Finland, and The New York Times called the Finnish capital Helsinki's Mannerheim Museum, memorializing the leader's life and times, \"the closest thing there is to a [Finnish] national shrine\".",
+            "Cite error: There are <ref group=lower-alpha> tags or {{efn}} templates on this page, but the references will not show without a {{reflist|group=lower-alpha}} template or {{notelist}} template (see the help page)."
+          ]
+        },
+        "uk": {
+          "status": "available",
+          "title": "Карл Густав Маннергейм",
+          "pageId": 9753,
+          "qid": "Q152306",
+          "revision": 49146020,
+          "timestamp": "2026-11-13T04:23:15Z",
+          "url": "https://uk.wikipedia.org/w/index.php?oldid=49146020",
+          "paragraphs": [
+            "Ка́рл Гу́став Емі́ль Маннерге́йм (швед. Carl Gustaf Emil Mannerheim швед. вимова: [kɑːɭ ˈɡɵ̂sːtav ˈěːmɪl ˈmânːɛrˌhɛjm], Фінляндською Шведською: [kɑːrl ˈɡʉstɑv ˈeːmil ˈmɑnːærˌhejm] ( прослухати), 4 червня 1867(18670604) — 27 січня 1951, Лозанна) — фінський державний та військовий діяч шведського походження, генерал-лейтенант російської імператорської армії (1917), генерал від кавалерії (1918) фінської армії, фельдмаршал (1933), з 1942 року — маршал Фінляндії (почесне звання), барон. Учасник російсько-японської війни. Регент Королівства Фінляндія (12 грудня 1918 — 26 червня 1919), 6-й президент Фінляндії (4 серпня 1944 — 11 березня 1946). Командувач військовими силами Білої гвардії у Фінській громадянській війні в 1918 році, головнокомандувач збройних сил Фінляндії у часи Другої світової війни.",
+            "За даними опитування, найвеличніший діяч у фінській історії усіх часів. Визнаний за його провідну роль у створенні незалежної Фінляндії та виключні заслуги у відстоюванні своєї держави від зазіхань більшовицької Росії, Карл Густав Маннергейм вважається «батьком сучасної Фінляндії»."
+          ]
+        },
+        "ru": {
+          "status": "available",
+          "title": "Маннергейм, Карл Густав Эмиль",
+          "pageId": 54414,
+          "qid": "Q152306",
+          "revision": 155820642,
+          "timestamp": "2026-10-26T10:29:45Z",
+          "url": "https://ru.wikipedia.org/w/index.php?oldid=155820642",
+          "paragraphs": [
+            "Барон Карл Гу́став Эми́ль Ма́ннергейм (швед. и фин. Carl Gustaf Emil Mannerheim, МФА (швед.): МФА: [kɑːrl ˈɡʉstɑv ˈeːmil ˈmɑnːærhejm]; 4 июня 1867 (по другим данным 16 июня или 4 (16) июня), имение Виллнэс (другое написание — Виллнес; ныне Аскайнен), Або-Бьёрнеборгская губерния, Великое княжество Финляндское, Российская империя — 27 января 1951, Лозанна, Швейцария) — финский государственный и политический деятель шведского происхождения, русский и финский военный деятель.",
+            "Генерал-лейтенант русской армии (25 апреля 1917), генерал от кавалерии (7 марта 1918) финляндской армии, фельдмаршал (19 мая 1933), маршал Финляндии (только как почётное звание) (4 июня 1942), регент Королевства Финляндия с 12 декабря 1918 года по 26 июля 1919 года, президент Финляндии с 4 августа 1944 года по 11 марта 1946 года.",
+            "В качестве личного имени им использовалось второе имя, Гу́став; во время службы в русской армии он назывался Густа́вом Ка́рловичем; иногда его звали на финский манер — Ку́стаа.",
+            "Ошибка в сносках: Для существующих тегов <ref> группы «комм.» не найдено соответствующего тега <references group=\"комм.\"/>"
+          ]
+        }
+      },
+      "hash": "046a9a35e84d08e96d52b3007e22ca9f88ef5dd556f6ffb77a2cf513a9fe16f0"
+    },
+    {
+      "id": 1137,
+      "title": "Sauli Niinistö",
+      "qid": "Q29207",
+      "readership": {
+        "id": 1137,
+        "title": "Sauli Niinistö",
+        "revisions": 2257,
+        "qid": "Q29207",
+        "views": 8162,
+        "days": 30,
+        "from": "2026-10-15",
+        "to": "2026-11-13"
+      },
+      "editions": {
+        "fi": {
+          "status": "available",
+          "title": "Sauli Niinistö",
+          "pageId": 1137,
+          "qid": "Q29207",
+          "revision": 24345839,
+          "timestamp": "2026-10-29T11:05:36Z",
+          "url": "https://fi.wikipedia.org/w/index.php?oldid=24345839",
+          "paragraphs": [
+            "Sauli Väinämö Niinistö (s. 24. elokuuta 1948 Salo) on suomalainen kokoomustaustainen poliitikko, joka toimi Suomen tasavallan 12. presidenttinä kahden kauden ajan vuosina 2012–2024.",
+            "Juristina työskennellyt Niinistö toimi Salon kaupunginvaltuustossa 1977–1992, kansanedustajana vuosina 1987–2003 ja 2007–2011 ja Kansallisen Kokoomuksen puheenjohtajana 1994–2001. Hän oli mukana Paavo Lipposen ensimmäisessä ja toisessa hallituksessa, ensin oikeusministerinä 1995–1996 ja sitten valtiovarainministerinä 1996–2003. Jälkimmäisessä virassa Niinistö tunnettiin tiukasta talouskuristaan ja työstään 1990-luvun laman jälkeisten säästöjen ja leikkausten parissa. Niinistön ministerikausien aikana Suomesta tuli Euroopan talous- ja rahaliiton jäsen ja euro otettiin käyttöön. Ministeriuran jälkeen hän siirtyi Euroopan investointipankin varapääjohtajaksi vuosiksi 2003–2007. Vuosina 2007–2011 Niinistö oli eduskunnan puhemies.",
+            "Niinistö oli kokoomuksen presidenttiehdokkaana vuoden 2006 presidentinvaalissa ja uudestaan vuoden 2012 vaalissa, jossa hänet valittiin tasavallan presidentiksi toisella kierroksella. Hänestä tuli ensimmäinen kokoomuslainen presidentti sitten Juho Kusti Paasikiven. Vuoden 2018 vaalissa Niinistö oli ehdolla valitsijayhdistyksen kautta ja voitti vaalit ensimmäisellä kierroksella yli 60 prosentin äänikannatuksella. Näin hänestä tuli myös ensimmäinen Suomen tasavallan presidentti, joka on valittu suorassa kansanvaalissa virkaansa jo ensimmäisellä kierroksella. Kautensa aikana Niinistö oli mielipidekyselyissä hyvin suosittu."
+          ]
+        },
+        "en": {
+          "status": "available",
+          "title": "Sauli Niinistö",
+          "pageId": 1042690,
+          "qid": "Q29207",
+          "revision": 1383302116,
+          "timestamp": "2026-11-02T00:45:29Z",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1383302116",
+          "paragraphs": [
+            "Sauli Väinämö Niinistö (born 24 August 1948) is a Finnish politician who served as the president of Finland from 2012 to 2024.",
+            "A lawyer by education, Niinistö was Chairman of the National Coalition Party (NCP) from 1994 to 2001, Minister of Justice from 1995 to 1996, Minister of Finance from 1996 to 2003, Deputy Prime Minister from 1995 to 2001 and the NCP candidate in the 2006 presidential election. He served as the Speaker of the Parliament of Finland from 2007 to 2011 and has been the honorary president of the European People's Party (EPP) since 2002.",
+            "Niinistö was the NCP candidate in the 2012 presidential election, defeating Pekka Haavisto of the Green League with 62.6% of the vote in the decisive second round. Niinistö assumed office on 1 March 2012; he is the first NCP president since Juho Kusti Paasikivi, who left office in 1956. In May 2017, Niinistö announced that he would seek reelection in the 2018 presidential election, running as an independent candidate. The NCP and Christian Democrats (KD) supported his candidacy. He won reelection in the first round on 28 January 2018 with 62.7% of the vote and his second term began on 1 February 2018.",
+            "In a 2023 poll conducted by MTV Uutiset, Niinistö was ranked as Finland's greatest president of all time.",
+            "Cite error: There are <ref group=lower-alpha> tags or {{efn}} templates on this page, but the references will not show without a {{reflist|group=lower-alpha}} template or {{notelist}} template (see the help page)."
+          ]
+        },
+        "uk": {
+          "status": "available",
+          "title": "Саулі Нійністе",
+          "pageId": 1242259,
+          "qid": "Q29207",
+          "revision": 45994243,
+          "timestamp": "2025-08-20T16:57:49Z",
+          "url": "https://uk.wikipedia.org/w/index.php?oldid=45994243",
+          "paragraphs": [
+            "Са́улі Вя́йняме Ні́йністе (фін. Sauli Väinämö Niinistö; нар. 24 серпня 1948, Сало) — 12-й президент Фінляндії (2012—2024). Представник Національної коаліційної партії.",
+            "Обраний на посаду президента Фінляндії 5 лютого 2012 року, інавгурація відбулась 1 березня 2012. За освітою юрист, був міністром фінансів з 1996 до 2003 року, а також кандидатом у президенти на виборах 2006 року. З 2007 по 2011 був спікером парламенту Фінляндії. З 2002 — почесний президент Європейської народної партії. Крім того, він був президентом Футбольної асоціації Фінляндії.",
+            "Нійністе був кандидатом у президенти від НКП на виборах 2012 року. У першому турі він посів перше місце, набравши 37,0 % голосів, після чого в другому турі змагався з Пекка Гаавісто від Зеленого союзу. У другому турі Нійністе набрав 62,6 %, тоді як його суперник — 37,4 %."
+          ]
+        },
+        "ru": {
+          "status": "available",
+          "title": "Ниинистё, Саули",
+          "pageId": 1622624,
+          "qid": "Q29207",
+          "revision": 155568440,
+          "timestamp": "2026-10-12T02:40:24Z",
+          "url": "https://ru.wikipedia.org/w/index.php?oldid=155568440",
+          "paragraphs": [
+            "Са́ули Вя́йнямё Ни́инистё (фин. Sauli Väinämö Niinistö [ˈsɑu̯li ˈʋæi̯næmø ˈniːnistø]; род. 24 августа 1948, Сало, Турку-Пори) — финский государственный и политический деятель, юрист. Президент Финляндии в течение двух сроков — с 1 марта 2012 года по 1 марта 2024 года (был переизбран в 2018 году).",
+            "С 1987 по 2003 годы и с 2007 по 2011 годы — депутат парламента Финляндии от правоцентристской партии «Национальная коалиция»; в 2007—2011 годах — спикер парламента Финляндии (до выборов в апреле 2011 года). До своего избрания президентом Финляндии возглавлял Финский футбольный союз в 2009—2012 годах, был председателем оргкомитета чемпионата Европы по фигурному катанию 2009 года.",
+            "В 2013 году в связи с 65-летием удостоен степени почётного доктора Университета Ювяскюля."
+          ]
+        }
+      },
+      "hash": "226534faef834e3b30ce55111242225befc60e6ada950587d5cce6692d3848ae"
+    },
+    {
+      "id": 1150,
+      "title": "Suomen sisällissota",
+      "qid": "Q211855",
+      "readership": {
+        "id": 1150,
+        "title": "Suomen sisällissota",
+        "revisions": 3357,
+        "qid": "Q211855",
+        "views": 7591,
+        "days": 29,
+        "from": "2026-10-15",
+        "to": "2026-11-12"
+      },
+      "editions": {
+        "fi": {
+          "status": "available",
+          "title": "Suomen sisällissota",
+          "pageId": 1150,
+          "qid": "Q211855",
+          "revision": 24307521,
+          "timestamp": "2026-10-07T15:15:52Z",
+          "url": "https://fi.wikipedia.org/w/index.php?oldid=24307521",
+          "paragraphs": [
+            "Suomen sisällissota käytiin Suomen senaatin ja Suomen kansanvaltuuskunnan johtamien joukkojen välillä 27. tammikuuta – 15. toukokuuta 1918. Senaatin asevoimina olivat valkoiset joukot ja kansanvaltuuskunnan joukkoina Suomen Punainen Kaarti eli punaiset. Lisäksi keisarillisen Saksan armeija tuki valkoisia, ja Neuvosto-Venäjä tuki punaisia pääasiassa toimittamalla näille aseita ja muuta sotamateriaalia.",
+            "Sisällissota oli osa ensimmäisen maailmansodan aiheuttamaa valtiollista ja yhteiskunnallista murrosvaihetta Euroopassa. Vuonna 1917 maailmansota johti Venäjän keisarikunnan hajoamiseen ja poliittiseen taisteluun vallasta sekä lopulta Venäjän sisällissotaan. Venäjän romahduksen seurauksena keisarikunnan osa, Suomen suuriruhtinaskunta, julistautui itsenäiseksi Suomeksi 6. joulukuuta 1917. Suomalaisen yhteiskunnan sisäisten jännitteiden korostuminen ja purkautuminen johti kuitenkin valtiovallan hajoamisen kautta vuoden 1917 kuluessa valtapoliittiseen ja sotilaalliseen kriisiin, jonka seurauksena maahan muodostui kaksi aseistetuilla joukoilla varustautunutta valtakeskusta. Sisällissodan syttymiseen vaikutti myös taloudelliset syyt ja sen aiheuttama nälkä. Kriisi kärjistyi tammikuun lopussa vuonna 1918 sisällissodaksi punaisten ja valkoisten välille. Punaiset hallitsivat Etelä-Suomea, valkoiset Keski- ja Pohjois-Suomea. Molempien osapuolten sotilaallinen vahvuus oli noin 80 000 sotilasta.",
+            "Helmikuussa 1918 alkanut punaisten hyökkäysvaihe epäonnistui lähes täysin, ja sodan ratkaisutaistelut käytiin maalis–huhtikuussa 1918. Tampereen taistelu alkoi 16. maaliskuuta ja päättyi 6. huhtikuuta C. G. E. Mannerheimin johtamien valkoisten joukkojen voittoon. Kenraalimajuri Rüdiger von der Goltzin johtama Saksan Itämeren-divisioona oli noussut 3. huhtikuuta maihin Etelä-Suomeen noin 13 000 sotilaan vahvuisin joukoin tukemaan valkoisia. Saksalaiset valtasivat huhtikuun aikana Helsingin, Lahden ja muita eteläsuomalaisia kaupunkeja. Punaisten poliittinen johto vetäytyi Helsingin menetyksen jälkeen itään Suomen toiseksi suurimpaan kaupunkiin Viipuriin. Valkoiset valtasivat huhtikuun lopussa vielä Viipurin. Saksan interventio lyhensi sodan kestoa merkittävästi.",
+            "Sisällissota päättyi 15. toukokuuta 1918 valkoisen Suomen voittoon. Suomen itsenäisyys, jonka olivat jo 4. tammikuuta 1918 tunnustaneet Venäjä, Ranska, Ruotsi ja Saksa ja heti perään useat muut valtiot, sai vahvistuksensa. Saksan keisarikunta romahti syksyllä 1918, ja saksalaisjoukot poistuivat Suomesta joulukuussa 1918. Samalla luovuttiin hankkeesta muuttaa Suomi kuningas­kunnaksi muiden Pohjoismaiden tapaan, ja sen sijaan Suomen valtiomuodoksi tuli tasavaltainen demokratia Euroopan läntisten suurvaltojen myötävaikutuksella.",
+            "Sisällissodasta tuli Suomen historian ristiriitaisin tapahtuma, jonka vaikutukset suomalaisiin ja suomalaiseen yhteiskuntaan ovat olleet poikkeuksellisen pitkäkestoiset. Kuten usein käy kansojen sisäisissä valtataisteluissa, sodan aikana ja sen jälkeen esiintyi laajamittaista terroria. Sotatoimien ollessa käynnissä molemmat osapuolet syyllistyivät poliittiseen terroriin ja raakuuksiin. Sodan kuluessa punaisten käsissä kuoli 1 424 valkoista teloitettuna, 4 kuoli vankileirillä. Valkoisten käsissä kuoli 7 370 punaista teloitettuna, 11 652 kuoli vankileirillä, suurin osa sotatoimien jo päätyttyä, sillä punaisten tai punaisiksi epäiltyjen vangitseminen ja teloittaminen jatkui laajamittaisesti vielä viimeisten taistelijoiden antauduttua. Kaikkiaan sisällissota vaati noin 38 000 uhria. Näistä noin 75 prosenttia oli punaisia, joita kuoli eniten teloituksissa sodan aikana ja sodan päätyttyä vankileireillä nälkään ja tauteihin. Varsinaisissa taistelutoimissa kuoli lähes yhtä paljon sekä punaisia että valkoisia. Terrorin uhreista vähemmistö oli valkoisia, ja myös Venäjän kansalaisia teloitettiin. Sodan muut uhrit olivat lähinnä taisteluissa kaatuneita saksalaisia ja venäläisiä sotilaita."
+          ]
+        },
+        "en": {
+          "status": "available",
+          "title": "Finnish Civil War",
+          "pageId": 11772,
+          "qid": "Q211855",
+          "revision": 1385549379,
+          "timestamp": "2026-11-13T22:07:10Z",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1385549379",
+          "paragraphs": [
+            "The Finnish Civil War was fought in 1918 for the leadership and control of recently independent Finland (formerly part of Russia) between White Finland and the Finnish Socialist Workers' Republic (Red Finland). The clashes took place in the context of the national, political, and social turmoil caused by World War I (Eastern Front) in Europe. The belligerents were the paramilitary Red Guards, led by a section of the Social Democratic Party with backup of the Russian bolsheviks, and the paramilitary White Guards of the senate. General C. G. E. Mannerheim led the White Guards with major assistance by both the Finnish Jäger Battalion trained in Germany and from March-April 1918 by the German Imperial Army, along the German goal to control Fennoscandia and Petrograd of Russia. The Reds, composed of industrial and agrarian working class people, controlled the cities and industrial centres of southern Finland. The Whites, composed of land owners and the middle and upper class, controlled the rural central and northern Finland.",
+            "In the years before the civil war, Finland had experienced rapid population growth, industrialisation, gradually increasing urbanisation and the rise of a comprehensive labour movement. The country's political and governmental systems were in an unstable phase of democratisation and modernisation. The socio-economic condition and education of the population had gradually improved, and national awareness and culture had progressed. World War I led to the collapse of the Russian Empire, causing a power vacuum in Finland, and the subsequent struggle for dominance led to militarisation and an escalating crisis between the left-leaning labour movement and the conservatives.",
+            "The Reds carried out an unsuccessful general offensive in February 1918, supplied with weapons by Soviet Russia. A counteroffensive by the Whites began in March, reinforced by the German Empire's military detachments in April. The decisive engagements were the Battles of Tampere and Viipuri, won by the Whites, and the Battles of Helsinki and Lahti, won by German troops, leading to overall victory for the Whites and the German forces. Political violence became a part of this warfare with around 12,000 casualties - most of them were Reds. Moreover, about 12,500 Red prisoners died of malnutrition and disease in camps. In total around 38,000 people died in the conflict, where around one million Finns of the total population of three million had been more or less involved with.",
+            "In the immediate aftermath, Finland passed from the sphere of influence of Soviet Russia to the German power sphere with a plan to establish a German-led Finnish monarchy. The scheme ended with Germany's defeat in World War I, and Finland instead emerged as a sovereign, democratic, constitutional state with proper civil society. The civil war divided the nation for decades. The Finnish society was gradually reunited through social compromises based on a long-term culture of moderate politics, religion and a post-war economic recovery.",
+            "Cite error: There are <ref group=lower-alpha> tags or {{efn}} templates on this page, but the references will not show without a {{reflist|group=lower-alpha}} template or {{notelist}} template (see the help page)."
+          ]
+        },
+        "uk": {
+          "status": "available",
+          "title": "Громадянська війна у Фінляндії",
+          "pageId": 1685931,
+          "qid": "Q211855",
+          "revision": 49119098,
+          "timestamp": "2026-11-09T10:49:11Z",
+          "url": "https://uk.wikipedia.org/w/index.php?oldid=49119098",
+          "paragraphs": [
+            "Громадянська війна у Фінляндії — внутрішній збройний конфлікт у Фінляндії в першій половині 1918 року із залученням зовнішніх сил.",
+            "У роки, що передували конфлікту, Фінляндія переживала швидке зростання населення, індустріалізацію, урбанізацію та піднесення всеохоплюючого робітничого руху. Політична та урядова системи країни перебували в нестабільній фазі демократизації та модернізації. Соціально-економічний стан та освіта населення поступово покращувалися, а національна свідомість та культура розвивалися. Перша світова війна призвела до розпаду Російської імперії, спричинивши вакуум влади у Фінляндії, а подальша боротьба за домінування спричинила мілітаризацію та ескалацію кризи між лівим робітничим рухом та консерваторами. Червоні здійснили невдалий генеральний наступ у лютому 1918 року, отримавши зброю від Радянської Росії. Контрнаступ білих розпочався у березні, підкріплений військовими загонами Німецької імперії у квітні. Вирішальними сутичками стали битви під Тампере та Війпурі, виграні білими, та битви під Гельсінкі та Лахті, виграні німецькими військами, що призвело до загальної перемоги білих та німецьких військ. Політичне насильство стало частиною цієї війни, в якій загинуло близько 12 000 людей, більшість з яких були червоними. Крім того, близько 12 500 червоних в'язнів померли від недоїдання та хвороб у таборах. Загалом у конфлікті загинуло 39 000 людей, з яких 36 000 були фінами.",
+            "Війна відбулася між силами «білих», які підтримувала імперська Німеччина та силами «червоних», які підтримувала більшовицька Росія. Конфлікт у Фінляндії став однією зі складових Першої світової війни, бувши нею ж, значною мірою, і спричиненим.",
+            "Відразу після цього фіни перейшли з-під російського правління до сфери впливу Німеччини з планом встановлення фінської монархії під керівництвом Німеччини. Цей план завершився поразкою Німеччини у Першій світовій війні, і Фінляндія натомість стала незалежною демократичною республікою. Громадянська війна розділяла країну на десятиліття. Фінське суспільство возз'єдналося завдяки соціальним компромісам, заснованим на довготривалій культурі поміркованої політики, релігії та післявоєнного економічного відновлення."
+          ]
+        },
+        "ru": {
+          "status": "available",
+          "title": "Гражданская война в Финляндии",
+          "pageId": 595445,
+          "qid": "Q211855",
+          "revision": 155541128,
+          "timestamp": "2026-10-10T18:26:16Z",
+          "url": "https://ru.wikipedia.org/w/index.php?oldid=155541128",
+          "paragraphs": [
+            "Гражда́нская война́ в Финля́ндии (фин. Suomen sisällissota) — вооружённый конфликт между сторонниками (красными) и противниками (белыми, белофиннами) установления коммунистической власти в стране, шедший с 27 января по 15 мая 1918 года. Финская гражданская война была одним из многих национальных и социальных конфликтов в Европе первой четверти XX века.",
+            "Красных поддерживала Советская Россия; белые получали помощь от Германии и Швеции. Обе воюющие стороны прибегали к внесудебным казням и террору."
+          ]
+        }
+      },
+      "hash": "a298512f973c3ec7c1b81f8b371023684a10eec829743a071e23615af735f046"
+    },
+    {
+      "id": 440,
+      "title": "Jatkosota",
+      "qid": "Q122100",
+      "readership": {
+        "id": 440,
+        "title": "Jatkosota",
+        "revisions": 1671,
+        "qid": "Q122100",
+        "views": 7584,
+        "days": 30,
+        "from": "2026-10-15",
+        "to": "2026-11-13"
+      },
+      "editions": {
+        "fi": {
+          "status": "available",
+          "title": "Jatkosota",
+          "pageId": 440,
+          "qid": "Q122100",
+          "revision": 24333541,
+          "timestamp": "2026-10-22T20:10:51Z",
+          "url": "https://fi.wikipedia.org/w/index.php?oldid=24333541",
+          "paragraphs": [
+            "Jatkosota oli sota, joka käytiin Suomen ja Neuvostoliiton välillä osana toista maailmansotaa 25. kesäkuuta 1941 – 19. syyskuuta 1944. Sitä pidetään talvisodan jatkeena. Jatkosotaa käytiin Suomen rintamalla samaan aikaan, kun Saksa toteutti laajaa hyökkäystä Neuvostoliittoon. Hyökkäys käynnisti itärintaman, joka päättyi vasta Saksan antautumiseen keväällä 1945. Suomen rintama oli jaettu saksalaisten ja suomalaisten joukkojen kesken siten, että suomalaiset olivat vastuussa eteläisestä rintamasta ja saksalaiset Lapin rintamasta.",
+            "Suomi ei ollut lain mukaan Saksan liittolainen, sillä mitään liittosopimusta ei ollut. Sen sijaan käytännössä Suomi oli Saksan liittolainen, koska se antoi aluettaan Saksan käyttöön, alisti joukkojaan Saksalle, sai aseapua Saksalta ja soti Saksan kanssa.",
+            "Sodan alussa eteläisellä rintamaosalla suomalaiset joukot valtasivat talvisodassa menetetyt alueet ja etenivät yli Syvärin ja Leningradin puolustuslinjojen tuntumaan. Joulukuussa 1941 hyökkäys kuitenkin pysäytettiin, ja alkoi yli kaksi vuotta kestänyt asemasotavaihe. Pohjoisilla rintamaosilla ei saatu katkaistua Muurmannin rataa, eivätkä saksalaisjoukot kyenneet etenemään Murmanskiin.",
+            "Neuvostoliiton suurhyökkäys kesäkuussa 1944 mursi suomalaisten etummaiset puolustuslinjat. Raskaiden torjuntataistelujen jälkeen aseet laskettiin 4.–5. syyskuuta; tulitauko oli virallisesti määrätty alkaneeksi 4. syyskuuta, mutta neuvostoliittolaiset joukot lopettivat ammunnan paikoittain vasta 5. syyskuuta 1944. Jatkosodan välirauhanehtoihin kuului muun muassa saksalaisten joukkojen pakottaminen pois Suomesta, mikä johti Lapin sotaan Saksaa vastaan 15. syyskuuta 1944. Moskovan välirauha allekirjoitettiin 19. syyskuuta 1944, ja se vahvistettiin Pariisin rauhassa vuonna 1947."
+          ]
+        },
+        "en": {
+          "status": "available",
+          "title": "Continuation War",
+          "pageId": 7712,
+          "qid": "Q122100",
+          "revision": 1384254721,
+          "timestamp": "2026-11-07T10:04:31Z",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1384254721",
+          "paragraphs": [
+            "The Continuation War, also known as the Second Soviet–Finnish War, was a conflict fought by Finland and Nazi Germany against the Soviet Union during World War II. It began with a Finnish declaration of war on 25 June 1941 and ended on 19 September 1944 with the Moscow Armistice. The Soviet Union and Finland had previously fought the Winter War from 1939 to 1940, which ended with the Soviet failure to conquer Finland and the Moscow Peace Treaty. Numerous reasons have been proposed for the Finnish decision to invade, with regaining territory lost during the Winter War regarded as the most common. Other justifications for the conflict include Finnish President Risto Ryti's vision of a Greater Finland and Commander-in-Chief Carl Gustaf Emil Mannerheim's desire to annex East Karelia.",
+            "On 22 June 1941, the Axis Powers invaded the Soviet Union. Three days later, the Soviet Union conducted an air raid on Finnish cities which prompted Finland to declare war and allow German troops in Finland to begin offensive warfare. By September 1941, Finland had regained its post–Winter War concessions to the Soviet Union in Karelia. The Finnish Army continued its offensive past the 1939 border during the invasion of East Karelia and halted it only around 30–32 km (19–20 mi) from the centre of Leningrad. It participated in besieging the city by cutting the northern supply routes and by digging in until 1944. In Lapland, joint German–Finnish forces failed to capture Murmansk or cut the Kirov (Murmansk) Railway. The Soviet Vyborg–Petrozavodsk offensive in June and August 1944 drove the Finns from most of the territories that they had gained during the war, but the Finnish Army halted the offensive in August 1944.",
+            "Hostilities between Finland and the USSR ceased in September 1944 with the signing of the Moscow Armistice in which Finland restored its borders per the 1940 Moscow Peace Treaty and additionally ceded Petsamo and leased the Porkkala Peninsula to the Soviets. Furthermore, Finland was required to pay war reparations to the Soviet Union, accept partial responsibility for the war, and acknowledge that it had been a German ally. Finland was also required by the agreement to expel German troops from Finnish territory, which led to the Lapland War between Finland and Germany.",
+            "Cite error: There are <ref group=lower-alpha> tags or {{efn}} templates on this page, but the references will not show without a {{reflist|group=lower-alpha}} template or {{notelist}} template (see the help page)."
+          ]
+        },
+        "uk": {
+          "status": "available",
+          "title": "Радянсько-фінська війна (1941—1944)",
+          "pageId": 381584,
+          "qid": "Q122100",
+          "revision": 48404129,
+          "timestamp": "2026-07-16T19:41:52Z",
+          "url": "https://uk.wikipedia.org/w/index.php?oldid=48404129",
+          "paragraphs": [
+            "Радя́нсько-фі́нська війна́ (25 червня 1941 — 6 грудня 1941 і 9 червня 1944 — 4 вересня 1944), Війна-продовження, або Каре́льська кампа́нія — бойові дії між фінськими і радянськими військами на Східноєвропейському театрі Другої світової війни.",
+            "У фінській історіографії для назви цих військових дій переважно використовується термін «Війна-продовження» (фін. jatkosota, швед. fortsättningskriget), що, з одного боку, підкреслює той факт, що в ході цієї війни Фінляндія знову зазнала агресії з боку СРСР та що намагалася відновити територіальні втрати, завдані внаслідок Радянсько-фінської війни 1939—1940 років, а також є спробою обґрунтувати самостійний характер війни і таким чином дистанціюватися від нападу Німеччини та її союзників на СРСР.",
+            "У російській та радянській історіографії конфлікт не виділяється в окрему війну, а розглядається як один з театрів так званої Великої Вітчизняної війни. Аналогічним чином Німеччина розглядала свої операції в регіоні як складову частину Другої світової війни."
+          ]
+        },
+        "ru": {
+          "status": "available",
+          "title": "Советско-финская война (1941—1944)",
+          "pageId": 39134,
+          "qid": "Q122100",
+          "revision": 155503827,
+          "timestamp": "2026-10-09T08:23:24Z",
+          "url": "https://ru.wikipedia.org/w/index.php?oldid=155503827",
+          "paragraphs": [
+            "Советско-финская война 1941—1944 годов (в финской историографии — «война-продолжение», фин. jatkosota) — война между СССР, с одной стороны, и Финляндией и нацистской Германией — с другой, проходившая с 1941 по 1944 год, являясь частью Великой Отечественной и Второй мировой войн. В ходе войны Финляндия выступила на стороне стран «оси» и их союзников с целью возвращения утраченных в ходе Зимней войны (1939—1940) территорий, а также захвата территории СССР до «границы трёх перешейков» (Карельского, Олонецкого и Беломорского).",
+            "21—25 июня с территории Финляндии против СССР действовали военно-морские и военно-воздушные силы Германии. 22 июня 1941 года в ответ на занятие финскими войсками демилитаризованной зоны Аландских островов последние в тот же день подверглись бомбардировке советской авиации. 25 июня силы советского воздушного флота нанесли авиаудар по 18 финским аэродромам, задействованным в боевых операциях, и нескольким населённым пунктам — в этот же день правительство Финляндии заявило, что страна находится в состоянии войны с СССР. 29 июня финские войска начали боевые действия против СССР. В ходе наступления летом и осенью 1941 года финская армия заняла большую часть территорий, потерянных в 1940 году, а затем продолжила продвижение, захватив значительные территории Карело-Финской ССР, заняв Петрозаводск и выйдя к реке Свирь в Ленинградской области.",
+            "В 1941—1944 годах войска Финляндии участвовали в блокаде Ленинграда. На оккупированной территории Карело-Финской ССР были созданы концлагеря для русского гражданского населения; в них умерли 4279 человек, а в финском плену — 19 085 советских военнослужащих. К концу 1941 года линия фронта стабилизировалась; в 1942—1943 годах война приобрела преимущественно позиционный характер.",
+            "Со стороны Британской империи в боях принимало участие 151-е крыло королевских ВВС, располагавшееся на территории СССР. Также в боях участвовал 12-й дивизион MAS военно-морских сил Италии, действовавший в составе фино-итало-германской флотилии на Ладожском озере.",
+            "Летом 1944 года советские войска провели Выборгско-Петрозаводскую наступательную операцию, после которой Финляндия начала переговоры о выходе из войны. Боевые действия прекратились 4—5 сентября, а 19 сентября было подписано Московское перемирие. Финляндия сохранила государственную независимость, приняла границу, установленную в 1940 году, уступила СССР Петсамо, передала ему в аренду Порккала-Удд, обязалась выплатить репарации и удалить со своей территории германские войска. Выполнение последнего условия привело к Лапландской войне между Финляндией и Германией. Окончательные условия мира были закреплены Парижским мирным договором 10 февраля 1947 года.",
+            "Ошибка в сносках: Для существующих тегов <ref> группы «lower-alpha» не найдено соответствующего тега <references group=\"lower-alpha\"/>"
+          ]
+        }
+      },
+      "hash": "0f041f639d3d0007f0060e4cc71631b1ec338fb54cd9789b0f42652d1f30a128"
+    },
+    {
+      "id": 1256,
+      "title": "Talvisota",
+      "qid": "Q134949",
+      "readership": {
+        "id": 1256,
+        "title": "Talvisota",
+        "revisions": 2143,
+        "qid": "Q134949",
+        "views": 7574,
+        "days": 29,
+        "from": "2026-10-15",
+        "to": "2026-11-12"
+      },
+      "editions": {
+        "fi": {
+          "status": "available",
+          "title": "Talvisota",
+          "pageId": 1256,
+          "qid": "Q134949",
+          "revision": 24373824,
+          "timestamp": "2026-11-13T10:39:22Z",
+          "url": "https://fi.wikipedia.org/w/index.php?oldid=24373824",
+          "paragraphs": [
+            "Talvisota käytiin Suomen ja Neuvostoliiton välillä 30. marraskuuta 1939 – 13. maaliskuuta 1940. Neuvostoliitto aloitti sodan hyökkäämällä Suomeen ilman sodanjulistusta, ja sota päättyi 105 päivää myöhemmin Moskovan rauhansopimukseen.",
+            "Sotaa edelsivät loka–marraskuussa 1939 käydyt neuvottelut, joissa Neuvostoliitto painosti Suomea siirtämään itärajaa kauemmaksi Leningradista. Neuvostoliitto oli jo elokuussa 1939 solminut Saksan kanssa Molotov–Ribbentrop-sopimuksen, jonka salaisessa lisäpöytäkirjassa Suomi laskettiin osaksi Neuvostoliiton etupiiriä. Myös Suomella ja Neuvostoliitolla oli voimassa hyökkäämättömyyssopimus, mutta Neuvostoliitto purki sen muutamaa päivää ennen sotaa vetoamalla tekaistuihin Mainilan laukauksiin.",
+            "Neuvostoliiton tavoitteena oli vallata koko maa, mutta hyökkäykset pysäytettiin toistuvasti. Sota on tunnettu erityisesti kylmistä talviolosuhteista, suomalaisten mottitaktiikasta, puna-armeijan huomattavista miestappioista sekä talvisodan henkenä tunnetusta kansallisesta yhtenäisyydestä. Suomi vastaanotti ulkomaista apua ja sai riveihinsä vapaaehtoissotilaita. Lisäksi Kansainliitto tuomitsi hyökkäyksen ja erotti Neuvostoliiton jäsenyydestään. Saksa sen sijaan pysyi puolueettomana noudattaakseen sopimustaan Neuvostoliiton kanssa.",
+            "Rauhanneuvottelut käynnistettiin helmikuussa 1940, kun Suomen puolustus alkoi horjua, ja Neuvostoliitto pelkäsi länsivaltojen tuovan joukkoja Suomen tueksi. Suomi menetti Neuvostoliitolle noin kymmenesosan maa-alueistaan, mukaan lukien neljänneksi suurimman kaupunkinsa Viipurin. Sotaa seurasi välirauha, jonka aikana Suomi lähentyi Saksan kanssa, ja jota kesällä 1941 seurasi jatkosota.",
+            "Viittausvirhe: <ref>-elementit löytyivät ryhmälle nimeltä ”lower-alpha”, mutta vastaavaa <references group=\"lower-alpha\"/>-elementtiä ei löytynyt."
+          ]
+        },
+        "en": {
+          "status": "available",
+          "title": "Winter War",
+          "pageId": 33924,
+          "qid": "Q134949",
+          "revision": 1384334162,
+          "timestamp": "2026-11-07T19:50:21Z",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1384334162",
+          "paragraphs": [
+            "The Winter War was a war between the Soviet Union and Finland. It began with a Soviet invasion of Finland on 30 November 1939, three months after the outbreak of World War II, and ended three and a half months later with the Moscow Peace Treaty on 13 March 1940. Despite superior military strength, especially in tanks and aircraft, the Soviet Union suffered severe losses and initially made little headway. The League of Nations deemed the attack illegal and expelled the Soviet Union from its organization.",
+            "The Soviets made several demands, including that Finland cede substantial border territories in exchange for land elsewhere, claiming security reasons — primarily the protection of Leningrad, 32 km (20 mi) from the Finnish border. When Finland refused, the Soviets invaded. Most sources conclude that the Soviet Union had intended to conquer all of Finland, and cite the establishment of the puppet Finnish Communist government and the Molotov–Ribbentrop Pact's secret protocols as evidence of this, while other sources argue against the idea of a full Soviet conquest. Finland repelled Soviet attacks for more than two months and inflicted substantial losses on the invaders in temperatures as low as −43 °C (−45 °F). The battles focused mainly on Taipale along the Karelian Isthmus, on Kollaa in Ladoga Karelia and on Raate Road in Kainuu, but there were also battles in Lapland and North Karelia.",
+            "Following the initial setbacks, the Soviets reduced their strategic objectives and put an end to the puppet Finnish communist government in late January 1940, and informed the legitimate Finnish government that they were willing to negotiate peace. After the Soviet military reorganized and adopted different tactics, they renewed their offensive in February 1940 and overcame the Finnish defences on the Karelian Isthmus. This left the Finnish Army in the main theatre of war near the breaking point, with a retreat seeming inevitable. Consequently, Finnish commander-in-chief Carl Gustaf Emil Mannerheim urged a peace deal with the Soviets, while the Finns still retained bargaining power.",
+            "Hostilities ceased in March 1940 with the signing of the Moscow Peace Treaty in which Finland ceded 9% of its territory to the Soviet Union. Soviet losses were heavy, and the country's international reputation suffered. Their gains exceeded their pre-war demands, and the Soviets received substantial territories along Lake Ladoga and further north. Finland retained its sovereignty and enhanced its international reputation. The poor performance of the Red Army encouraged German Chancellor Adolf Hitler to believe that an attack on the Soviet Union would be successful and confirmed negative Western opinions of the Soviet military. After 15 months of Interim Peace, in June 1941, Germany commenced Operation Barbarossa, and the Continuation War between Finland and the Soviets began.",
+            "Cite error: There are <ref group=F> tags on this page, but the references will not show without a {{reflist|group=F}} template (see the help page)."
+          ]
+        },
+        "uk": {
+          "status": "available",
+          "title": "Радянсько-фінська війна (1939—1940)",
+          "pageId": 35953,
+          "qid": "Q134949",
+          "revision": 48804811,
+          "timestamp": "2026-09-07T04:41:28Z",
+          "url": "https://uk.wikipedia.org/w/index.php?oldid=48804811",
+          "paragraphs": [
+            "Радя́нсько-ф́інська, або Зимо́ва війна́ (фін. talvisota, рос. Советско-финская война) — збройний конфлікт між СРСР і Фінляндією у період від 30 листопада 1939 року до 13 березня 1940 року (104 доби та 4 години). Війна стала наслідком узгодження розподілу сфер впливу у Східній Європі згідно з таємними протоколами до пакту про ненапад між Німеччиною та СРСР 23 серпня 1939 року та Договір про дружбу та кордон між СРСР та Німеччиною від 28 вересня 1939 р.).",
+            "СРСР неодноразово пропонував (з 1938 р.) відсунути кордон від Ленінграда, який пролягав за 32 км від центру міста, з міркувань безпеки, заявляючи, що Німеччина могла б використати територію північної країни для ймовірного вторгнення. Москва пропонувала компенсувати територіальні втрати в Східній Карелії. Після відмови фінського уряду від радянських пропозицій про зміну кордонів у Карелії і передачу військово-морської бази Ханко, 28 листопада 1939 року СРСР розірвав дипломатичні стосунки з Фінляндією. 30 листопада чотири армії СРСР чисельністю 540 тисяч вояків напали на сусідню державу на фронті від Балтійського до Баренцового моря. Війна мала агресивний характер.",
+            "Більшість джерел приходять до висновку, що Радянський Союз мав намір завоювати всю Фінляндію і використав встановлення маріонеткового фінського комуністичного уряду та секретні протоколи пакту Молотова — Ріббентропа для цього. Тоді як інші джерела вважають, що СРСР хотів тільки відсунути кордон у Карелії задля безпеки Ленінграда, і заперечують прагнення насадити в Фінляндії прокомуністичний режим. Військове вторгнення Червоної армії стало причиною визнання Лігою Націй Радянського Союзу агресором і виключення його зі свого складу. Розглядається як частина Другої світової війни.",
+            "У радянській пропаганді та офіційній радянській історіографії війна називалася «збройним конфліктом на кордоні з Фінляндією» або «оборонною війною СРСР проти агресії буржуазної Фінляндії». У пізнішій радянській та частині сучасної російської історіографії ця війна розглядається як окремий двосторонній локальний конфлікт, який не є частиною Другої світової війни; так само як, наприклад, і бої на річці Халхин-Гол у Монголії.",
+            "Війна завершилася підписанням Московського мирного договору, який зафіксував відторгнення від Фінляндії значної частини її території."
+          ]
+        },
+        "ru": {
+          "status": "available",
+          "title": "Советско-финляндская война (1939—1940)",
+          "pageId": 33700,
+          "qid": "Q134949",
+          "revision": 155688701,
+          "timestamp": "2026-10-18T18:22:09Z",
+          "url": "https://ru.wikipedia.org/w/index.php?oldid=155688701",
+          "paragraphs": [
+            "Советско-финляндская война 1939—1940 годов, также известная как Советско-финская война 1939—1940 годов, Зимняя война, Финская война, Финская кампания 1939—1940 годов, Третья советско-финская война, Советско-финский вооружённый конфликт 1939—1940 годов (фин. Talvisota) — война между СССР и Финляндией в период с 30 ноября 1939 года по 12 марта 1940 года. Продолжительность войны составила 105 дней.",
+            "Ссылаясь на соображения безопасности для Ленинграда, расположенного вблизи финской границы, советское руководство выдвигало несколько предложений на протяжении 1938 и 1939 годов о том, чтобы Финляндия уступила пограничные территории (Карельский перешеек, острова в Финском заливе, часть области Петсамо) в обмен на земли в Карелии, которые были вдвое больше запрашиваемых территорий, хоть и являлись неосвоенными и заболоченными. Финляндия отказалась от этих предложений. 26 ноября 1939 года правительство СССР направило ноту протеста правительству Финляндии по поводу произошедшего артиллерийского обстрела, который, по заявлению советской стороны, был совершён с финской территории.",
+            "30 ноября СССР начал военное вторжение в Финляндию. Начало боевых действий привело к тому, что 14 декабря 1939 года СССР как агрессор был исключён из Лиги Наций. Большая часть источников утверждают, что Советский Союз намеревался завоевать всю Финляндию, указывая на факт создания марионеточного финского коммунистического правительства и секретные протоколы пакта Молотова — Риббентропа. В то же время ряд других источников оспаривают планы СССР о полном завоевании Финляндии.",
+            "Военные действия прекратились в марте 1940 года подписанием Московского мирного договора, по которому Финляндия уступила около 10 % своей территории Советскому Союзу. 430 тысяч финских жителей власти Финляндии эвакуировали из прифронтовых районов вглубь страны.",
+            "Сам Карл Густав Маннергейм говорил тогда о том, что Московский мир был крайне выгоден для Финляндии в сложившихся реалиях, с выходом РККА на оперативный простор.",
+            "Ошибка в сносках: Для существующих тегов <ref> группы «Комм.» не найдено соответствующего тега <references group=\"Комм.\"/>"
+          ]
+        }
+      },
+      "hash": "7736031b1ef6259adbe2257a9a53cca9740fd73a4e1f34008bb93ea1b5113590"
+    }
+  ]
+}

@@ -12,6 +12,14 @@ The atlas covers **all 19,742 articles and 862,076 revisions in MariaDB's Finnis
 
 The UI adapts the mint/charcoal palette, DM Sans and Space Grotesk, three-column layout and inspector from `feature/conflict-explorer`, retaining the React graph physics and live explorer. Charts and the timeline use **calendar months**, with all-history, five-year, twelve-month and three-month windows.
 
+## Four-language comparison
+
+`/?metric=language&title=Talvisota` adds a second, independent score for selected claims and framing in **Finnish, English, Ukrainian and Russian** introductions. Eight popular demo articles were selected by recent Finnish pageviews among the 30 most-revised M articles. All 32 editions are captured at fixed revision IDs; six pairwise comparisons show original quotations, English paraphrases and source links.
+
+The labels are **AI-assisted and unvalidated**, not an automatic general-purpose opinion detector. Five or six selected axes per article feed a deterministic function. Omissions, uncertainty and incomparable dates are excluded; seven articles have an aggregate and Kekkonen remains unknown because only one pair meets the evidence threshold. Zero means agreement on measured claims only. This November snapshot is separate from the monthly October M editing history. See [language method](docs/LANGUAGE-METHOD.md).
+
+`npm run languages:build` reproduces the static output from the committed capture and annotations. `npm run languages:capture -- --refresh` needs public Wikimedia network access and new annotation review before a rebuild. Production builds use committed sources, with no Wikimedia or LLM requests. The new code passes all **100 Node tests, zero skipped**, including MariaDB integration, and the TypeScript/production build. Publication checks are recorded in [language release](docs/qa/language-release.md).
+
 ## Pipeline
 
 1. Verify all 16 official M Parquet partitions and export complete histories.

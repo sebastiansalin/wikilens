@@ -1,1 +1,19 @@
-{"buildCommand":"node pipeline/capture-languages.mjs && npm run build","outputDirectory":"dist","framework":"vite","regions":["fra1"],"functions":{"api/*.mjs":{"maxDuration":60}},"rewrites":[{"source":"/((?!api/).*)","destination":"/index.html"}]}
+{
+  "buildCommand": "node pipeline/build-languages.mjs && npm run build",
+  "outputDirectory": "dist",
+  "framework": "vite",
+  "regions": [
+    "fra1"
+  ],
+  "functions": {
+    "api/*.mjs": {
+      "maxDuration": 60
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/((?!api/).*)",
+      "destination": "/index.html"
+    }
+  ]
+}
