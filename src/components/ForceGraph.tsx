@@ -7,11 +7,12 @@ import type { Simulation } from '../physics.mjs';
 import type { MeasuredFields, MeasuredLink } from '../graph-metrics.mjs';
 import type { GraphNode, Theme } from '../types';
 
-export type MapNode = GraphNode & MeasuredFields;
+export type MapNode = GraphNode & MeasuredFields & { articleRadius?: number };
+type MapLink = MeasuredLink & { articleWidth?: number };
 
 interface Props {
   nodes: MapNode[];
-  links: MeasuredLink[];
+  links: MapLink[];
   rootId: string;
   selectedId?: string;
   theme: Theme;
@@ -33,7 +34,7 @@ type Gesture = {
 const clamp = (value: number, low: number, high: number) => Math.max(low, Math.min(high, value));
 const edgeKey = (source: string, target: string) => JSON.stringify([source, target]);
 const unorderedKey = (source: string, target: string) => JSON.stringify([source, target].sort());
-const starRadius = (node: MapNode, rootId: string) => Math.max(3.5, node.radius * (node.id === rootId ? 0.34 : 0.24));
+const starRadius = (node: MapNode, rootId: string) => node.articleRadius ?? Math.max(3.5, node.radius * (node.id === rootId ? 0.34 : 0.24));
 const label = (title: string) => title.length > 34 ? `${title.slice(0, 31).trimEnd()}…` : title;
 
 export default function ForceGraph({ nodes, links, rootId, selectedId, theme, motion, onSelect, onExplore, pathIds = [] }: Props) {
@@ -64,7 +65,7 @@ export default function ForceGraph({ nodes, links, rootId, selectedId, theme, mo
   const visibleNodes = useMemo(() => nodes.slice(0, 160), [nodes]);
   const visibleLinks = useMemo(() => {
     const ids = new Set(visibleNodes.map(node => node.id));
-    const unique = new Map<string, MeasuredLink>();
+    const unique = new Map<string, MapLink>();
     for (const edge of links) if (ids.has(edge.source) && ids.has(edge.target) && edge.source !== edge.target) unique.set(edgeKey(edge.source, edge.target), edge);
     return [...unique.values()];
   }, [links, visibleNodes]);
@@ -369,7 +370,7 @@ export default function ForceGraph({ nodes, links, rootId, selectedId, theme, mo
             const inPath = pathEdges.has(unorderedKey(edge.source, edge.target));
             const active = Boolean(focus && (edge.source === focus || edge.target === focus));
             const rootEdge = edge.source === rootId || edge.target === rootId;
-            return <line key={edgeKey(edge.source, edge.target)} ref={element => { if (element) edgeElements.current.set(edgeKey(edge.source, edge.target), element); else edgeElements.current.delete(edgeKey(edge.source, edge.target)); }} className={`force-edge${inPath ? ' is-path' : ''}${active ? ' is-active' : ''}`} data-source={edge.source} data-target={edge.target} stroke={inPath ? '#e3c37d' : 'var(--map-edge, #799792)'} strokeWidth={inPath ? 1.8 : active ? 1.1 : 0.65} vectorEffect="non-scaling-stroke" style={{ opacity: inPath ? 0.85 : focus ? active ? 0.55 : 0.045 : rootEdge ? 0.18 : 0.09 }} />;
+            return <line key={edgeKey(edge.source, edge.target)} ref={element => { if (element) edgeElements.current.set(edgeKey(edge.source, edge.target), element); else edgeElements.current.delete(edgeKey(edge.source, edge.target)); }} className={`force-edge${inPath ? ' is-path' : ''}${active ? ' is-active' : ''}`} data-source={edge.source} data-target={edge.target} stroke={inPath ? '#e3c37d' : 'var(--map-edge, #799792)'} strokeWidth={edge.articleWidth ?? (inPath ? 1.8 : active ? 1.1 : 0.65)} vectorEffect="non-scaling-stroke" style={{ opacity: inPath ? 0.85 : focus ? active ? 0.55 : 0.045 : rootEdge ? 0.18 : 0.09 }} />;
           })}
         </g>
         {visibleNodes.map(node => {

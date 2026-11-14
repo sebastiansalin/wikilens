@@ -42,7 +42,12 @@ function AtlasLoaded({data}:{data:AtlasData}){
  const horizon=useMemo(()=>eventHorizon(index,rootId,{limit,rings,rank:id=>index.neighbours.get(id)?.size||0}),[index,rootId,limit,rings]);
  const graph=useMemo(()=>{
   const nodes:GraphNode[]=horizon.ids.map(id=>{const a=index.byId.get(id)!;return {id:String(id),title:a.title,lang:'fi',qid:null,description:'Finnish-history M snapshot',extract:'',url:`https://fi.wikipedia.org/?curid=${id}`,length:a.bytes,root:id===rootId};});
-  return measureGraph({root:{id:String(rootId)},nodes,links:horizon.links},{minRadius:16,maxRadius:36});
+  const measured=measureGraph({root:{id:String(rootId)},nodes,links:horizon.links},{minRadius:16,maxRadius:36});
+  const maxBytes=Math.max(1,...nodes.map(n=>Math.max(0,n.length)));
+  const sizedNodes=measured.nodes.map(n=>({...n,articleRadius:8+20*Math.sqrt(Math.max(0,n.length)/maxBytes)}));
+  const radii=new Map(sizedNodes.map(n=>[n.id,n.articleRadius]));
+  const sizedLinks=measured.links.map(edge=>({...edge,articleWidth:Math.min(3.8,Math.max(.55,Math.min(radii.get(edge.source)!,radii.get(edge.target)!)*.10))}));
+  return {...measured,nodes:sizedNodes,links:sizedLinks};
  },[horizon,index,rootId]);
  const coloredNodes=useMemo(()=>graph.nodes.map(n=>({...n,disagreementScore:summaries.get(Number(n.id))?.score??null})),[graph,summaries]);
  const episodes=useMemo(()=>detail?.episodes.filter(e=>e.category===category&&e.qualifiedAt.slice(0,7)>=from&&e.qualifiedAt.slice(0,7)<=end)||[],[detail,category,from,end]);
