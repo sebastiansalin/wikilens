@@ -15,4 +15,4 @@ Validation completed:
 - Connected Brave at 390 × 844: tab navigation, search, selected article, missing-edition states and vertical scrolling remained usable. Viewport override reset after testing.
 - Close button and Escape restored Livvinkarjala / September 2026 in the atlas. Reopening retained the independent language article. No captured browser console errors after these checks.
 
-Publication status at this record: source and data prepared and locally verified; production deployment verification pending.
+Published source release `beadea7f29bf85a7a74422a27db7059c7e51e4a1` to public main with an expected-head, non-force update. Vercel deployment [FcV6MhWPTm9X6CerF8NC7LvMxUig](https://vercel.com/mv-c84d/wikilens/FcV6MhWPTm9X6CerF8NC7LvMxUig) completed successfully in the existing project. Connected Brave verified the production tab at [WikiLens](https://wikilens-junction2026.vercel.app/?languages=1): top 100, Belomorsk FI/EN 77.3 and all six scores loaded, no captured console errors, close restored Talvisota / October 2026, and reopening loaded the comparison again. Source evidence is committed and ordinary deployments require no capture job.

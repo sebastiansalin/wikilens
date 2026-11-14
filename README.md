@@ -57,6 +57,8 @@ The evaluator reports agreement, Cohen's kappa, coverage and sample confusion co
 
 ## Current status
 
+- **Latest addition (14 November 2026):** The closable [Language differences tab](https://wikilens-junction2026.vercel.app/?languages=1) is live from release `beadea7`. Its exact top-100 sample and 173 usable pair comparisons were precomputed and audited. Production browser checks passed; see [release checks](docs/qa/language-differences-release.md). Editing scores, graph and timeline remain independent.
+
 - **Previous atlas release (14 November 2026, 21:28 Europe/Helsinki):** Leo's reviewed main version `7e6e120` is deployed at the production URL through release commit `d1ff35c`. Both commits use the exact same source tree. Vercel deployment `DSW8bPJssb4QyykqrYccrrcXupKq` reached Ready / Production / Current after an 18-second build. Brave checks confirmed the atlas, Talvisota index 35, the monthly previous-month control, and no captured console errors. This release exposes the atlas-only interface described below.
 
 - MariaDB import completed: **19,742 articles / 862,076 revisions**. Original pilot capture preserved.
